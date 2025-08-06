@@ -20,6 +20,10 @@ const Poems: CollectionConfig<'poems'> = {
     useAsTitle: 'title',
     defaultColumns: ['title', 'slug', 'updatedAt'],
   },
+  defaultPopulate: {
+    title: true,
+    slug: true,
+  },
   trash: true,
   orderable: true,
   access: {
