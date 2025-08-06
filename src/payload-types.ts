@@ -79,7 +79,11 @@ export interface Config {
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  collectionsJoins: {};
+  collectionsJoins: {
+    subjects: {
+      poems: 'poems';
+    };
+  };
   collectionsSelect: {
     subjects: SubjectsSelect<false> | SubjectsSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
@@ -143,23 +147,14 @@ export interface Subject {
   slug?: string | null;
   slugLock?: boolean | null;
   sortOrder?: number | null;
+  poems?: {
+    docs?: (string | Poem)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "categories".
- */
-export interface Category {
-  id: string;
-  _order?: string | null;
-  title: string;
-  description?: string | null;
-  slug?: string | null;
-  slugLock?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -209,6 +204,20 @@ export interface Poem {
   createdAt: string;
   deletedAt?: string | null;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface Category {
+  id: string;
+  _order?: string | null;
+  title: string;
+  description?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -484,6 +493,7 @@ export interface SubjectsSelect<T extends boolean = true> {
   slug?: T;
   slugLock?: T;
   sortOrder?: T;
+  poems?: T;
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;

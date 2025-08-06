@@ -38,6 +38,12 @@ const Subjects: CollectionConfig = {
         position: 'sidebar',
       },
     },
+    {
+      name: 'poems', // reverse relation
+      type: 'join',
+      collection: 'poems',
+      on: 'subject',
+    },
   ],
 }
 
