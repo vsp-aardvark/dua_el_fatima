@@ -237,10 +237,7 @@ export interface Subpoem {
   id: string;
   _order?: string | null;
   title: string;
-  /**
-   * Required unless this poem is a group (see below).
-   */
-  content?: {
+  content: {
     root: {
       type: string;
       children: {
@@ -254,7 +251,7 @@ export interface Subpoem {
       version: number;
     };
     [k: string]: unknown;
-  } | null;
+  };
   publishedAt?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;

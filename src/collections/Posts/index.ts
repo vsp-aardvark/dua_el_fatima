@@ -108,6 +108,7 @@ const Poems: CollectionConfig<'poems'> = {
             {
               name: 'group',
               type: 'array',
+              label: "Poem",
               fields: [
                 {
                   name: 'poem',
