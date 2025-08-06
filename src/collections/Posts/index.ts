@@ -112,7 +112,7 @@ const Poems: CollectionConfig<'poems'> = {
                 {
                   name: 'poem',
                   type: 'relationship',
-                  relationTo: 'poems',
+                  relationTo: 'subpoems',
                 },
               ],
               required: false,

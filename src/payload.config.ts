@@ -13,6 +13,7 @@ import Categories from '@/collections/Categories'
 import Subjects from '@/collections/Subjects'
 import Posts from '@/collections/Posts'
 import Alerts from '@/collections/Alerts'
+import SubPoems from '@/collections/Posts/Sub'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -32,7 +33,7 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
   }),
-  collections: [Subjects, Categories, Posts,  Alerts,Media,Users],
+  collections: [Subjects, Categories, Posts,  Alerts,Media,Users,SubPoems],
   sharp,
   plugins: [
     payloadCloudPlugin(),

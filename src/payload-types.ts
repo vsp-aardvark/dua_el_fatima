@@ -73,6 +73,7 @@ export interface Config {
     alerts: Alert;
     media: Media;
     users: User;
+    subpoems: Subpoem;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -86,6 +87,7 @@ export interface Config {
     alerts: AlertsSelect<false> | AlertsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    subpoems: SubpoemsSelect<false> | SubpoemsSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -196,7 +198,7 @@ export interface Poem {
    */
   group?:
     | {
-        poem?: (string | null) | Poem;
+        poem?: (string | null) | Subpoem;
         id?: string | null;
       }[]
     | null;
@@ -226,6 +228,40 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "subpoems".
+ */
+export interface Subpoem {
+  id: string;
+  _order?: string | null;
+  title: string;
+  /**
+   * Required unless this poem is a group (see below).
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  publishedAt?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  deletedAt?: string | null;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -391,6 +427,10 @@ export interface PayloadLockedDocument {
         value: string | User;
       } | null)
     | ({
+        relationTo: 'subpoems';
+        value: string | Subpoem;
+      } | null)
+    | ({
         relationTo: 'payload-jobs';
         value: string | PayloadJob;
       } | null);
@@ -546,6 +586,22 @@ export interface UsersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "subpoems_select".
+ */
+export interface SubpoemsSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  content?: T;
+  publishedAt?: T;
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  deletedAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-jobs_select".
  */
 export interface PayloadJobsSelect<T extends boolean = true> {
@@ -623,6 +679,10 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'alerts';
           value: string | Alert;
+        } | null)
+      | ({
+          relationTo: 'subpoems';
+          value: string | Subpoem;
         } | null);
     global?: string | null;
     user?: (string | null) | User;
