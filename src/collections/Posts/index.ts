@@ -35,63 +35,97 @@ const Poems: CollectionConfig<'poems'> = {
       required: true,
     },
     {
-      name: 'subject',
-      type: 'relationship',
-      relationTo: 'subjects',
-      required: true,
-    },
-    {
-      name: 'category',
-      type: 'relationship',
-      relationTo: 'categories',
-      required: true,
-    },
-    {
-      name: 'content',
-      type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-            ParagraphFeature(),
-            LinkFeature(),
-            BlocksFeature({ blocks: [MediaBlock] }),
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-            HorizontalRuleFeature(),
-          ]
-        },
-      }),
-      label: false,
-      required: false,
-      admin: {
-        condition: (data) => !data?.group || data.group.length === 0,
-        description: 'Required unless this poem is a group (see below).',
-      },
-    },
-    {
-      name: 'media',
-      type: 'upload',
-      relationTo: 'media',
-      required: false,
-    },
-    {
-      name: 'group',
-      type: 'array',
+      type: 'row',
       fields: [
         {
-          name: 'poem',
+          name: 'subject',
           type: 'relationship',
-          relationTo: 'poems',
+          relationTo: 'subjects',
+          required: true,
+          admin: {
+            description: 'Description for the Poem, e.g Hussein, Fatima',
+            allowCreate: true,
+          },
+        },
+        {
+          name: 'category',
+          type: 'relationship',
+          relationTo: 'categories',
+          required: true,
         },
       ],
-      required: false,
-      admin: {
-        description:
-          'If you add poems here, this entry becomes a group and the content field is optional.',
-      },
     },
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            {
+              name: 'content',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+                    ParagraphFeature(),
+                    LinkFeature(),
+                    BlocksFeature({ blocks: [MediaBlock] }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                    HorizontalRuleFeature(),
+                  ]
+                },
+              }),
+              label: false,
+              required: false,
+              admin: {
+                condition: (data) => !data?.group || data.group.length === 0,
+                description: 'Required unless this poem is a group (see below).',
+              },
+            },
+          ],
+        },
+        {
+          label: 'Media',
+          fields: [
+            {
+              name: 'media',
+              type: 'upload',
+              relationTo: 'media',
+              required: false,
+            },
+          ],
+        },
+        {
+          label: 'Group',
+          fields: [
+            {
+              name: 'group',
+              type: 'array',
+              fields: [
+                {
+                  name: 'poem',
+                  type: 'relationship',
+                  relationTo: 'poems',
+                },
+              ],
+              required: false,
+              admin: {
+                description:
+                  'If you add poems here, this entry becomes a group and the content field is optional.',
+                isSortable: true,
+              },
+            },
+          ],
+          admin: {
+            description: 'For Grouped Poems, Add the included poems here',
+          },
+        },
+      ],
+    },
+    //sidebar
     {
       name: 'publishedAt',
       type: 'date',
