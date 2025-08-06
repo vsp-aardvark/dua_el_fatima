@@ -5,6 +5,8 @@ const Categories: CollectionConfig = {
   slug: 'categories',
   admin: {
     useAsTitle: 'title',
+    defaultColumns: ['title', 'sortOrder', 'slug'],
+    listSearchableFields: ['title', 'sortOrder'],
   },
   orderable: true,
   fields: [
