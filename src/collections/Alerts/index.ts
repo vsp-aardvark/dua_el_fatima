@@ -15,34 +15,67 @@ const Alerts: CollectionConfig = {
   },
   fields: [
     {
-      name: 'message',
+      name: 'title',
       type: 'text',
       required: true,
+      label: 'Title',
     },
     {
-      name: 'expiresAt',
-      type: 'date',
-      required: true,
+      type:"tabs",
+      tabs : [
+        {
+          label :"Message",
+          fields :[
+            {
+              name: 'message',
+              type: 'text',
+              required: false,
+              label: 'Message | Notification Body'
+            },
+          ]
+        },
+        {
+          label :"Media",
+          fields : [
+            {
+              name: 'media',
+              type: 'upload',
+              relationTo: 'media',
+              required: false,
+              label: 'Media | Image | Document',
+            },
+          ]
+        }
+      ]
     },
     {
-      name: 'subject',
-      type: 'relationship',
-      relationTo: 'subjects',
+      type: 'row',
+      fields: [
+        {
+          name: 'expiresAt',
+          type: 'date',
+          required: false,
+          label: 'Expiry Date, if there is one',
+        },
+      ],
+    },
+    {
+      type: 'text',
+      name: 'link',
       required: false,
-    },
-    {
-      name: 'category',
-      type: 'relationship',
-      relationTo: 'categories',
-      required: false,
-    },
-    {
-      name: 'poem',
-      type: 'relationship',
-      relationTo: 'poems',
-      required: false,
+      label: 'Link for message',
     },
   ],
+  versions: {
+    drafts: {
+      autosave: {
+        // We set this interval for optimal live preview
+        interval: 100,
+      },
+      schedulePublish: true,
+    },
+    maxPerDoc: 50,
+  },
 }
 
 export default Alerts

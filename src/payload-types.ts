@@ -167,6 +167,9 @@ export interface Poem {
   id: string;
   _order?: string | null;
   title: string;
+  /**
+   * Description for the Poem, e.g Hussein, Fatima
+   */
   subject: string | Subject;
   category: string | Category;
   /**
@@ -230,13 +233,14 @@ export interface Media {
  */
 export interface Alert {
   id: string;
-  message: string;
-  expiresAt: string;
-  subject?: (string | null) | Subject;
-  category?: (string | null) | Category;
-  poem?: (string | null) | Poem;
+  title: string;
+  message?: string | null;
+  media?: (string | null) | Media;
+  expiresAt?: string | null;
+  link?: string | null;
   updatedAt: string;
   createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -490,13 +494,14 @@ export interface PoemsSelect<T extends boolean = true> {
  * via the `definition` "alerts_select".
  */
 export interface AlertsSelect<T extends boolean = true> {
+  title?: T;
   message?: T;
+  media?: T;
   expiresAt?: T;
-  subject?: T;
-  category?: T;
-  poem?: T;
+  link?: T;
   updatedAt?: T;
   createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -610,10 +615,15 @@ export interface TaskSchedulePublish {
   input: {
     type?: ('publish' | 'unpublish') | null;
     locale?: string | null;
-    doc?: {
-      relationTo: 'poems';
-      value: string | Poem;
-    } | null;
+    doc?:
+      | ({
+          relationTo: 'poems';
+          value: string | Poem;
+        } | null)
+      | ({
+          relationTo: 'alerts';
+          value: string | Alert;
+        } | null);
     global?: string | null;
     user?: (string | null) | User;
   };
