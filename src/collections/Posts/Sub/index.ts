@@ -57,10 +57,6 @@ const SubPoems: CollectionConfig<'subpoems'> = {
       }),
       label: false,
       required: true,
-      admin: {
-        condition: (data) => !data?.group || data.group.length === 0,
-        description: 'Required unless this poem is a group (see below).',
-      },
     },
     //sidebar
     {
