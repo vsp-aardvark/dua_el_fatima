@@ -47,6 +47,9 @@ const Subjects: CollectionConfig = {
       type: 'join',
       collection: 'poems',
       on: 'subject',
+      admin: {
+        hidden: true,
+      },
     },
   ],
 }

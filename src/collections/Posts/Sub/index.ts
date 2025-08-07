@@ -79,6 +79,16 @@ const SubPoems: CollectionConfig<'subpoems'> = {
         ],
       },
     },
+    {
+      // reverse relation
+      name: 'poem',
+      type: 'join',
+      collection: 'poems',
+      on: 'group.poem',
+      admin: {
+        hidden: true,
+      },
+    },
     ...slugField(),
   ],
   versions: {

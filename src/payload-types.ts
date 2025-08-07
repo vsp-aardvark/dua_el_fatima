@@ -83,6 +83,9 @@ export interface Config {
     subjects: {
       poems: 'poems';
     };
+    subpoems: {
+      poem: 'poems';
+    };
   };
   collectionsSelect: {
     subjects: SubjectsSelect<false> | SubjectsSelect<true>;
@@ -263,6 +266,11 @@ export interface Subpoem {
     [k: string]: unknown;
   };
   publishedAt?: string | null;
+  poem?: {
+    docs?: (string | Poem)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -602,6 +610,7 @@ export interface SubpoemsSelect<T extends boolean = true> {
   title?: T;
   content?: T;
   publishedAt?: T;
+  poem?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;
