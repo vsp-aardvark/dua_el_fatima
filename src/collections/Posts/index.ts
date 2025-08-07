@@ -108,7 +108,7 @@ const Poems: CollectionConfig<'poems'> = {
             {
               name: 'group',
               type: 'array',
-              label: "Poem",
+              label: 'Poem',
               fields: [
                 {
                   name: 'poem',
@@ -152,6 +152,30 @@ const Poems: CollectionConfig<'poems'> = {
       },
     },
     ...slugField(),
+    {
+      label: 'Sub Poems',
+      name: 'groupCount',
+      type: 'number',
+      admin: {
+        readOnly: true,
+        position: 'sidebar',
+      },
+      defaultValue: 0,
+      hooks: {
+        beforeChange: [
+          ({ data }) => {
+            const group = data?.group || []
+            return group.length
+          },
+        ],
+        beforeValidate: [
+          ({ data }) => {
+            const group = data?.group || []
+            return group.length
+          },
+        ],
+      },
+    },
   ],
   versions: {
     drafts: {

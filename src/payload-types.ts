@@ -203,6 +203,7 @@ export interface Poem {
   publishedAt?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
+  groupCount?: number | null;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
@@ -541,6 +542,7 @@ export interface PoemsSelect<T extends boolean = true> {
   publishedAt?: T;
   slug?: T;
   slugLock?: T;
+  groupCount?: T;
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;
