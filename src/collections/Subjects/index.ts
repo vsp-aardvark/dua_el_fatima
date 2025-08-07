@@ -10,6 +10,10 @@ const Subjects: CollectionConfig = {
     listSearchableFields: ['title', 'sortOrder'],
     defaultColumns: ['title', 'sortOrder', 'slug'],
   },
+  defaultPopulate: {
+    title: true,
+    slug: true,
+  },
   orderable: true,
   trash: true,
   access: {

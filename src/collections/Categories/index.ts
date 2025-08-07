@@ -10,6 +10,10 @@ const Categories: CollectionConfig = {
     defaultColumns: ['title', 'sortOrder', 'slug'],
     listSearchableFields: ['title', 'sortOrder'],
   },
+  defaultPopulate: {
+    title: true,
+    slug: true,
+  },
   orderable: true,
   trash: true,
   access: {
