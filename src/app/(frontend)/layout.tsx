@@ -60,10 +60,8 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en">
-      <body>
-        <main>{children}</main>
-      </body>
+    <html lang="en" data-theme="light" className={"bg-gray-50 antialiased __variable_e8ce0c"}>
+      <body>{children}</body>
     </html>
   )
 }
