@@ -19,6 +19,7 @@ const SubPoems: CollectionConfig<'subpoems'> = {
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'slug', 'updatedAt'],
+    group: 'Poems',
   },
   defaultPopulate: {
     title: true,

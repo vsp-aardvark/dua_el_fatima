@@ -6,6 +6,7 @@ const Alerts: CollectionConfig = {
   slug: 'alerts',
   admin: {
     useAsTitle: 'message',
+    group: 'Events',
   },
   access: {
     read: anyone,
@@ -21,22 +22,22 @@ const Alerts: CollectionConfig = {
       label: 'Title',
     },
     {
-      type:"tabs",
-      tabs : [
+      type: 'tabs',
+      tabs: [
         {
-          label :"Message",
-          fields :[
+          label: 'Message',
+          fields: [
             {
               name: 'message',
               type: 'text',
               required: false,
-              label: 'Message | Notification Body'
+              label: 'Message | Notification Body',
             },
-          ]
+          ],
         },
         {
-          label :"Media",
-          fields : [
+          label: 'Media',
+          fields: [
             {
               name: 'media',
               type: 'upload',
@@ -44,18 +45,18 @@ const Alerts: CollectionConfig = {
               required: false,
               label: 'Media | Image | Document',
             },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     },
     {
       type: 'row',
       fields: [
         {
-          name: 'expiresAt',
+          name: 'dateAt',
           type: 'date',
-          required: false,
-          label: 'Expiry Date, if there is one',
+          required: true,
+          label: 'Event Date of happening',
         },
       ],
     },
@@ -63,7 +64,7 @@ const Alerts: CollectionConfig = {
       type: 'text',
       name: 'link',
       required: false,
-      label: 'Link for message',
+      label: 'Custom Link for message (Link to WhatsApp, Google, or Twitter)',
     },
   ],
   versions: {

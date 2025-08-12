@@ -288,7 +288,7 @@ export interface Alert {
   title: string;
   message?: string | null;
   media?: (string | null) | Media;
-  expiresAt?: string | null;
+  dateAt: string;
   link?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -556,7 +556,7 @@ export interface AlertsSelect<T extends boolean = true> {
   title?: T;
   message?: T;
   media?: T;
-  expiresAt?: T;
+  dateAt?: T;
   link?: T;
   updatedAt?: T;
   createdAt?: T;

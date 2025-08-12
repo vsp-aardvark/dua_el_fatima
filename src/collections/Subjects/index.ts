@@ -9,6 +9,7 @@ const Subjects: CollectionConfig = {
     useAsTitle: 'title',
     listSearchableFields: ['title', 'sortOrder'],
     defaultColumns: ['title', 'sortOrder', 'slug'],
+    group: 'Personality',
   },
   defaultPopulate: {
     title: true,

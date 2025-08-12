@@ -19,6 +19,7 @@ const Poems: CollectionConfig<'poems'> = {
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'slug', 'updatedAt'],
+    group: 'Poems',
   },
   defaultPopulate: {
     title: true,

@@ -9,6 +9,7 @@ const Categories: CollectionConfig = {
     useAsTitle: 'title',
     defaultColumns: ['title', 'sortOrder', 'slug'],
     listSearchableFields: ['title', 'sortOrder'],
+    group: 'Personality',
   },
   defaultPopulate: {
     title: true,
