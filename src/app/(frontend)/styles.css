@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.text-gray-700 {
+    color: var(--color-gray-700);
+}
+
 :root {
     --font-mono: 'Roboto Mono', monospace;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.css'
+import '@/app/(frontend)/styles.css'
 import { Metadata } from 'next'
 
 // app/metadata.js or layout.js
