@@ -146,7 +146,7 @@ export default async function HomePage() {
                 <div className="-mx-4 h-[448px] mask-[linear-gradient(to_bottom,white_60%,transparent)] px-9 sm:mx-0 lg:absolute lg:-inset-x-10 lg:-top-10 lg:-bottom-20 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32">
                   <div className="relative aspect-366/729 mx-auto max-w-[366px]">
                     <div className="absolute inset-y-[calc(1/729*100%)] right-[calc(5/729*100%)] left-[calc(7/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl" />
-                    <div className="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-gray-900 pt-[calc(23/318*100%)]">
+                    <div className="absolute top-[calc(23/729*100%)] left-[calc(23/366*100%)] grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-[#F6FAFC] pt-[calc(23/318*100%)]">
                       <div className={'flex flex-col'}>
                         {/*HERO*/}
                         <div className="h-80 w-full absolute">
@@ -158,6 +158,11 @@ export default async function HomePage() {
                           <div className="h-80 w-full left-0 top-0 absolute bg-gradient-to-tr from-slate-50 via-slate-50/90 to-slate-50/0" />
                         </div>
                         {/*HERO*/}
+                        {/*APPBAR*/}
+                        <div className="justify-start text-slate-950 text-2xl font-black z-[100] px-2 py-2">
+                          Dua El Fatuma (SWA)
+                        </div>
+                        {/*APPBAR*/}
                       </div>
                     </div>
                     <svg
