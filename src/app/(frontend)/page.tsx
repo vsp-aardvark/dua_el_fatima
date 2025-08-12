@@ -57,7 +57,7 @@ export default async function HomePage() {
                   📜 Dua El Fatuma (SWA) – At Your Fingertips
                 </h1>
                 <p className="mt-6 text-lg text-gray-600">
-                  Download the app and carry the beauty of poetry wherever you go.
+                  Download the app and carry the beauty wherever you go.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
                   <Link
