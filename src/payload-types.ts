@@ -285,11 +285,14 @@ export interface Subpoem {
  */
 export interface Alert {
   id: string;
+  _order?: string | null;
   title: string;
   message?: string | null;
   media?: (string | null) | Media;
   dateAt: string;
   link?: string | null;
+  date?: string | null;
+  time?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -553,11 +556,14 @@ export interface PoemsSelect<T extends boolean = true> {
  * via the `definition` "alerts_select".
  */
 export interface AlertsSelect<T extends boolean = true> {
+  _order?: T;
   title?: T;
   message?: T;
   media?: T;
   dateAt?: T;
   link?: T;
+  date?: T;
+  time?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
