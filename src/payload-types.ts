@@ -208,6 +208,7 @@ export interface Poem {
   slug?: string | null;
   slugLock?: boolean | null;
   groupCount?: number | null;
+  isGroup?: boolean | null;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
@@ -375,7 +376,7 @@ export interface PoemsDraft {
     [k: string]: unknown;
   } | null;
   media?: (string | null) | Media;
-  isGroup?: boolean | null;
+  isGroup?: (string | null) | Poem;
   updatedAt: string;
   createdAt: string;
 }
@@ -611,6 +612,7 @@ export interface PoemsSelect<T extends boolean = true> {
   slug?: T;
   slugLock?: T;
   groupCount?: T;
+  isGroup?: T;
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;

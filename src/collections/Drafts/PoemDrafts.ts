@@ -104,12 +104,17 @@ const PoemDrafts: CollectionConfig = {
       ],
     },
     {
-      type: 'checkbox',
-      label: 'Is Group or Anjuman ?',
+      label: 'Group or Anjuman ?',
       name: 'isGroup',
       required: false,
       admin: {
         position: 'sidebar',
+      },
+      type: 'relationship',
+      relationTo: 'poems',
+      filterOptions: ({}) => {
+        //only return grouped poems
+        return { isGroup: { equals: true } }
       },
     },
   ],

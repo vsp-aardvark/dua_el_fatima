@@ -160,6 +160,7 @@ const Poems: CollectionConfig<'poems'> = {
       admin: {
         readOnly: true,
         position: 'sidebar',
+        hidden: true,
       },
       defaultValue: 0,
       hooks: {
@@ -175,6 +176,15 @@ const Poems: CollectionConfig<'poems'> = {
             return group.length
           },
         ],
+      },
+    },
+    {
+      type: 'checkbox',
+      label: 'Is Group or Anjuman ?',
+      name: 'isGroup',
+      required: false,
+      admin: {
+        position: 'sidebar',
       },
     },
   ],
