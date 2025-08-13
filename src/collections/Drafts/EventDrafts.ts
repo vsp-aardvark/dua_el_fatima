@@ -1,31 +1,18 @@
 import { CollectionConfig } from 'payload'
 import { anyone } from '@/access/anyone'
-import { authenticated } from '@/access/authenticated'
+import { adminOnly } from '@/access/adminOnly'
 
-function utilGetDateTimeFromString(data: string, index: number) {
-  console.debug(`Current date ${data} before processing index:${index}`)
-  const match = data.match(/^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2})/)
-  if (match) {
-    return match[index]
-  }
-  return ''
-}
-
-const Alerts: CollectionConfig = {
-  labels: {
-    singular: 'Event',
-    plural: 'Events',
-  },
-  slug: 'alerts',
+const EventDrafts: CollectionConfig = {
+  slug: 'event-drafts',
   admin: {
     useAsTitle: 'title',
-    group: 'Events',
+    group: 'Drafts',
   },
   access: {
     read: anyone,
-    create: authenticated,
-    update: authenticated,
-    delete: authenticated,
+    create: anyone,
+    update: adminOnly,
+    delete: adminOnly,
   },
   fields: [
     {
@@ -80,36 +67,6 @@ const Alerts: CollectionConfig = {
       label: 'Custom Link for message (Link to WhatsApp, Google, or Twitter)',
     },
     {
-      label: 'Date',
-      name: 'date',
-      type: 'text',
-      admin: {
-        readOnly: true,
-        position: 'sidebar',
-        hidden: true,
-      },
-      defaultValue: '',
-      hooks: {
-        beforeChange: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 1)],
-        beforeValidate: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 1)],
-      },
-    },
-    {
-      label: 'Time',
-      name: 'time',
-      type: 'text',
-      admin: {
-        readOnly: true,
-        position: 'sidebar',
-        hidden: true,
-      },
-      defaultValue: '',
-      hooks: {
-        beforeChange: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 2)],
-        beforeValidate: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 2)],
-      },
-    },
-    {
       label: 'Event Type | Schedule Type',
       name: 'type',
       type: 'select',
@@ -134,17 +91,7 @@ const Alerts: CollectionConfig = {
       },
     },
   ],
-  versions: {
-    drafts: {
-      autosave: {
-        // We set this interval for optimal live preview
-        interval: 100,
-      },
-      schedulePublish: true,
-    },
-    maxPerDoc: 50,
-  },
   orderable: true,
 }
 
-export default Alerts
+export default EventDrafts
