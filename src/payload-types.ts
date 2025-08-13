@@ -74,6 +74,8 @@ export interface Config {
     media: Media;
     users: User;
     subpoems: Subpoem;
+    'event-drafts': EventDraft;
+    'poems-drafts': PoemsDraft;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -95,6 +97,8 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     subpoems: SubpoemsSelect<false> | SubpoemsSelect<true>;
+    'event-drafts': EventDraftsSelect<false> | EventDraftsSelect<true>;
+    'poems-drafts': PoemsDraftsSelect<false> | PoemsDraftsSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -325,6 +329,58 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "event-drafts".
+ */
+export interface EventDraft {
+  id: string;
+  _order?: string | null;
+  title: string;
+  dateAt: string;
+  message?: string | null;
+  media?: (string | null) | Media;
+  link?: string | null;
+  type?: ('Majlis' | 'Jashan' | 'Amaal') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "poems-drafts".
+ */
+export interface PoemsDraft {
+  id: string;
+  _order?: string | null;
+  title: string;
+  /**
+   * Description for the Poem, e.g Hussein, Fatima
+   */
+  subject: string | Subject;
+  category: string | Category;
+  /**
+   * Required unless this poem is a group (see below).
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  media?: (string | null) | Media;
+  isGroup?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-jobs".
  */
 export interface PayloadJob {
@@ -449,6 +505,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'subpoems';
         value: string | Subpoem;
+      } | null)
+    | ({
+        relationTo: 'event-drafts';
+        value: string | EventDraft;
+      } | null)
+    | ({
+        relationTo: 'poems-drafts';
+        value: string | PoemsDraft;
       } | null)
     | ({
         relationTo: 'payload-jobs';
@@ -627,6 +691,36 @@ export interface SubpoemsSelect<T extends boolean = true> {
   createdAt?: T;
   deletedAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "event-drafts_select".
+ */
+export interface EventDraftsSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  dateAt?: T;
+  message?: T;
+  media?: T;
+  link?: T;
+  type?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "poems-drafts_select".
+ */
+export interface PoemsDraftsSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  subject?: T;
+  category?: T;
+  content?: T;
+  media?: T;
+  isGroup?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
