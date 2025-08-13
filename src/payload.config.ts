@@ -19,6 +19,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 const storage = s3Storage({
+  signedDownloads: true,
   collections: {
     media: true,
   },
