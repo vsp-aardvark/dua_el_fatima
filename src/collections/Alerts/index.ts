@@ -31,6 +31,17 @@ const Alerts: CollectionConfig = {
       label: 'Title',
     },
     {
+      name: 'dateAt',
+      type: 'date',
+      required: true,
+      label: 'Event Date of happening',
+      admin: {
+        date: {
+          pickerAppearance: 'dayAndTime',
+        },
+      },
+    },
+    {
       type: 'tabs',
       tabs: [
         {
@@ -59,22 +70,6 @@ const Alerts: CollectionConfig = {
       ],
     },
     {
-      type: 'row',
-      fields: [
-        {
-          name: 'dateAt',
-          type: 'date',
-          required: true,
-          label: 'Event Date of happening',
-          admin: {
-            date: {
-              pickerAppearance: 'dayAndTime',
-            },
-          },
-        },
-      ],
-    },
-    {
       type: 'text',
       name: 'link',
       required: false,
@@ -87,7 +82,7 @@ const Alerts: CollectionConfig = {
       admin: {
         readOnly: true,
         position: 'sidebar',
-        //hidden: true,
+        hidden: true,
       },
       defaultValue: '',
       hooks: {
@@ -102,12 +97,36 @@ const Alerts: CollectionConfig = {
       admin: {
         readOnly: true,
         position: 'sidebar',
-        //hidden: true,
+        hidden: true,
       },
       defaultValue: '',
       hooks: {
         beforeChange: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 2)],
         beforeValidate: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 2)],
+      },
+    },
+    {
+      label: 'Event Type | Schedule Type',
+      name: 'type',
+      type: 'select',
+      options: [
+        {
+          label: 'Majlis',
+          value: 'Majlis',
+        },
+        {
+          label: 'Jashan',
+          value: 'Jashan',
+        },
+        {
+          label: 'Amaal',
+          value: 'Amaal',
+        },
+      ],
+      defaultValue: 'Majlis',
+      required: false,
+      admin: {
+        position: 'sidebar',
       },
     },
   ],

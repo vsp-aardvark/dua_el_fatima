@@ -287,12 +287,13 @@ export interface Alert {
   id: string;
   _order?: string | null;
   title: string;
+  dateAt: string;
   message?: string | null;
   media?: (string | null) | Media;
-  dateAt: string;
   link?: string | null;
   date?: string | null;
   time?: string | null;
+  type?: ('Majlis' | 'Jashan' | 'Amaal') | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -558,12 +559,13 @@ export interface PoemsSelect<T extends boolean = true> {
 export interface AlertsSelect<T extends boolean = true> {
   _order?: T;
   title?: T;
+  dateAt?: T;
   message?: T;
   media?: T;
-  dateAt?: T;
   link?: T;
   date?: T;
   time?: T;
+  type?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
