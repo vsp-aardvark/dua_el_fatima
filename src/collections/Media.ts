@@ -2,7 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 export const Media: CollectionConfig = {
   slug: 'media',
-  admin :{
+  admin: {
     group: 'Administrative',
   },
   access: {
@@ -15,5 +15,8 @@ export const Media: CollectionConfig = {
       required: true,
     },
   ],
-  upload: true,
+  upload: {
+    disableLocalStorage: true,
+    adapter: 's3',
+  },
 }

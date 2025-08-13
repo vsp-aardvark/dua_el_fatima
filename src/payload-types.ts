@@ -204,20 +204,10 @@ export interface Poem {
   slug?: string | null;
   slugLock?: boolean | null;
   groupCount?: number | null;
-  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
   _status?: ('draft' | 'published') | null;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -284,20 +274,10 @@ export interface Subpoem {
   };
   slug?: string | null;
   slugLock?: boolean | null;
-  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
   _status?: ('draft' | 'published') | null;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -310,19 +290,9 @@ export interface Alert {
   media?: (string | null) | Media;
   dateAt: string;
   link?: string | null;
-  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -573,20 +543,10 @@ export interface PoemsSelect<T extends boolean = true> {
   slug?: T;
   slugLock?: T;
   groupCount?: T;
-  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;
   _status?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -598,19 +558,9 @@ export interface AlertsSelect<T extends boolean = true> {
   media?: T;
   dateAt?: T;
   link?: T;
-  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -665,20 +615,10 @@ export interface SubpoemsSelect<T extends boolean = true> {
   poem?: T;
   slug?: T;
   slugLock?: T;
-  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;
   _status?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
