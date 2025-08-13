@@ -77,6 +77,7 @@ const Alerts: CollectionConfig = {
     },
     maxPerDoc: 50,
   },
+  orderable: true,
 }
 
 export default Alerts
