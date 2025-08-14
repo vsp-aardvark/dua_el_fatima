@@ -291,6 +291,7 @@ export interface Subpoem {
 export interface Alert {
   id: string;
   _order?: string | null;
+  type?: ('Majlis' | 'Jashan' | 'Amaal') | null;
   title: string;
   dateAt: string;
   message?: string | null;
@@ -298,7 +299,6 @@ export interface Alert {
   link?: string | null;
   date?: string | null;
   time?: string | null;
-  type?: ('Majlis' | 'Jashan' | 'Amaal') | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -624,6 +624,7 @@ export interface PoemsSelect<T extends boolean = true> {
  */
 export interface AlertsSelect<T extends boolean = true> {
   _order?: T;
+  type?: T;
   title?: T;
   dateAt?: T;
   message?: T;
@@ -631,7 +632,6 @@ export interface AlertsSelect<T extends boolean = true> {
   link?: T;
   date?: T;
   time?: T;
-  type?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

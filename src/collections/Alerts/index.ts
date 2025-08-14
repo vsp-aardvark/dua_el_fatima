@@ -29,6 +29,27 @@ const Alerts: CollectionConfig = {
   },
   fields: [
     {
+      label: 'Event Type | Schedule Type',
+      name: 'type',
+      type: 'select',
+      options: [
+        {
+          label: 'Majlis',
+          value: 'Majlis',
+        },
+        {
+          label: 'Jashan',
+          value: 'Jashan',
+        },
+        {
+          label: 'Amaal',
+          value: 'Amaal',
+        },
+      ],
+      defaultValue: 'Majlis',
+      required: false,
+    },
+    {
       name: 'title',
       type: 'text',
       required: true,
@@ -107,30 +128,6 @@ const Alerts: CollectionConfig = {
       hooks: {
         beforeChange: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 2)],
         beforeValidate: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 2)],
-      },
-    },
-    {
-      label: 'Event Type | Schedule Type',
-      name: 'type',
-      type: 'select',
-      options: [
-        {
-          label: 'Majlis',
-          value: 'Majlis',
-        },
-        {
-          label: 'Jashan',
-          value: 'Jashan',
-        },
-        {
-          label: 'Amaal',
-          value: 'Amaal',
-        },
-      ],
-      defaultValue: 'Majlis',
-      required: false,
-      admin: {
-        position: 'sidebar',
       },
     },
   ],

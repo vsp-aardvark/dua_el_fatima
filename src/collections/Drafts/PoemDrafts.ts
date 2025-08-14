@@ -58,6 +58,17 @@ const PoemDrafts: CollectionConfig = {
       ],
     },
     {
+      label: 'Group or Anjuman ?',
+      name: 'isGroup',
+      required: false,
+      type: 'relationship',
+      relationTo: 'poems',
+      filterOptions: ({}) => {
+        //only return grouped poems
+        return { isGroup: { equals: true } }
+      },
+    },
+    {
       type: 'tabs',
       tabs: [
         {
@@ -102,20 +113,6 @@ const PoemDrafts: CollectionConfig = {
           ],
         },
       ],
-    },
-    {
-      label: 'Group or Anjuman ?',
-      name: 'isGroup',
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-      type: 'relationship',
-      relationTo: 'poems',
-      filterOptions: ({}) => {
-        //only return grouped poems
-        return { isGroup: { equals: true } }
-      },
     },
   ],
 }
