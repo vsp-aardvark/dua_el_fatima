@@ -86,7 +86,7 @@ const Poems: CollectionConfig<'poems'> = {
               label: false,
               required: false,
               admin: {
-                condition: (data) => !data?.group || data.group.length === 0,
+                condition: (data) => !data?.isGroup || data.isGroup === true,
                 description: 'Required unless this poem is a group (see below).',
               },
             },
@@ -107,16 +107,10 @@ const Poems: CollectionConfig<'poems'> = {
           label: 'Group',
           fields: [
             {
-              name: 'group',
-              type: 'array',
-              label: 'Poem',
-              fields: [
-                {
-                  name: 'poem',
-                  type: 'relationship',
-                  relationTo: 'subpoems',
-                },
-              ],
+              name: 'poem',
+              type: 'relationship',
+              relationTo: 'subpoems',
+              hasMany: true,
               required: false,
               admin: {
                 description:
