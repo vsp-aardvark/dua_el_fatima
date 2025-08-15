@@ -148,31 +148,6 @@ const Poems: CollectionConfig<'poems'> = {
     },
     ...slugField(),
     {
-      label: 'Sub Poems',
-      name: 'groupCount',
-      type: 'number',
-      admin: {
-        readOnly: true,
-        position: 'sidebar',
-        hidden: true,
-      },
-      defaultValue: 0,
-      hooks: {
-        beforeChange: [
-          ({ data }) => {
-            const group = data?.group || []
-            return group.length
-          },
-        ],
-        beforeValidate: [
-          ({ data }) => {
-            const group = data?.group || []
-            return group.length
-          },
-        ],
-      },
-    },
-    {
       type: 'checkbox',
       label: 'Is Group or Anjuman ?',
       name: 'isGroup',
