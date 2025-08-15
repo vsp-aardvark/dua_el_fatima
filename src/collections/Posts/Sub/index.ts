@@ -85,7 +85,7 @@ const SubPoems: CollectionConfig<'subpoems'> = {
       name: 'poem',
       type: 'join',
       collection: 'poems',
-      on: 'group.poem',
+      on: 'poem',
       admin: {
         hidden: true,
       },
