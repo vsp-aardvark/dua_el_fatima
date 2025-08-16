@@ -10,7 +10,7 @@ const Devices: CollectionConfig = {
   slug: 'devices',
   admin: {
     useAsTitle: 'deviceId',
-    group: 'Settings',
+    group: 'Administrative',
   },
   access: {
     read: anyone,
@@ -58,6 +58,18 @@ const Devices: CollectionConfig = {
     {
       label: 'Info',
       name: 'info',
+      type: 'text',
+      required: false,
+    },
+    {
+      label: 'Last Seen',
+      name: 'lastUsedAt',
+      type: 'date',
+      required: false,
+    },
+    {
+      label: 'Last Seen Info',
+      name: 'lastSeenInfo',
       type: 'text',
       required: false,
     },

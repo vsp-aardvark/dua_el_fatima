@@ -16,6 +16,7 @@ import SubPoems from '@/collections/Posts/Sub'
 import { s3Storage } from '@payloadcms/storage-s3'
 import EventDrafts from '@/collections/Drafts/EventDrafts'
 import PoemDrafts from '@/collections/Drafts/PoemDrafts'
+import Devices from '@/collections/Extra/Device'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -52,7 +53,18 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
   }),
-  collections: [Subjects, Categories, Posts, Alerts, Media, Users, SubPoems,EventDrafts,PoemDrafts],
+  collections: [
+    Subjects,
+    Categories,
+    Posts,
+    Alerts,
+    Media,
+    Users,
+    SubPoems,
+    EventDrafts,
+    PoemDrafts,
+    Devices,
+  ],
   sharp,
   plugins: [payloadCloudPlugin(), storage],
 })

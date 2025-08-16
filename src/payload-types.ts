@@ -76,6 +76,7 @@ export interface Config {
     subpoems: Subpoem;
     'event-drafts': EventDraft;
     'poems-drafts': PoemsDraft;
+    devices: Device;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -99,6 +100,7 @@ export interface Config {
     subpoems: SubpoemsSelect<false> | SubpoemsSelect<true>;
     'event-drafts': EventDraftsSelect<false> | EventDraftsSelect<true>;
     'poems-drafts': PoemsDraftsSelect<false> | PoemsDraftsSelect<true>;
+    devices: DevicesSelect<false> | DevicesSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -379,6 +381,24 @@ export interface PoemsDraft {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "devices".
+ */
+export interface Device {
+  id: string;
+  deviceId: string;
+  brand: string;
+  model: string;
+  identifier: string;
+  version: string;
+  hash?: string | null;
+  info?: string | null;
+  lastUsedAt?: string | null;
+  lastSeenInfo?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-jobs".
  */
 export interface PayloadJob {
@@ -511,6 +531,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'poems-drafts';
         value: string | PoemsDraft;
+      } | null)
+    | ({
+        relationTo: 'devices';
+        value: string | Device;
       } | null)
     | ({
         relationTo: 'payload-jobs';
@@ -712,6 +736,23 @@ export interface PoemsDraftsSelect<T extends boolean = true> {
   isGroup?: T;
   content?: T;
   media?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "devices_select".
+ */
+export interface DevicesSelect<T extends boolean = true> {
+  deviceId?: T;
+  brand?: T;
+  model?: T;
+  identifier?: T;
+  version?: T;
+  hash?: T;
+  info?: T;
+  lastUsedAt?: T;
+  lastSeenInfo?: T;
   updatedAt?: T;
   createdAt?: T;
 }
