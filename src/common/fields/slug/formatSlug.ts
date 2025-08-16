@@ -1,4 +1,5 @@
 import type { FieldHook } from 'payload'
+import uuid from '@/common/utils/uuid'
 
 export const formatSlug = (val: string): string =>
   val
@@ -10,16 +11,16 @@ export const formatSlugHook =
   (fallback: string): FieldHook =>
   ({ data, operation, value }) => {
     if (typeof value === 'string') {
-      return formatSlug(value)
+      return formatSlug(value) ?? uuid()
     }
 
     if (operation === 'create' || !data?.slug) {
       const fallbackData = data?.[fallback] || data?.[fallback]
 
       if (fallbackData && typeof fallbackData === 'string') {
-        return formatSlug(fallbackData)
+        return formatSlug(fallbackData) ?? uuid()
       }
     }
 
-    return value
+    return value ?? uuid()
   }

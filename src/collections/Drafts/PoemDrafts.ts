@@ -15,10 +15,23 @@ import { adminOnly } from '@/access/adminOnly'
 
 const PoemDrafts: CollectionConfig = {
   slug: 'poems-drafts',
+  labels: {
+    singular: 'Draft',
+    plural: 'Drafts',
+  },
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'updatedAt'],
     group: 'Drafts',
+    components: {
+      edit: {
+        SaveButton: '@/common/components/SubmitSaveButton',
+        beforeDocumentControls: [
+          '@/common/components/RejectButton',
+          '@/common/components/TransferButton',
+        ],
+      },
+    },
   },
   defaultPopulate: {
     title: true,
@@ -42,10 +55,11 @@ const PoemDrafts: CollectionConfig = {
         {
           name: 'subject',
           type: 'relationship',
+          label: 'Shaheed / Munasibath',
           relationTo: 'subjects',
           required: true,
           admin: {
-            description: 'Description for the Poem, e.g Hussein, Fatima',
+            description: 'e.g Hussein, Fatima',
             allowCreate: true,
           },
         },
@@ -54,11 +68,15 @@ const PoemDrafts: CollectionConfig = {
           type: 'relationship',
           relationTo: 'categories',
           required: true,
+          admin: {
+            description: 'e.g Nouha, Marsia',
+            allowCreate: true,
+          },
         },
       ],
     },
     {
-      label: 'Group or Anjuman ?',
+      label: 'Groh | Anjuman ?',
       name: 'isGroup',
       required: false,
       type: 'relationship',

@@ -198,16 +198,10 @@ export interface Poem {
   /**
    * If you add poems here, this entry becomes a group and the content field is optional.
    */
-  group?:
-    | {
-        poem?: (string | null) | Subpoem;
-        id?: string | null;
-      }[]
-    | null;
+  poem?: (string | Subpoem)[] | null;
   publishedAt?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
-  groupCount?: number | null;
   isGroup?: boolean | null;
   updatedAt: string;
   createdAt: string;
@@ -353,10 +347,14 @@ export interface PoemsDraft {
   _order?: string | null;
   title: string;
   /**
-   * Description for the Poem, e.g Hussein, Fatima
+   * e.g Hussein, Fatima
    */
   subject: string | Subject;
+  /**
+   * e.g Nouha, Marsia
+   */
   category: string | Category;
+  isGroup?: (string | null) | Poem;
   /**
    * Required unless this poem is a group (see below).
    */
@@ -376,7 +374,6 @@ export interface PoemsDraft {
     [k: string]: unknown;
   } | null;
   media?: (string | null) | Media;
-  isGroup?: (string | null) | Poem;
   updatedAt: string;
   createdAt: string;
 }
@@ -602,16 +599,10 @@ export interface PoemsSelect<T extends boolean = true> {
   category?: T;
   content?: T;
   media?: T;
-  group?:
-    | T
-    | {
-        poem?: T;
-        id?: T;
-      };
+  poem?: T;
   publishedAt?: T;
   slug?: T;
   slugLock?: T;
-  groupCount?: T;
   isGroup?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -718,9 +709,9 @@ export interface PoemsDraftsSelect<T extends boolean = true> {
   title?: T;
   subject?: T;
   category?: T;
+  isGroup?: T;
   content?: T;
   media?: T;
-  isGroup?: T;
   updatedAt?: T;
   createdAt?: T;
 }

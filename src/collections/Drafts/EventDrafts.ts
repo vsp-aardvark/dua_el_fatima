@@ -4,9 +4,22 @@ import { adminOnly } from '@/access/adminOnly'
 
 const EventDrafts: CollectionConfig = {
   slug: 'event-drafts',
+  labels: {
+    singular: 'Schedule',
+    plural: 'Schedules',
+  },
   admin: {
     useAsTitle: 'title',
     group: 'Drafts',
+    components: {
+      edit: {
+        SaveButton: '@/common/components/SubmitSaveButton',
+        beforeDocumentControls: [
+          '@/common/components/RejectButton',
+          '@/common/components/TransferButton',
+        ],
+      },
+    },
   },
   access: {
     read: anyone,

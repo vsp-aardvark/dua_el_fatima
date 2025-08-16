@@ -146,10 +146,10 @@ const Poems: CollectionConfig<'poems'> = {
         ],
       },
     },
-    ...slugField(),
+    ...slugField('title'),
     {
       type: 'checkbox',
-      label: 'Is Group or Anjuman ?',
+      label: 'Groh or Anjuman ?',
       name: 'isGroup',
       required: false,
       admin: {

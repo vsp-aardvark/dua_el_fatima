@@ -1,0 +1,9 @@
+@media (max-width: 600px) {
+  .collection-edit__form {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .doc-controls__value {
+    display: none;
+  }
+}
