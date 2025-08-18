@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { authenticated } from '@/access/authenticated'
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -7,6 +8,9 @@ export const Media: CollectionConfig = {
   },
   access: {
     read: () => true,
+    create: () => true,
+    update: authenticated,
+    delete: authenticated,
   },
   fields: [
     {
