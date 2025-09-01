@@ -96,18 +96,13 @@ const PoemDrafts: CollectionConfig = {
               name: 'content',
               type: 'richText',
               editor: lexicalEditor({
-                features: ({ rootFeatures }) => {
-                  return [
-                    ...rootFeatures,
-                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    ParagraphFeature(),
-                    LinkFeature(),
-                    BlocksFeature({ blocks: [MediaBlock] }),
-                    FixedToolbarFeature(),
-                    InlineToolbarFeature(),
-                    HorizontalRuleFeature(),
-                  ]
-                },
+                features: ({ rootFeatures }) => [
+                  // ...rootFeatures,
+                  // BlocksFeature({ blocks: [MediaBlock] }),
+                  // FixedToolbarFeature(),
+                  // InlineToolbarFeature(),
+                  HorizontalRuleFeature(),
+                ],
               }),
               label: false,
               required: true,
