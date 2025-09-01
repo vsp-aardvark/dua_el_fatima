@@ -96,7 +96,7 @@ const PoemDrafts: CollectionConfig = {
               name: 'content',
               type: 'richText',
               editor: lexicalEditor({
-                features: ({ rootFeatures }) => [
+                features: () => [
                   // ...rootFeatures,
                   // BlocksFeature({ blocks: [MediaBlock] }),
                   // FixedToolbarFeature(),
