@@ -5,8 +5,8 @@ import { adminOnly } from '@/access/adminOnly'
 const EventDrafts: CollectionConfig = {
   slug: 'event-drafts',
   labels: {
-    singular: 'Schedule',
-    plural: 'Schedules',
+    singular: 'Elaan',
+    plural: 'Elaan',
   },
   admin: {
     useAsTitle: 'title',
@@ -78,30 +78,6 @@ const EventDrafts: CollectionConfig = {
       name: 'link',
       required: false,
       label: 'Custom Link for message (Link to WhatsApp, Google, or Twitter)',
-    },
-    {
-      label: 'Event Type | Schedule Type',
-      name: 'type',
-      type: 'select',
-      options: [
-        {
-          label: 'Majlis',
-          value: 'Majlis',
-        },
-        {
-          label: 'Jashan',
-          value: 'Jashan',
-        },
-        {
-          label: 'Amaal',
-          value: 'Amaal',
-        },
-      ],
-      defaultValue: 'Majlis',
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
     },
   ],
   orderable: true,

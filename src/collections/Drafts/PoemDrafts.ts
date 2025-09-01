@@ -1,23 +1,13 @@
 import { CollectionConfig } from 'payload'
 import { anyone } from '@/access/anyone'
-import {
-  BlocksFeature,
-  FixedToolbarFeature,
-  HeadingFeature,
-  HorizontalRuleFeature,
-  InlineToolbarFeature,
-  lexicalEditor,
-  ParagraphFeature,
-  LinkFeature,
-} from '@payloadcms/richtext-lexical'
-import { MediaBlock } from '@/common/blocks/MediaBlock'
+import { HorizontalRuleFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { adminOnly } from '@/access/adminOnly'
 
 const PoemDrafts: CollectionConfig = {
   slug: 'poems-drafts',
   labels: {
-    singular: 'Draft',
-    plural: 'Drafts',
+    singular: 'Lyric',
+    plural: 'Lyrics',
   },
   admin: {
     useAsTitle: 'title',

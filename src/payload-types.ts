@@ -336,7 +336,6 @@ export interface EventDraft {
   message?: string | null;
   media?: (string | null) | Media;
   link?: string | null;
-  type?: ('Majlis' | 'Jashan' | 'Amaal') | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -720,7 +719,6 @@ export interface EventDraftsSelect<T extends boolean = true> {
   message?: T;
   media?: T;
   link?: T;
-  type?: T;
   updatedAt?: T;
   createdAt?: T;
 }
