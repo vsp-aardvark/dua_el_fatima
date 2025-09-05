@@ -5,6 +5,7 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { searchPlugin } from '@payloadcms/plugin-search'
 
 import { Users } from '@/collections/Users'
 import { Media } from '@/collections/Media'
@@ -66,5 +67,15 @@ export default buildConfig({
     Devices,
   ],
   sharp,
-  plugins: [payloadCloudPlugin(), storage],
+  plugins: [
+    payloadCloudPlugin(),
+    storage,
+    searchPlugin({
+      collections: ['poems', 'subjects', 'categories'],
+      defaultPriorities: {
+        pages: 10,
+        posts: 20,
+      },
+    }),
+  ],
 })
