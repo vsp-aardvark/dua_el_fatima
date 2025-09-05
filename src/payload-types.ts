@@ -77,6 +77,7 @@ export interface Config {
     'event-drafts': EventDraft;
     'poems-drafts': PoemsDraft;
     devices: Device;
+    search: Search;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -101,6 +102,7 @@ export interface Config {
     'event-drafts': EventDraftsSelect<false> | EventDraftsSelect<true>;
     'poems-drafts': PoemsDraftsSelect<false> | PoemsDraftsSelect<true>;
     devices: DevicesSelect<false> | DevicesSelect<true>;
+    search: SearchSelect<false> | SearchSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -397,6 +399,32 @@ export interface Device {
   createdAt: string;
 }
 /**
+ * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "search".
+ */
+export interface Search {
+  id: string;
+  title?: string | null;
+  priority?: number | null;
+  doc:
+    | {
+        relationTo: 'poems';
+        value: string | Poem;
+      }
+    | {
+        relationTo: 'subjects';
+        value: string | Subject;
+      }
+    | {
+        relationTo: 'categories';
+        value: string | Category;
+      };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-jobs".
  */
@@ -534,6 +562,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'devices';
         value: string | Device;
+      } | null)
+    | ({
+        relationTo: 'search';
+        value: string | Search;
       } | null)
     | ({
         relationTo: 'payload-jobs';
@@ -751,6 +783,17 @@ export interface DevicesSelect<T extends boolean = true> {
   info?: T;
   lastUsedAt?: T;
   lastSeenInfo?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "search_select".
+ */
+export interface SearchSelect<T extends boolean = true> {
+  title?: T;
+  priority?: T;
+  doc?: T;
   updatedAt?: T;
   createdAt?: T;
 }
