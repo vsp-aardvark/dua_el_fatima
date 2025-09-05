@@ -73,8 +73,9 @@ export default buildConfig({
     searchPlugin({
       collections: ['poems', 'subjects', 'categories'],
       defaultPriorities: {
-        pages: 10,
-        posts: 20,
+        poems: 10,
+        subjects: 20,
+        categories: 20,
       },
     }),
   ],

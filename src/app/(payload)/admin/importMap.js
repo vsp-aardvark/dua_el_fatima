@@ -27,6 +27,8 @@ import { UploadFeatureClient as UploadFeatureClient_e70f5e05f09f93e00b997edb1ef0
 import { default as default_b6271f968346ecd3cfe3be99bf51ab50 } from '@/common/components/RejectButton'
 import { default as default_fd632ff132cfd310ce3265edbee25242 } from '@/common/components/TransferButton'
 import { default as default_36bab2a4986f986ab03abb5bab594358 } from '@/common/components/SubmitSaveButton'
+import { LinkToDoc as LinkToDoc_aead06e4cbf6b2620c5c51c9ab283634 } from '@payloadcms/plugin-search/client'
+import { ReindexButton as ReindexButton_aead06e4cbf6b2620c5c51c9ab283634 } from '@payloadcms/plugin-search/client'
 import { S3ClientUploadHandler as S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24 } from '@payloadcms/storage-s3/client'
 
 export const importMap = {
@@ -59,5 +61,7 @@ export const importMap = {
   "@/common/components/RejectButton#default": default_b6271f968346ecd3cfe3be99bf51ab50,
   "@/common/components/TransferButton#default": default_fd632ff132cfd310ce3265edbee25242,
   "@/common/components/SubmitSaveButton#default": default_36bab2a4986f986ab03abb5bab594358,
+  "@payloadcms/plugin-search/client#LinkToDoc": LinkToDoc_aead06e4cbf6b2620c5c51c9ab283634,
+  "@payloadcms/plugin-search/client#ReindexButton": ReindexButton_aead06e4cbf6b2620c5c51c9ab283634,
   "@payloadcms/storage-s3/client#S3ClientUploadHandler": S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24
 }
