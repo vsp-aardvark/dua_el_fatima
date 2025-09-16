@@ -6,7 +6,7 @@ import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf'
 import Tesseract from 'tesseract.js'
 
 // pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
-pdfjsLib.GlobalWorkerOptions.workerSrc = `/pdfdist/pdf.worker.min.js`
+pdfjsLib.GlobalWorkerOptions.workerSrc = `/pdfdist/pdf.worker.min.mjs`
 
 export default function OCRPdf() {
   const [pages, setPages] = useState<{ page: number; text: string | null }[]>([])
