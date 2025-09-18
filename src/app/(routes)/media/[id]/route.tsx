@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 
-export async function GET(_: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
   try {
     const payload = await getPayload({
       config: configPromise,
@@ -17,8 +17,11 @@ export async function GET(_: NextRequest, { params }: { params: { id: string } }
       return NextResponse.json({ error: 'Media not found' }, { status: 404 })
     }
 
+    const url = req.nextUrl.clone()
+    url.pathname = mediaDoc.url
+
     // Option 1: Redirect to S3 URL
-    return NextResponse.redirect(mediaDoc.url)
+    return NextResponse.redirect(url)
 
     // ---- OR ----
     // Option 2: Proxy the file through Next.js
