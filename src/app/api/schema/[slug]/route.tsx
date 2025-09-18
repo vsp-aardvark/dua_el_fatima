@@ -1,4 +1,4 @@
-import config from '@/payload.config'
+import config from '@payload-config'
 
 export async function GET(req: Request, { params }: { params: { slug: string } }) {
   const { slug } = params
