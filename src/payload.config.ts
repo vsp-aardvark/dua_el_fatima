@@ -13,7 +13,6 @@ import Categories from '@/collections/Categories'
 import Subjects from '@/collections/Subjects'
 import Posts from '@/collections/Posts'
 import Alerts from '@/collections/Alerts'
-import SubPoems from '@/collections/Posts/Sub'
 import { s3Storage } from '@payloadcms/storage-s3'
 import EventDrafts from '@/collections/Drafts/EventDrafts'
 import PoemDrafts from '@/collections/Drafts/PoemDrafts'
@@ -63,7 +62,6 @@ export default buildConfig({
     Alerts,
     Media,
     Users,
-    SubPoems,
     EventDrafts,
     PoemDrafts,
     Devices,

@@ -26,58 +26,20 @@ export async function transferDraftPost(path: string, _: Record<string, any> = {
       throw new Error(`No draft with id ${id}`)
     }
 
-    if (poemDraft.isGroup) {
-      //
-      const oldPoem = await payload.findByID({
-        collection: 'poems',
-        id: poemDraft.isGroup as string,
-        depth: 0,
-        select: {
-          id: true,
-          poem: true,
-        },
-      })
-
-      const subPoem = await payload.create({
-        collection: 'subpoems',
-        data: {
-          title: poemDraft.title,
-          // @ts-ignore
-          content: poemDraft.content,
-          slug: formatSlug(poemDraft.title),
-          _status: 'published',
-          publishedAt: DateTime.utc().toISO({}),
-        },
-      })
-
-      const existingGroups = (oldPoem.poem ?? []) as string[]
-      existingGroups.push(subPoem.id)
-
-      const newPoem = await payload.update({
-        collection: 'poems',
-        id: oldPoem.id,
-        data: {
-          poem: existingGroups,
-        },
-        depth: 0,
-      })
-
-      //
-    } else {
-      await payload.create({
-        collection: 'poems',
-        data: {
-          title: poemDraft.title,
-          slug: formatSlug(poemDraft.title),
-          content: poemDraft.content,
-          subject: poemDraft.subject,
-          category: poemDraft,
-          //
-          _status: 'published',
-          publishedAt: DateTime.utc().toISO(),
-        },
-      })
-    }
+    await payload.create({
+      collection: 'poems',
+      data: {
+        title: poemDraft.title,
+        slug: formatSlug(poemDraft.title),
+        content: poemDraft.content,
+        subject: poemDraft.subject,
+        category: poemDraft,
+        group: poemDraft.group,
+        //
+        _status: 'published',
+        publishedAt: DateTime.utc().toISO(),
+      },
+    })
 
     //
   } else if (segments.at(3) === 'event-drafts') {

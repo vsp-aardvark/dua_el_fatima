@@ -73,7 +73,6 @@ export interface Config {
     alerts: Alert;
     media: Media;
     users: User;
-    subpoems: Subpoem;
     'event-drafts': EventDraft;
     'poems-drafts': PoemsDraft;
     devices: Device;
@@ -89,9 +88,6 @@ export interface Config {
     subjects: {
       poems: 'poems';
     };
-    subpoems: {
-      poem: 'poems';
-    };
   };
   collectionsSelect: {
     subjects: SubjectsSelect<false> | SubjectsSelect<true>;
@@ -100,7 +96,6 @@ export interface Config {
     alerts: AlertsSelect<false> | AlertsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
-    subpoems: SubpoemsSelect<false> | SubpoemsSelect<true>;
     'event-drafts': EventDraftsSelect<false> | EventDraftsSelect<true>;
     'poems-drafts': PoemsDraftsSelect<false> | PoemsDraftsSelect<true>;
     devices: DevicesSelect<false> | DevicesSelect<true>;
@@ -203,14 +198,10 @@ export interface Poem {
     [k: string]: unknown;
   } | null;
   media?: (string | null) | Media;
-  /**
-   * If you add poems here, this entry becomes a group and the content field is optional.
-   */
-  poem?: (string | Subpoem)[] | null;
-  publishedAt?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
-  isGroup?: boolean | null;
+  publishedAt?: string | null;
+  group: string | Group;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
@@ -252,39 +243,18 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "subpoems".
+ * via the `definition` "groups".
  */
-export interface Subpoem {
+export interface Group {
   id: string;
   _order?: string | null;
   title: string;
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  publishedAt?: string | null;
-  poem?: {
-    docs?: (string | Poem)[];
-    hasNextPage?: boolean;
-    totalDocs?: number;
-  };
+  media?: (string | null) | Media;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
-  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -361,7 +331,7 @@ export interface PoemsDraft {
    * e.g Nouha, Marsia
    */
   category: string | Category;
-  isGroup?: (string | null) | Poem;
+  group: string | Group;
   /**
    * Required unless this poem is a group (see below).
    */
@@ -416,21 +386,6 @@ export interface Suggestion {
   media?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "groups".
- */
-export interface Group {
-  id: string;
-  _order?: string | null;
-  title: string;
-  media?: (string | null) | Media;
-  slug?: string | null;
-  slugLock?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-  deletedAt?: string | null;
 }
 /**
  * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
@@ -586,10 +541,6 @@ export interface PayloadLockedDocument {
         value: string | User;
       } | null)
     | ({
-        relationTo: 'subpoems';
-        value: string | Subpoem;
-      } | null)
-    | ({
         relationTo: 'event-drafts';
         value: string | EventDraft;
       } | null)
@@ -700,11 +651,10 @@ export interface PoemsSelect<T extends boolean = true> {
   category?: T;
   content?: T;
   media?: T;
-  poem?: T;
-  publishedAt?: T;
   slug?: T;
   slugLock?: T;
-  isGroup?: T;
+  publishedAt?: T;
+  group?: T;
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;
@@ -771,23 +721,6 @@ export interface UsersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "subpoems_select".
- */
-export interface SubpoemsSelect<T extends boolean = true> {
-  _order?: T;
-  title?: T;
-  content?: T;
-  publishedAt?: T;
-  poem?: T;
-  slug?: T;
-  slugLock?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  deletedAt?: T;
-  _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "event-drafts_select".
  */
 export interface EventDraftsSelect<T extends boolean = true> {
@@ -809,7 +742,7 @@ export interface PoemsDraftsSelect<T extends boolean = true> {
   title?: T;
   subject?: T;
   category?: T;
-  isGroup?: T;
+  group?: T;
   content?: T;
   media?: T;
   updatedAt?: T;
@@ -950,10 +883,6 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'alerts';
           value: string | Alert;
-        } | null)
-      | ({
-          relationTo: 'subpoems';
-          value: string | Subpoem;
         } | null);
     global?: string | null;
     user?: (string | null) | User;

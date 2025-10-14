@@ -66,15 +66,11 @@ const PoemDrafts: CollectionConfig = {
       ],
     },
     {
-      label: 'Groh | Anjuman ?',
-      name: 'isGroup',
-      required: false,
+      name: 'group',
       type: 'relationship',
-      relationTo: 'poems',
-      filterOptions: ({}) => {
-        //only return grouped poems
-        return { isGroup: { equals: true } }
-      },
+      relationTo: 'groups',
+      required: true,
+      label: 'Anjuman',
     },
     {
       type: 'tabs',

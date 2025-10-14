@@ -103,29 +103,10 @@ const Poems: CollectionConfig<'poems'> = {
             },
           ],
         },
-        {
-          label: 'Group',
-          fields: [
-            {
-              name: 'poem',
-              type: 'relationship',
-              relationTo: 'subpoems',
-              hasMany: true,
-              required: false,
-              admin: {
-                description:
-                  'If you add poems here, this entry becomes a group and the content field is optional.',
-                isSortable: true,
-              },
-            },
-          ],
-          admin: {
-            description: 'For Grouped Poems, Add the included poems here',
-          },
-        },
       ],
     },
     //sidebar
+    ...slugField('title'),
     {
       name: 'publishedAt',
       type: 'date',
@@ -146,12 +127,12 @@ const Poems: CollectionConfig<'poems'> = {
         ],
       },
     },
-    ...slugField('title'),
     {
-      type: 'checkbox',
-      label: 'Groh or Anjuman ?',
-      name: 'isGroup',
-      required: false,
+      name: 'group',
+      type: 'relationship',
+      relationTo: 'groups',
+      required: true,
+      label: 'Anjuman',
       admin: {
         position: 'sidebar',
       },
