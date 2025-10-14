@@ -19,6 +19,7 @@ import EventDrafts from '@/collections/Drafts/EventDrafts'
 import PoemDrafts from '@/collections/Drafts/PoemDrafts'
 import Devices from '@/collections/Extra/Device'
 import Suggestions from '@/collections/Suggestions'
+import Groups from '@/collections/Posts/Groups'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -66,14 +67,15 @@ export default buildConfig({
     EventDrafts,
     PoemDrafts,
     Devices,
-    Suggestions
+    Suggestions,
+    Groups
   ],
   sharp,
   plugins: [
     payloadCloudPlugin(),
     storage,
     searchPlugin({
-      collections: ['poems', 'subjects', 'categories'],
+      collections: ['poems', 'subjects', 'categories','groups'],
       defaultPriorities: {
         poems: 10,
         categories: 20,

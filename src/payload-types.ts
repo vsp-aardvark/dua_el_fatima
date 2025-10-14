@@ -77,6 +77,8 @@ export interface Config {
     'event-drafts': EventDraft;
     'poems-drafts': PoemsDraft;
     devices: Device;
+    suggestions: Suggestion;
+    groups: Group;
     search: Search;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
@@ -102,6 +104,8 @@ export interface Config {
     'event-drafts': EventDraftsSelect<false> | EventDraftsSelect<true>;
     'poems-drafts': PoemsDraftsSelect<false> | PoemsDraftsSelect<true>;
     devices: DevicesSelect<false> | DevicesSelect<true>;
+    suggestions: SuggestionsSelect<false> | SuggestionsSelect<true>;
+    groups: GroupsSelect<false> | GroupsSelect<true>;
     search: SearchSelect<false> | SearchSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -399,6 +403,36 @@ export interface Device {
   createdAt: string;
 }
 /**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "suggestions".
+ */
+export interface Suggestion {
+  id: string;
+  _order?: string | null;
+  name: string;
+  email?: string | null;
+  contact?: string | null;
+  message: string;
+  media?: (string | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "groups".
+ */
+export interface Group {
+  id: string;
+  _order?: string | null;
+  title: string;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  deletedAt?: string | null;
+  _status?: ('draft' | 'published') | null;
+}
+/**
  * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -420,6 +454,10 @@ export interface Search {
     | {
         relationTo: 'categories';
         value: string | Category;
+      }
+    | {
+        relationTo: 'groups';
+        value: string | Group;
       };
   updatedAt: string;
   createdAt: string;
@@ -562,6 +600,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'devices';
         value: string | Device;
+      } | null)
+    | ({
+        relationTo: 'suggestions';
+        value: string | Suggestion;
+      } | null)
+    | ({
+        relationTo: 'groups';
+        value: string | Group;
       } | null)
     | ({
         relationTo: 'search';
@@ -788,6 +834,34 @@ export interface DevicesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "suggestions_select".
+ */
+export interface SuggestionsSelect<T extends boolean = true> {
+  _order?: T;
+  name?: T;
+  email?: T;
+  contact?: T;
+  message?: T;
+  media?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "groups_select".
+ */
+export interface GroupsSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  deletedAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "search_select".
  */
 export interface SearchSelect<T extends boolean = true> {
@@ -880,6 +954,10 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'subpoems';
           value: string | Subpoem;
+        } | null)
+      | ({
+          relationTo: 'groups';
+          value: string | Group;
         } | null);
     global?: string | null;
     user?: (string | null) | User;
