@@ -33,51 +33,99 @@ const EventDrafts: CollectionConfig = {
       type: 'text',
       required: true,
       label: 'Title',
+      hidden: true,
+    },
+    {
+      label: 'Elaan',
+      name: 'type',
+      type: 'select',
+      options: [
+        {
+          label: 'Majlis',
+          value: 'Majlis',
+        },
+        {
+          label: 'Jashan',
+          value: 'Jashan',
+        },
+        {
+          label: 'Amaal',
+          value: 'Amaal',
+        },
+      ],
+      defaultValue: 'Majlis',
+      required: false,
     },
     {
       name: 'dateAt',
       type: 'date',
       required: true,
-      label: 'Event Date of happening',
+      label: 'Ba Tareeq',
       admin: {
         date: {
-          pickerAppearance: 'dayAndTime',
+          pickerAppearance: 'dayOnly',
         },
       },
+    },
+    {
+      name: 'timeAt',
+      type: 'date',
+      required: false,
+      label: 'Ba WaQt',
+      admin: {
+        date: {
+          pickerAppearance: 'timeOnly',
+        },
+      },
+    },
+    {
+      name: 'message',
+      type: 'text',
+      required: false,
+      label: 'Ba MuQaam',
     },
     {
       type: 'tabs',
       tabs: [
         {
-          label: 'Message',
+          label: 'Mutamanni | Bani -e- Majlis',
           fields: [
             {
-              name: 'message',
+              name: 'venue0',
               type: 'text',
               required: false,
-              label: 'Message | Notification Body',
+              label: 'Bani -e- Majlis',
             },
           ],
         },
         {
-          label: 'Media',
+          label: 'Mutamanni | Bani -e- Jashan',
           fields: [
             {
-              name: 'media',
-              type: 'upload',
-              relationTo: 'media',
+              name: 'venue01',
+              type: 'text',
               required: false,
-              label: 'Media | Image | Document',
+              label: 'Bani -e- Jashan',
             },
           ],
         },
       ],
     },
     {
+      name: 'media',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+      label: 'Upload Image | Banner | Ad',
+    },
+    {
       type: 'text',
       name: 'link',
       required: false,
-      label: 'Custom Link for message (Link to WhatsApp, Google, or Twitter)',
+      label: 'Deep Link for Elaan (WhatsApp, Google, or Facebook)',
+      admin: {
+        position: 'sidebar',
+      },
     },
   ],
   orderable: true,

@@ -2,14 +2,14 @@ import { CollectionConfig } from 'payload'
 import { anyone } from '@/access/anyone'
 import { authenticated } from '@/access/authenticated'
 
-function utilGetDateTimeFromString(data: string, index: number) {
-  console.debug(`Current date ${data} before processing index:${index}`)
-  const match = data.match(/^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2})/)
-  if (match) {
-    return match[index]
-  }
-  return ''
-}
+// function utilGetDateTimeFromString(data: string, index: number) {
+//   console.debug(`Current date ${data} before processing index:${index}`)
+//   const match = data.match(/^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2}:\d{2})/)
+//   if (match) {
+//     return match[index]
+//   }
+//   return ''
+// }
 
 const Alerts: CollectionConfig = {
   labels: {
@@ -126,36 +126,6 @@ const Alerts: CollectionConfig = {
       label: 'Deep Link for Elaan (WhatsApp, Google, or Facebook)',
       admin: {
         position: 'sidebar',
-      },
-    },
-    {
-      label: 'Date',
-      name: 'date',
-      type: 'text',
-      admin: {
-        readOnly: true,
-        position: 'sidebar',
-        hidden: true,
-      },
-      defaultValue: '',
-      hooks: {
-        beforeChange: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 1)],
-        beforeValidate: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 1)],
-      },
-    },
-    {
-      label: 'Time',
-      name: 'time',
-      type: 'text',
-      admin: {
-        readOnly: true,
-        position: 'sidebar',
-        hidden: true,
-      },
-      defaultValue: '',
-      hooks: {
-        beforeChange: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 2)],
-        beforeValidate: [({ data }) => utilGetDateTimeFromString((data?.dateAt || '').trim(), 2)],
       },
     },
   ],
