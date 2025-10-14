@@ -6,8 +6,8 @@ import { adminOnly } from '@/access/adminOnly'
 const PoemDrafts: CollectionConfig = {
   slug: 'poems-drafts',
   labels: {
-    singular: 'Lyric',
-    plural: 'Lyrics',
+    singular: 'Lyrics Request',
+    plural: 'Lyrics Requests',
   },
   admin: {
     useAsTitle: 'title',

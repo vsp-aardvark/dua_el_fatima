@@ -5,8 +5,8 @@ import { adminOnly } from '@/access/adminOnly'
 const EventDrafts: CollectionConfig = {
   slug: 'event-drafts',
   labels: {
-    singular: 'Elaan',
-    plural: 'Elaan',
+    singular: 'Elaan Request',
+    plural: 'Elaan Requests',
   },
   admin: {
     useAsTitle: 'title',

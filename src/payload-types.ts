@@ -272,8 +272,6 @@ export interface Alert {
   venue01?: string | null;
   media?: (string | null) | Media;
   link?: string | null;
-  date?: string | null;
-  time?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -311,8 +309,12 @@ export interface EventDraft {
   id: string;
   _order?: string | null;
   title: string;
+  type?: ('Majlis' | 'Jashan' | 'Amaal') | null;
   dateAt: string;
+  timeAt?: string | null;
   message?: string | null;
+  venue0?: string | null;
+  venue01?: string | null;
   media?: (string | null) | Media;
   link?: string | null;
   updatedAt: string;
@@ -678,8 +680,6 @@ export interface AlertsSelect<T extends boolean = true> {
   venue01?: T;
   media?: T;
   link?: T;
-  date?: T;
-  time?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -732,8 +732,12 @@ export interface UsersSelect<T extends boolean = true> {
 export interface EventDraftsSelect<T extends boolean = true> {
   _order?: T;
   title?: T;
+  type?: T;
   dateAt?: T;
+  timeAt?: T;
   message?: T;
+  venue0?: T;
+  venue01?: T;
   media?: T;
   link?: T;
   updatedAt?: T;

@@ -26,6 +26,10 @@ const Poems: CollectionConfig<'poems'> = {
     slug: true,
   },
   trash: true,
+  labels: {
+    singular: 'Lyrics',
+    plural: 'Lyrics',
+  },
   orderable: true,
   access: {
     read: anyone,

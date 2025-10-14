@@ -16,6 +16,10 @@ const Subjects: CollectionConfig = {
     slug: true,
   },
   orderable: true,
+  labels: {
+    singular: 'Personality',
+    plural: 'Personalities',
+  },
   trash: true,
   access: {
     read: anyone,

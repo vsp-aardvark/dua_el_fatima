@@ -13,8 +13,8 @@ import { authenticated } from '@/access/authenticated'
 
 const Alerts: CollectionConfig = {
   labels: {
-    singular: 'Event',
-    plural: 'Events',
+    singular: 'Elaan',
+    plural: 'Elaan',
   },
   slug: 'alerts',
   admin: {
