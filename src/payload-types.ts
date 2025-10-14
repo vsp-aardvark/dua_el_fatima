@@ -264,9 +264,12 @@ export interface Alert {
   id: string;
   _order?: string | null;
   type?: ('Majlis' | 'Jashan' | 'Amaal') | null;
-  title: string;
+  title?: string | null;
   dateAt: string;
+  timeAt?: string | null;
   message?: string | null;
+  venue0?: string | null;
+  venue01?: string | null;
   media?: (string | null) | Media;
   link?: string | null;
   date?: string | null;
@@ -669,7 +672,10 @@ export interface AlertsSelect<T extends boolean = true> {
   type?: T;
   title?: T;
   dateAt?: T;
+  timeAt?: T;
   message?: T;
+  venue0?: T;
+  venue01?: T;
   media?: T;
   link?: T;
   date?: T;
