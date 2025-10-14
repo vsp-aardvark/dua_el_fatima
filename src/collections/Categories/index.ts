@@ -34,6 +34,15 @@ const Categories: CollectionConfig = {
       type: 'textarea',
     },
     ...slugField(),
+    {
+      type: 'checkbox',
+      label: 'Groh or Anjuman?',
+      name: 'group',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
 }
 
