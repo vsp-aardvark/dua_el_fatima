@@ -425,12 +425,12 @@ export interface Group {
   id: string;
   _order?: string | null;
   title: string;
+  media?: (string | null) | Media;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
-  _status?: ('draft' | 'published') | null;
 }
 /**
  * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
@@ -853,12 +853,12 @@ export interface SuggestionsSelect<T extends boolean = true> {
 export interface GroupsSelect<T extends boolean = true> {
   _order?: T;
   title?: T;
+  media?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;
-  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -954,10 +954,6 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'subpoems';
           value: string | Subpoem;
-        } | null)
-      | ({
-          relationTo: 'groups';
-          value: string | Group;
         } | null);
     global?: string | null;
     user?: (string | null) | User;

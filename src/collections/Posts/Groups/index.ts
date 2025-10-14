@@ -32,19 +32,16 @@ const Groups: CollectionConfig<'groups'> = {
       type: 'text',
       required: true,
     },
+    {
+      name: 'media',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+      label: 'Book Cover',
+    },
     //sidebar
     ...slugField(),
   ],
-  versions: {
-    drafts: {
-      autosave: {
-        // We set this interval for optimal live preview
-        interval: 100,
-      },
-      schedulePublish: true,
-    },
-    maxPerDoc: 50,
-  },
 }
 
 export default Groups
