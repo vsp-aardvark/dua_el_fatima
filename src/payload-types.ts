@@ -218,6 +218,7 @@ export interface Category {
   description?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
+  group?: boolean | null;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
@@ -641,6 +642,7 @@ export interface CategoriesSelect<T extends boolean = true> {
   description?: T;
   slug?: T;
   slugLock?: T;
+  group?: T;
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;
