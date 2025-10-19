@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import '@/app/(frontend)/styles.css'
 import { Metadata } from 'next'
 
@@ -60,8 +60,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en" data-theme="light" className={"bg-gray-50 antialiased __variable_e8ce0c"}>
-      <body>{children}</body>
+    <html lang="en" data-theme="light" className={'bg-gray-50 antialiased __variable_e8ce0c'}>
+      <body>
+        <Suspense>{children}</Suspense>
+      </body>
     </html>
   )
 }
