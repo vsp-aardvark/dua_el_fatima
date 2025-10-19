@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript"
+    src="js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="js/anjumanNouhas.js"></script>
+<script type="text/javascript" src="js/select2.min.js"></script>
+<script type="text/javascript" src="js/nouhaSearchNew.js"></script>
+<link href="css/select2.min.css" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3b543d;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f6f6ff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+.nouhas {
+  background-color: rgb(208, 212, 158);
+padding:12px;
+color:#000000;
+border: 5px solid green;
+border-top-left-radius: 18px;
+border-top-right-radius: 18px;
+border-bottom-right-radius: 18px;
+}
+
+img {
+width: 100%;
+
+}
+
+.content {
+  padding: 16px;
+}
+
+.menu {
+  width:100%;
+  text-align:center;
+  
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+   font-family: ui-monospace;
+}
+.footer{
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  position: static;
+  background-color: #325225;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    font-family: ui-monospace;
+    
+}
+.select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+</style>
+</head>
+<body class = "noselect">
+ <div class="sticky";>
+<div id="mySidenav" class="sidenav">
+  <div><span align="left"><img src="images/zikreKarbala.jpeg"></span><span align="right">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></span></div>
+  <select id='searchOptionNew'class="js-example-basic-multiplenouhay" style="width: 100%;padding: 100px">
+        </select>
+  <a href="index.html">Home</a>
+  <a href="nouhaDarHaal.html">Nouhay Dar Haal</a>
+  <a href="nouhaMenu.html">Nouhay</a>
+  <a href="anjumanMenu.html">Anjuman Nouhay</a>
+  <a href="OldNouhayMenu.html">Bayazi Nouhay</a>
+  <a href="salaamMenu.html">Salaam</a>
+  <a href="MarsiaMenu.html">Marsia</a>
+  <a href="manqabat.html">Manqabat</a>
+  <a href="qasiday.html">Qasiday</a>
+  <a href="munaejaat.html">Munaejaat</a>
+  <a href="ziyaraat.html">Ziyaraat</a>
+  <a href="duas.html">Duas</a>
+  <a href="newlyAddedInExcel.html">Newly Added </font></a>
+  <a href="savedLyrics.html">Saved Lyrics</font></a>
+  <a href="market://details?id=com.mirza.zikrekarbala">Update App</a>
+</div>
+<div style="background-color: rgb(21, 64, 28);padding:8px;color:#fdf0f0">
+<div>
+<span style="font-size:30px;cursor:pointer;float: left;" onclick="window.history.go(-1);">&#10094;</span>
+<span style="font-size:30px;cursor:pointer;float: right;" onclick="openNav();">&#9776;</span>
+<div style="text-align:center;padding:10px;font-weight: bold;font-size: 25px;font-family: ui-monospace;"> 
+Zikr e Karbala
+</div>
+</div>
+</div>
+<input id='searchOption' type= "text" placeholder="Filter Nouha.." style="width: 100%;height: 30px">
+        </input>
+</div>
+<h3 id ="heading"></h3>
+<div class = "menu">
+  <div id="nouhas">
+    
+
+  </div>
+
+</div>
+
+
+       <div class = "footer" >Recite a Surah Fatiha for My Father</br> Mirza Saheb Ali Baig Ibne Mirza Faiyaz Ali Baig</br>
+    Developed By: Mirza Hassan Ali Baig (+91-8019503772) <br>Qayam Nagar, Hyderabad, India</div> 
+</body>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "75%";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+</script>
+</html> 
