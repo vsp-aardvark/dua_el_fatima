@@ -111,9 +111,9 @@ function FieldSwitch({
         >
           {options.map((option, index) => (
             <div className="flex items-center space-x-2" key={index}>
-              <RadioGroupItem value="beginner" id={`${name}-${index}`} />
+              <RadioGroupItem value={option.value} id={`${name}-${index}`} />
               <Label htmlFor={`${name}-${index}`} variant="secondary">
-                Beginner
+                {option.label}
               </Label>
             </div>
           ))}
