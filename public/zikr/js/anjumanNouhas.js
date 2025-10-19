@@ -179,6 +179,7 @@ $(document).ready(function() {
 			ALAHUS22:`Ya Hussain Ya Hussain Ya Hussain`,
 			ALAHUS23:`Ya Hussain Ya Mazloom`,
 			ALAHUS24:`Ya zainab -o- ume kulsum aley kunna minni salaam`,
+			ALAHUS25:`Mere Hussain teri maa kaha kaha roye`,
 
 		}
 		for(var nouha in mirnoha){
@@ -279,7 +280,308 @@ $(document).ready(function() {
 
 		}
 	}
+	
+	else if(reciter == "Anjumane Parwana e Qasim"){
+		var year  = "Anjuman Nouhay";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			APQANJ:`Kya aag lagi haaye mohammad ke chaman me`,
+			APQANJ1:`Hai Raahnuma himmate mardanae qasim`,
+			APQANJ2:`Sibte payambar salaam`,
+			APQANJ3:`Ruk nahi sakta ye matam jhuk nahi sakta ye parcham`,
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
 
+		}
+		var year  = "Shahzadi Sugra (s.a)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQSSG1:`Bulwayiye baba`,
+			APQSSG2:`Baba salaam lo`,
+			APQSSG3:`Sughra ne likha khat me kaisa mera bhayya hai`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Aon o Mohd (a.s)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQAOM1:`Farzando ke lasho pe ye maa karti thi zaari`,
+			APQAOM2:`Roro ke ye karti thi bayaan zainab e muztar`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Ali Asghar (a.s)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQASG1:`Khaake teer bhi asghar haaye muskuraya hai`,
+			APQASG2:`Khaali hai maa ki goud ab aao ali asghar`,
+			APQASG3:`Ruk ruk ke dekhte hain hasrat se laashe asghar`,
+			APQASG4:`Bano ka tha nouha Ali asghar ki lahed par`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Ali Akbar (a.s)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQAKB1:`Aye Ali Akbar Aye Ali Akbar`,
+			APQAKB2:`Haye ran ko khaime se kis tarha chale akbar`,
+			APQAKB3:`Aake seene se mere naiza nikaalo baba`,
+			APQAKB4:`Poocha laila ne ke zainab kya hua akbar mera`,
+			APQAKB5:`Shabbir se zainab ne pucha akbar hai kaha bolo bhayya`,
+			APQAKB6:`Akbar kaha ho aye ali akbar kaha ho tum`,
+			APQAKB7:`Thi ye sadaaye madar aye mere laal akbar`,
+			APQAKB8:`Kadyal jawaan ka laasha sarwar utha rahe hain`,
+			APQAKB9:`Laashe Akbar tak mere baba mujeh pohunchaayiye`,
+			APQAKB10:`Akbar shaheed hogaye tanha hue hussain`,
+			APQAKB11:`Aye mere naazo ke paale akbar`,
+			APQAKB12:`Lab par ye thi laila ki fuga haye mera kadyal jawaan`,
+			APQAKB13:`Mehlan Mehlan ya bunayya ya bunayya`,
+			APQAKB14:`Dunya bhula na payegi akbar teri azaan`,
+			APQAKB15:`Mit ti hai jawaani akbar ki`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Shahzade Qasim (a.s)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQQSM1:`Tukde hogaya dulha ran se laash aayi hai`,
+			APQQSM2:`Aye ibne hassan dulha`,
+			APQQSM3:`Abbas dekho lasha e qasim ko ek nazar`,
+			APQQSM4:`Faryaad Ya Ali`,
+			APQQSM5:`Karte hain ahle aza aaj ye kiska matam`,
+			APQQSM6:`Qasim ka janaza aata hai`,
+			APQQSM7:`Kya rang laayi shaadi ibne hassan tumhaari`,
+			APQQSM8:`Farwa ka laal dilbare shabbar guzar gaya`,
+			APQQSM9:`Dulha ki laash sarwar maqtal se la rahe hai`,
+			APQQSM10:`Ye kiski hogayi pamaal laash maqtal me`,
+		
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Moula Abbas (a.s)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQABS1:`Kounain me abbas ke matam ki sada hai`,
+			APQABS2:`Abbas qatl hogaye tanha hue hussain`,
+			APQABS3:`Bhai ke gham me sheh ki kamar toot gayi`,
+			APQABS4:`Yaade Abbas me zainab ne pukaara Abbas`,
+			APQABS5:`Kaha kulsoom ne rokar mera abbas gar hota`,
+			APQABS6:`Qatl hogaya saqqa tashnalab sakina hai`,
+			APQABS7:`Thi sada ye zainab ki aye hussain ke bhai`,
+			APQABS8:`Abbas kaha ho meri imdad ko aao`,
+			APQABS9:`Zulm hota hai naya dekho yaha aye abbas`,
+			APQABS10:`Zainab se kaha sheh ne alam qaime me lakar mai hogaya tanha`,
+			APQABS11:`Ammu nahi aaye`,
+		
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Imam Hussain (a.s)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQHUS1:`Chillayi ye zainab mera maara gaya bhai Allah duhaayi`,
+			APQHUS2:`Jalti hui reti par mazloom ka laasha hai`,
+			APQHUS3:`Hai shimr ke hatho me khanjar khanjar ke tale sarwar ka gala`,
+			APQHUS4:`Sarwar ka badan channi channi sar peet ke khawar rone lagi`,
+			APQHUS5:`Bhai ka gala kat te bahen dekh rahi hai`,
+			APQHUS6:`Aye shaame gareebaan`,
+			APQHUS7:`Suno ye awaaz wa hussaina ki zarre zarre se aa rahi hai`,
+			APQHUS8:`Jungle me dekho lut gai aulaade fatima`,
+			APQHUS9:`Karte raho matam pyaaso ka`,
+			APQHUS10:`Haye lut gaya fatima ka ghar`,
+			APQHUS11:`Wa hussaina shaheede karbala`,
+			APQHUS12:`Aayiye matam kare is gham me hum`,
+			APQHUS13:`Syede Mazloom imame Hussain`,
+			APQHUS14:`Aye mere pyaase baraadar ho kaha`,
+			APQHUS15:`Barbaad karbala me hua fatima ka ghar`,
+			APQHUS16:`Maqtal me qatl hogaye ahmed ke nawaase`,
+			APQHUS17:`The bain sakina ke baba nahi aaye`,
+			APQHUS18:`Kehti thi roke zainab karbobala ke ban me`,
+			APQHUS19:`Kaisa sitam nabi ke gharaane pa hogaya`,
+			APQHUS20:`Aabaad karbala hui ghar mera lut gaya`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Shahzadi Sakina (s.a)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQSAK1:`Bain karti thi sakina ke aao baba`,
+			APQSAK2:`Zindaan me gunjti thi sakina ki fugaa`,
+			APQSAK3:`Zindaan ke zulmatou me sakina guzar gayi`,
+			APQSAK4:`Zindaan me aye bali sakina guzar gayi`,
+			APQSAK5:`Margayi hai sakina wawaila`,
+			APQSAK6:`Tha shaam ke zindaan me abid ka ye nouha mazloom sakina`,
+			APQSAK7:`Rabab kehti thi rokar meri sakina jaan`,
+			APQSAK8:`Matam hai qaid khaane me binte hussain ka`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Moula Sajjad (a.s)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQSJD1:`Beemaar ka matam hai`,
+			APQSJD2:`Beemaar pa kyu touq o salaasal ki jafa hai`,
+			APQSJD3:``
+			
+		}
+		var year  = "Darbaar";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQDAR1:`Aale nabi wo shaam ka darbaar ya ali`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Imam Raza (a.s)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQIMR1:`Haye masmoon raza haye ghareebul ghoraba`,
+			APQIMR2:`Gurbat me tum shaheed hue moosi e raza`,
+			
+		}
+		
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Rehaayi o Arbayeen";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQARB1:`Zindaa se chuti karbobala jati hai zainab`,
+			APQARB2:`Haye kya kare zainab`,
+			APQARB3:`Karbala ke maqtal me arbayee ka matam hai`,
+			APQARB4:`Salaam lijiye bhayya watan chali zainab`,
+			APQARB5:`Kya kahungi sugra se`,
+			APQARB6:`Karte hain hum karbala ke bekaso ka arbayeen`,
+			APQARB7:`Jati hai bahen utho bhayya`
+			
+		}
+		
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+
+		
+		
+		var year  = "Shahzadi Zainab (s.a)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQZAI1:`Karbala shaam se phir karbobala hai zainab`,
+			APQZAI2:`Matam bapa hai zainab e dukhya guzar gayi`,
+			APQZAI3:`Phir shaam me ek taaza qayamat hui barpa`,
+			APQZAI4:`Qadam qadam pa banayi hai karbala zainab`,
+			APQZAI5:`Aye saniye zehra`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+
+		var year  = "Wapasi";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQWPS1:`Madina aayi hai zainab magar hussain nahi`,
+			APQWPS2:`Durro ki aziyat hai na zindaane jafa hai`,
+			APQWPS3:`Ghar lutaakar mai aayi hoon amma`,
+			APQWPS4:`Ali ki beti hoon amma falak sataayi hoon`,
+			APQWPS5:`Mai aayi hoon amma tere sab ghar ko lutakar`,
+			APQWPS6:`Amma bhara ghar lut gaya`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Alweda";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQALW1:`Alweda aye fatima zehra ke dilbar alweda`,
+			APQALW2:`Ab wida hota hai humse laal zehra ka`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Shahzadi Fatima (s.a)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQFAT1:`Bahao ashqe aza fatima ka hai matam`,
+			APQFAT2:`Fatima ka na raha koi sahara baba`,
+			APQFAT3:`Aaj hai madine me fatima ka gham barpa`,
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "Imam Ali (a.s)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			APQIMA1:`Koofe me dard o gham ki ajab chagayi faza`,
+			APQIMA2:`Hue ruqsat jaha se hydere karrar wawaila`,
+			
+			
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		
+		
+		
+	}
 	else if(reciter == "Anjuman e Masoomeen"){
 		var year  = "Imam Hussain (as)";
 		nouhaOption+="<h4>"+year+"</h4>";
@@ -541,6 +843,7 @@ $(document).ready(function() {
 			ASG2:`Hum Asghari shah ke matamdaar hai`,
 			ASG3:`Hum Hai Hussain Waale`,
 			ASG4:`Waqeyaate karbala hum kya`,
+			ASG5:`Roohe Shariyat hai ye gham jaane ibadat hai matam`,
 
 		}
 		for(var nouha in mirnoha){
@@ -552,6 +855,17 @@ $(document).ready(function() {
 		nouhaOption+="<h4>"+year+"</h4>";
 		var mirnoha={
 			ASGRK1:`Nana ne nawaase ne zaher ek sa paaya`,
+			ASGRK2:`Haaye Zehra Yateem hogayi`,
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+
+		var year  = "Imam Hassan (as)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			ASGIHSN1:`Haaye Hassan Mujtaba Haye Hasan Mujtaba`,
 		}
 		for(var nouha in mirnoha){
 			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
@@ -563,6 +877,7 @@ $(document).ready(function() {
 		var mirnoha={
 			ASGSF1:`Darwaza gira pehlu pe Zehra(s.a) huin Shaheed`,
 			ASGSF2:`Imam Aaj bhi Zehra ki qabr tooti hai`,
+			ASGSF3:`Mere Mohsin ko zalim ne maara`,
 		}
 		for(var nouha in mirnoha){
 			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
@@ -598,6 +913,7 @@ $(document).ready(function() {
 			ASGIA2:`Hyder ke Matamdaaro me hyder ka janaaza`,
 			ASGIA3:`Magz tak Haider(a.s) ka sar do neem hogaya`,
 			ASGIA4:`Momino aaj Ali(a.s) ka Maatam hai`,
+			ASGIA5:`Khuda ke ghar me Ali ka lahu bahaya gaya`,
 		}
 		for(var nouha in mirnoha){
 			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
@@ -611,6 +927,7 @@ $(document).ready(function() {
 
 			ASGJM1:`Muslim Ke sar ko zalim dar dar`,
 			ASGJM2:`Phir Aaj Ro Rahi Hai Koofe Me Shahzadi`,
+			ASGJM3:`Haaye Safeere Hussain`,
 
 		}
 		for(var nouha in mirnoha){
@@ -638,6 +955,7 @@ $(document).ready(function() {
 			ASGAM1:`Alweda Aun o Mohammad`,
 			ASGAM2:`Aye Aon o Mohammad Aye Aon o Mohammad`,
 			ASGAM3:`Qaime Ke Dar Pe Shaah Ne Rokar Yeh Di Sadaa`,
+			ASGAM4:`Laaye shahe deen maqtal se aon o mohd ke lashe`,
 
 		}
 		for(var nouha in mirnoha){
@@ -657,6 +975,7 @@ $(document).ready(function() {
 			ASGASG6:`Inkaar Aasmaa ko hai razi zamee nahi`,
 			ASGASG7:`Qalbe Zehra kat gaya gardan chidi besheer ki`,
 			ASGASG8:`Aye Mere laal Asghar`,
+			ASGASG9:`Chehre pa lahu Asghar e besheer ka malkar shabbir bohat roye`,
 
 		}
 		for(var nouha in mirnoha){
@@ -677,6 +996,7 @@ $(document).ready(function() {
 			ASGAKB8:`Nigahon ke sukoon ko qaake karbal mein`,
 			ASGAKB9:`Bacho uthao aake janaza jawan ka`,
 			ASGAKB10:`Jawaan Bete ki Mayyat Utha rahe hain Hussain`,
+			ASGAKB11:`Akbar tujhe madar ki nazar dhoond rahi hai`,
 
 		}
 		for(var nouha in mirnoha){
@@ -691,6 +1011,7 @@ $(document).ready(function() {
 			ASGJQ1:`Aye shabbar ki jaan Noushahe Karbala`,
 			ASGJQ2:`Taapo Se Hua Tukde Jab Tera Badan Qasim`,
 			ASGJQ3:`Maqtal se aaraha hai gulgoo qaba ka laasha`,
+			ASGJQ4:`Haaye Naushahe karbala qasim`,
 
 		}
 		for(var nouha in mirnoha){
@@ -713,6 +1034,11 @@ $(document).ready(function() {
 			ASGABS9:`Taskeene Qalbe Zehra Abbas Abbas`,
 			ASGABS10:`Ya Moula Abbas Ya Moula Abbas`,
 			ASGABS11:`Zainab ne tadapkar ye pukaara mere abbas`,
+			ASGABS12:`Aye mere quwwate bazu mere bhai Abbas`,
+			ASGABS13:`Akbar mujhe abbas ke lashe pa le chalo`,
+			ASGABS14:`Bedast hua naher pa saqqae sakina`,
+			ASSGABS15:`Ye roke boli sakina chacha chale aao`,
+
 
 		}
 		for(var nouha in mirnoha){
@@ -738,6 +1064,8 @@ $(document).ready(function() {
 			ASGIH12:`Fatima Roti Hai Karbal Ka Nazaara Dekhkar`,
 			ASGIH13:`Kullona Fidaka Ya Hussain`,
 			ASGIH14:`Hussainiyat ki Baqa hai Hussain Ka matam`,
+			ASGIH15:`Haye Hussain Nargaye Aada me hai shabbir Akela`,
+			ASGIH16:`Wa ghareebaa wa shaheedaa`,
 
 		}
 		for(var nouha in mirnoha){
@@ -769,6 +1097,10 @@ $(document).ready(function() {
 			ASGSS6:`Utho Aye Sakina Utho`,
 			ASGSS7:`Yeh Kaisa Qaidqana Hai`,
 			ASGSS8:`Zindaan Andhera Hai Baba`,
+			ASGSS9:`Ab to Aayiye baba`,
+			ASGSS10:`Aayiye chacha Abbas`,
+			ASGSS11:`Zindaan me ro ro ke ye kehti thi sakina`,
+			ASGSK12:`Shab ko zindaa se ye rone ki sada aati hai`,
 
 		}
 		for(var nouha in mirnoha){
@@ -783,6 +1115,7 @@ $(document).ready(function() {
 			ASGIS1:`Beemaare Karbala hai`,
 			ASGIS2:`Sarwar ke sogwaar Haaye Abid e Beemaar`,
 			ASGIS3:`Ye Beemaar kehta tha kufe me`,
+			ASGIS4:`Asshaam Asshaam`,
 
 		}
 		for(var nouha in mirnoha){
@@ -865,6 +1198,18 @@ $(document).ready(function() {
 			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
 
 		}
+		var year  = "Imam Moosa e Kazim (as)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			ASGIMK1:`Haaye mazdoro ne kazim ka uthaaya lasha`,
+
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		
 
 		var year  = "Imam Raza (as)";
 		nouhaOption+="<h4>"+year+"</h4>";
@@ -872,12 +1217,26 @@ $(document).ready(function() {
 
 			ASGIR1:`Qum se aati ha Sada Aye Ghareebul Ghoraba`,
 			ASGIR2:`Uth raha hai janaaza raza ka`,
-
+			ASGIR3:`Gareeb Mara gaya bewatan gareebi me`,
+			ASGIR4:`Yasrab ka ek musafir mashad me margaya hai`,
 		}
 		for(var nouha in mirnoha){
 			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
 
 		}
+
+		var year  = "Imam Mohd Taqi (as)";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			ASGIMT1:`Taboot par Taqi ke zehra ka marsia hai`,
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+
+		
 
 		var year  = "Imam e Zamana (ajtf)";
 		nouhaOption+="<h4>"+year+"</h4>";
@@ -2163,7 +2522,280 @@ $(document).ready(function() {
 
 		
 	}
+	else if(reciter == "Anjuman e Hussaini (Imambada)"){
+		var year = "Rasool e Khuda (saws)";
+		var mirnoha= {
+			ANJHRK2:`Zehra ke bain the ye payambar utho utho`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Bibi Fatima sa";
+		var mirnoha= {
+			ANJHBF1:`Ummat ke zulmo jor se zehra guzar gayi`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Moula Ali as";
+		var mirnoha= {
+			ANJHIMAL1:`Kufe me aik hashr bapa wa musibata`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Imam Hassan as";
+		var mirnoha= {
+			ANJHIMHA1:`Ahle Aza me sibte payambar ka hai matam`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Aon o Mohd as";
+		var mirnoha= {
+			ANJHAOM1:`Hai Sheh ki ankho me gurbar ka wo sama zainab`,
+			ANJHAOM2:`Jab kargaye duniya se safar aon o mohd`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Ali Asghar as";
+		var mirnoha= {
+			ANJHASG1:`Hasrat bhari nigaah se dekhti rahi madar`,
+			ANJHASG2:`Jhoola Jhulaane wali Aansu baha rahi hai`,
+			ANJHASG3:`Karbobala me hogaye bedaad kya naye`,
+			ANJHASG4:`Shaher bano ye karti thi nouha`,
+			ANJHASG5:`Sheh la rahe hain ran se nanha sa ek janaza`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Ali Akbar as";
+		var mirnoha= {
+			ANJHAK1:`Akbar tujhe sina lagi maa ka kaleja shaq hua`,
+			ANJHAK2:`Maqtal se aa raha hai kadyal jawaa ka lasha`,
+			ANJHAK3:`Ran se jawaa ka lasha shabbir la rahe hai`,
+			ANJHAK4:`Ro ro ke yahi laila ne kaha aye mere ali akbar ho kaha`,
+			ANJHAK5:`Uthta hai ab janaza laila ki hasrato ka`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Shahzade Qasim as";
+		var mirnoha= {
+			ANJHSHQ1:`Ashoor ke hangaam me dulha hai dulhan hai`,
+			ANJHSHQ2:`Bikhra hai ran me lasha noushahe karbala`,
+			ANJHSHQ3:`Kyu mujhko akela chord chale`,
+			ANJHSHQ4:`Laaye Hussain ran se Qasim bane ka lasha`,
+			ANJHSHQ5:`Qasim bane ka lasha shabbir  la rahe hain`,
+			ANJHSHQ6:`Rone laga baraati rone lagi khudayi`,
+			ANJHSHQ7:`Shahe deen kubra ki nazro se ye manzar legaye`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Moula Abbas as";
+		var mirnoha= {
+			ANJHABS1:`Abbas ke lashe par shabbir pukaare`,
+			ANJHABS2:`Abbas tere marne se duniya ujad gayi`,
+			ANJHABS3:`Ek hashr bapa hai dariya par bedash hua ibne hyder`,
+			ANJHABS4:`Jungle me luta fatima zehra ka bhara ghar aye sheh ke baradar`,
+			ANJHABS5:`Karbobala me zainabe muztar ne di sada`,
+			ANJHABS6:`Kate Abbas ke shaane saro se chin gayi chadar`,
+			ANJHABS7:`Lab pa zainab ke aseeri me tha nouha Abbas`,
+			ANJHABS8:`Saqqae Sakina ke kate naher pa shaane`,
+			ANJHABS9:`Zainab ke labo par tha nouha Aye mere baradar aajao`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Imam Hussain as";
+		var mirnoha= {
+			ANJHIHU1:`Be goro kafan ran me shabbir ka lasha hai`,
+			ANJHIHU2:`Haaye Mara gaya Shabbir hamaara pyaasa`,
+			ANJHIHU3:`Khanjar ke tale sibte payambar ka gala hai`,
+			ANJHIHU4:`Lasha Shahe mazloom ka reti pa pada hai`,
+			ANJHIHU5:`Pukari zainab e muztar mere Hussain utho`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Matami Juloos Nouhe";
+		var mirnoha= {
+			ANJHMJL1:`Aao Abbas ab chale aao`,
+			ANJHMJL2:`Ashoor ko karbal me luta fatima ka ghar`,
+			ANJHMJL3:`Dashte bala me goonjte the Fatima ke bain`,
+			ANJHMJL4:`Deti thi zehra sada aye mere bekas Hussain`,
+			ANJHMJL5:`Hai hussain ka parcham jisko hum sambhale hai`,
+			ANJHMJL6:`Kisko pukaare haye zainab`,
+			ANJHMJL7:`Maqtal me shahe dee ka lasha pada hua hai`,
+			ANJHMJL8:`Mere ghareeb Hussain mere Shaheed Hussain`,
+			ANJHMJL9:`Mere Hussain ke aabad ghar ko loot liya`,
+			ANJHMJL10:`Mere mazloom Hussain haaye mazloom Hussain`,
+			ANJHMJL11:`Sar e sarwar se ye aayi sada zainab meri zainab`,
+			ANJHMJL12:`Tha sahara aik hi Abbas ka`,
+			ANJHMJL13:`Ya Hussainam ya Hussain`,
+			ANJHMJL14:`Ye matam hai zehra ki dua`,
+			ANJHMJL15:`Zainab ne kaha sheh ke Alamdar kaha ho`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Shaame Ghareeba";
+		var mirnoha= {
+			ANJHSHG1:`Aye Shaame Ghareebaa`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Shahzadi Sakina sa";
+		var mirnoha= {
+			ANJHSKN1:`Kaisi hai ye khamooshi zindaan hai sakina`,
+			ANJHSKN2:`Masoom Sakina hai ghame bepidari hai`,
+			ANJHSKN3:`Mayyat pe sakina ki maa kehti thi rokar sadqe ho madar`,
+			ANJHSKN4:`Qaid hai aziyat hai aur yateem bacchi hai`,
+			ANJHSKN5:`Sajjad ne di roke sada haaye Sakina`,
+			ANJHSKN6:`Sakina Shaam ke zindaan me roro ke ye kehti hai`,
+			ANJHSKN7:`Zindaan ki zulmat me sakina guzar gayi`,
+			ANJHSKN8:`Zindaan me kohram macha haaye sakina`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Imam Zainul Abideen as";
+		var mirnoha= {
+			ANJHISJ1:`Ab Ahlebait ke liye zindaane shaam hai`,
+			ANJHISJ2:`Abid ne yahi kehke ghurbat me guzara hai`,
+			ANJHISJ3:`Har khadam pa karbala thi Abide bimaar tha`,
+			ANJHISJ4:`Sarwar ke Azadar`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Darbaar";
+		var mirnoha= {
+			ANJHADRB1:`Berida binte Ali hai Shaam ke darbar me`,
+			ANJHADRB2:`Qafila shaam ke darbar ko jo jaane laga`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Mutafarriq";
+		var mirnoha= {
+			ANJHMFQ1:`Barbaad hua haaye Mohd ka gharana`,
+			ANJHMFQ2:`Binte zehra ne bade karb ke manzar dekhe`,
+			ANJHMFQ3:`Goonji Aashoor ko karbal me azaane Akbar`,
+			ANJHMFQ4:`Hota rahega hashr talak matame Hussain`,
+			ANJHMFQ5:`Karbobala me baaghe payambar ujad gaya`,
+			ANJHMFQ6:`Looti gayi kamaayi ek din me fatima ki`,
+			ANJHMFQ7:`Ro ro ke bayaa karti thi ye fatima sughra`,
+			ANJHMFQ8:`Shabbir ye kehte hai na ghabrayiyo zainab`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Imam Raza as";
+		var mirnoha= {
+			ANJHIRZ1:`Hue Shaheed Imame Raza karo matam`,
+			ANJHIRZ2:`Mashad ki fizao me hai ek hashr sa barpa`,
+			ANJHIRZ3:`Mashad me aaj shahe khurasaa hue shaheed`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		
+		var year = "Shahzadi Zainab sa";
+		var mirnoha= {
+			ANJHZNB1:`Haye Zainab Saniye Binte Payambar Margayi`,
+			ANJHZNB2:`Jaane Fatima Zainab Qalbe Murtaza Zainab`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Arbayeen";
+		var mirnoha= {
+			ANJHARB1:`Arbayee hai Arbayee Shabbir ka hai Arbayee`,
+			ANJHARB2:`Arbayeen hota hai qaak par bahattar ka`,
+			ANJHARB3:`Bhai tera chehlum karne dukhya zainab aayi hai`,
+			ANJHARB4:`Chehlum karegi zainab zehra ke  bhare ghar ka`,
+			ANJHARB5:`Chehlum ke liye aaye haram qaide sitam se`,
+			ANJHARB6:`Hussain Bhai ke chehlum ko aayi hai zainab`,
+			ANJHARB7:`Karbala ke biyabaa me chehlum hai bahattar ka`,
+			ANJHARB8:`Karbala me chehlum hai fatima ke dilbar ka`,
+			ANJHARB9:`Karne aayi hoon mai bhai chehlum tera`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Wapasi e Ahle Haram";
+		var mirnoha= {
+			ANJHWPS1:`Khooke bhai ko aayi hoon amma`,
+			ANJHWPS2:`Lutaake ayi hoon karbal me ghar tera amma`,
+			ANJHWPS3:`Lutke aapka kunba ab watan me aaya hai`,
+			ANJHWPS4:`Mere Abbas utho`,
+			ANJHWPS5:`Qabre shahe bekas se watan aayi hai zainab`,
+			ANJHWPS6:`Qabre Zehra pa ye kehne lagi rokar zainab`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Imam Hassan Askari as";
+		var mirnoha= {
+			ANJHAIAS1:`Matam hai Askari ka sab momino ke ghar ghar`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Alweda";
+		var mirnoha= {
+			ANJHALW1:`Fatima ki jaan sarwar ab tera khuda hafiz`,
+			ANJHALW2:`Jati hai teri bahen alweda shahe zaman`,
+			ANJHALW3:`Saro pe qaak udao hai ruqsate shabbir`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Wa Hasrata Hussaina";
+		var mirnoha= {
+			ANJHTIT1:`WA HASRATA HUSSAINA`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		
+	}
 	else if(reciter == "Sipahe Hussaini"){
+		var year = "Ali Asghar (as)";
+		var mirnoha= {
+			SPHASG1:`Che Maheene ka musafir`,
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
 		var year = "Ali Akbar (as)";
 		var mirnoha= {
 			SPHAKB1:`Ankhon me Andhera  hai aaja Ali Akbar`,
@@ -2197,7 +2829,9 @@ $(document).ready(function() {
 		var mirnoha= {
 			SPHIMH1:`HUSSAIN KE AANSOO`,
 			SPHIMH2:`Haaye Hussaina Haaye Hussaina`,
-			SPHIMH3:`Tanhaa Reh gayaa Hussain`,
+			SPHIMH3:`Aai Meray Baradar Abbas a.s E Dilawer`,
+			SPHIMH4:`Zuljana mujhe le chal lashe Ali Akbar par`,
+			SPHIMH5:`Hai yeh Hussain ka noha hussain luthta hai`
 		}
 		nouhaOption+="<h4>"+year+"</h4>";
 		for(var nouha in mirnoha){
@@ -2207,6 +2841,8 @@ $(document).ready(function() {
 		var year = "Shahzadi Sakina (sa)";
 		var mirnoha= {
 			SPHSHQ1:`Shimr ne johi khainchi baliya sakina ki`,
+			SPHSHQ2:`Bali Sakina Sojao`
+
 		}
 		nouhaOption+="<h4>"+year+"</h4>";
 		for(var nouha in mirnoha){
@@ -2230,6 +2866,23 @@ $(document).ready(function() {
 		for(var nouha in mirnoha){
 			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
 		}
+		var year = "Imam Raza (as)";
+		var mirnoha= {
+			SPIMR1:"Ya Imam e Raza Ya  Imame Raza",
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		var year = "Wapasi";
+		var mirnoha= {
+			SPHWPS1:"Mai lutkay aaiyee hu",
+		}
+		nouhaOption+="<h4>"+year+"</h4>";
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+		
 
 		
 	}

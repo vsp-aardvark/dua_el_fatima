@@ -162,6 +162,11 @@ $(document).ready(function() {
 			SPHAKB2:`Dam e Akbar Badi Mushkil Say Nikla`,
 			ASGAKB9:`Bacho uthao aake janaza jawan ka`,
 			ASGAKB10:`Jawaan Bete ki Mayyat Utha rahe hain Hussain`,
+			ANJHAK1:`Akbar tujhe sina lagi maa ka kaleja shaq hua`,
+			ANJHAK2:`Maqtal se aa raha hai kadyal jawaa ka lasha`,
+			ANJHAK3:`Ran se jawaa ka lasha shabbir la rahe hai`,
+			ANJHAK4:`Ro ro ke yahi laila ne kaha aye mere ali akbar ho kaha`,
+			ANJHAK5:`Uthta hai ab janaza laila ki hasrato ka`,
 
 		}
 		for(var nouha in mirnoha){
@@ -252,6 +257,11 @@ $(document).ready(function() {
 			KWNASG1:`Di Sakina Ne Sada Aaye Mere Bhaiya Asghar`,
 			KWNASG2:`Kehti Thi Roke Madar Aajou Run Se Asghar`,
 			ASGASG8:`Aye Mere laal Asghar`,
+			ANJHASG1:`Hasrat bhari nigaah se dekhti rahi madar`,
+			ANJHASG2:`Jhoola Jhulaane wali Aansu baha rahi hai`,
+			ANJHASG3:`Karbobala me hogaye bedaad kya naye`,
+			ANJHASG4:`Shaher bano ye karti thi nouha`,
+			ANJHASG5:`Sheh la rahe hain ran se nanha sa ek janaza`,
 
 		}
 		for(var nouha in mirnoha){
@@ -285,6 +295,8 @@ $(document).ready(function() {
 			MTAAOM2:`HOTA RAHEGA SHAAM O SAHER AOUN O MOHD KA MATAM`,
 			MTAAOM3:`ZAINAB KE DULAAREY`,
 			KWNAOM1:`BAIN KARKE MAA HAAYE MERI JAAN AUN-O-MOHD`,
+			ANJHAOM1:`Hai Sheh ki ankho me gurbar ka wo sama zainab`,
+			ANJHAOM2:`Jab kargaye duniya se safar aon o mohd`,
 
 		}
 		for(var nouha in mirnoha){
@@ -349,6 +361,17 @@ $(document).ready(function() {
 			KWNARB3:`Mazloom-e-Karbala Ka Chehlum Hai Karbala Me`,
 			KWNARB4:`ZAINAB KI TAMANNA HAI CHELUM HU BAHATTAR KA`,
 			SPHARB1:`Karbobala me chehlum manane aayi hai Zainab`,
+			ANJHARB1:`Arbayee hai Arbayee Shabbir ka hai Arbayee`,
+			ANJHARB2:`Arbayeen hota hai qaak par bahattar ka`,
+			ANJHARB3:`Bhai tera chehlum karne dukhya zainab aayi hai`,
+			ANJHARB4:`Chehlum karegi zainab zehra ke  bhare ghar ka`,
+			ANJHARB5:`Chehlum ke liye aaye haram qaide sitam se`,
+			ANJHARB6:`Hussain Bhai ke chehlum ko aayi hai zainab`,
+			ANJHARB7:`Karbala ke biyabaa me chehlum hai bahattar ka`,
+			ANJHARB8:`Karbala me chehlum hai fatima ke dilbar ka`,
+			ANJHARB9:`Karne aayi hoon mai bhai chehlum tera`,
+			cw10:`Chehlum tera karne ko bahen aayi hai bhai`,
+
 
 		}
 		for(var nouha in mirnoha){
@@ -435,6 +458,7 @@ $(document).ready(function() {
 			SIMASK6:`samere me ghul hai bapa haaye haaye`,
 			SIMASK7:`Ya Imam e Askari as`,
 			n11:"Haaye hassan askari",
+			ANJHAIAS1:`Matam hai Askari ka sab momino ke ghar ghar`,
 
 		}
 		for(var nouha in mirnoha){
@@ -467,6 +491,9 @@ $(document).ready(function() {
 			SIMHAS20:`Jaisey hi ghar se nika taboot mujtaba ka`,
 			n25:"Ya hassan ya hassan",
 			MTAHAS:`SHABBAR KA JANAZA JAATA HAIN AUR TEER LAYEEN BARSAAT E HAIN`,
+			ANJHIMHA1:`Ahle Aza me sibte payambar ka hai matam`,
+			ASGIHSN1:`Haaye Hassan Mujtaba Haye Hasan Mujtaba`,
+
 
 		}
 		for(var nouha in mirnoha){
@@ -550,6 +577,7 @@ $(document).ready(function() {
 			SIMHUS73:`Hussain Zinda Hai Shaheed Zinda Hai`,
 			SIMHUS74:`Hussaina Hussaina`,
 			SIMHUS75:`Hussaino Minni`,
+			ALAHUS25:`Mere Hussain teri maa kaha kaha roye`,
 			SIMHUS76:`Jaao ke na ab deyr karo`,
 			SIMHUS77:`Jab kabhi gheerate insaa'n ka`,
 			SIMHUS78:`Jab piyo paani`,
@@ -714,6 +742,11 @@ $(document).ready(function() {
 			SPHIMH1:`HUSSAIN KE AANSOO`,
 			ASGIH13:`Kullona Fidaka Ya Hussain`,
 			ASGIH14:`Hussainiyat ki Baqa hai Hussain Ka matam`,
+			ANJHIHU1:`Be goro kafan ran me shabbir ka lasha hai`,
+			ANJHIHU2:`Haaye Mara gaya Shabbir hamaara pyaasa`,
+			ANJHIHU3:`Khanjar ke tale sibte payambar ka gala hai`,
+			ANJHIHU4:`Lasha Shahe mazloom ka reti pa pada hai`,
+			ANJHIHU5:`Pukari zainab e muztar mere Hussain utho`,
 
 		}
 		for(var nouha in mirnoha){
@@ -836,6 +869,16 @@ $(document).ready(function() {
 			MTAIMR2:`ROOKE HUMSHEEER NE KAHA BHAIYA`,
 			MTAIMR3:`SULTAN E DEEN SHAHE KHURASAA GUZARGAYA`,
 			KWNIMR1:`HAAYE IMAM-E-RAZA HAAYE IMAM-E-RAZA`,
+			ANJHIRZ1:`Hue Shaheed Imame Raza karo matam`,
+			ANJHIRZ2:`Mashad ki fizao me hai ek hashr sa barpa`,
+			ANJHIRZ3:`Mashad me aaj shahe khurasaa hue shaheed`,
+			SIMRG14:`Sar peet ke chillayi ye masoma e muztar`,
+			SIMGR15:`Mere bhai se mujhko milado`,
+			SIMGR16:`Ye shehre qurasaan me harsu duhayi hai`,
+			SIMRG17:`Aye Shaheede Jafa imam e Raza`,
+			SIMRG18:`Momino Shahe khurasaan ka matam karlo`,
+
+
 
 		}
 		for(var nouha in mirnoha){
@@ -939,6 +982,10 @@ $(document).ready(function() {
 			MTASJD3:`DIL SE KABHI NA SHAAM KE MANZER JUDAA HOVEY`,
 			MTASJD4:`ISLAM KA MASIHA THA BIMAAR KHUDAYA`,
 			KWNIMS1:`Sajjad Dil Sambhalo Bazar-e-Shaam Aaya`,
+			ANJHISJ1:`Ab Ahlebait ke liye zindaane shaam hai`,
+			ANJHISJ2:`Abid ne yahi kehke ghurbat me guzara hai`,
+			ANJHISJ3:`Har khadam pa karbala thi Abide bimaar tha`,
+			ANJHISJ4:`Sarwar ke Azadar`,
 
 		}
 		for(var nouha in mirnoha){
@@ -1131,6 +1178,7 @@ $(document).ready(function() {
 			MTAAZD2:`ZEHRA TERI DUA HAI YE MATAM HUSSAIN KA`,
 			KWNANJ1:`MATAMI ANJUMAN KARWAN E AZA`,
 			KWNANJ2:`TA HASR KARWAN-E-AZA GHAM MANAINGE`,
+			SKOA103:`Nade Aliyan Aliyan ya ali`,
 
 		}
 		for(var nouha in mirnoha){
@@ -1142,6 +1190,8 @@ $(document).ready(function() {
 
 			SJMQ1:`Bibi masooma e qum`,
 			SJMQ2:`Ya Hamsheere Raza`,
+			SJMQ3:`Masooma e qum Fatima`,
+			SJMQ4:`Aye Momino sar peeto jati hai ba hasrat masoma ki mayat`,
 
 		}
 		for(var nouha in mirnoha){
@@ -1195,7 +1245,7 @@ $(document).ready(function() {
 			SMABS42:`Abbas utho tumko sada deta hai hussain`,
 			SMABS43:`Abbas Ya moula Ya Abbas Moula`,
 			SMABS44:`Abbase Ali Sheh ke Alamdar sidharo`,
-			SMABS45:`Ae wafa ke paighambar`,
+			SMABS45:`Aye wafa ke paighambar`,
 			SMABS46:`Ajab Zehra Ke Bete Ki Ghareebi Ka Zamana Hai`,
 			SMABS47:`Alam abbas ka`,
 			SMABS48:`Alam ke Saaye me Kehte chalo hussain`,
@@ -1326,6 +1376,17 @@ $(document).ready(function() {
 			MTAABS6:`HO TUM KAHAN ABBAS`,
 			MTAABS7:`KAB LOUT KE AMMU AOUGE`,
 			MTAABS8:`KHETEY THEY HARAM ROOKER SAQQA E SAKINA`,
+			ANJHABS1:`Abbas ke lashe par shabbir pukaare`,
+			ANJHABS2:`Abbas tere marne se duniya ujad gayi`,
+			ANJHABS3:`Ek hashr bapa hai dariya par bedash hua ibne hyder`,
+			ANJHABS4:`Jungle me luta fatima zehra ka bhara ghar aye sheh ke baradar`,
+			ANJHABS5:`Karbobala me zainabe muztar ne di sada`,
+			ANJHABS6:`Kate Abbas ke shaane saro se chin gayi chadar`,
+			ANJHABS7:`Lab pa zainab ke aseeri me tha nouha Abbas`,
+			ANJHABS8:`Saqqae Sakina ke kate naher pa shaane`,
+			ANJHABS9:`Zainab ke labo par tha nouha Aye mere baradar aajao`,
+			MBS123:`Kaash Abbas na maare jaate`,
+			SMB137:`Margaye saqqae haram haye haye`,
 
 		}
 		for(var nouha in mirnoha){
@@ -1345,6 +1406,8 @@ $(document).ready(function() {
 			SRSK7:`Ye musalmano rasool e paak`,
 			ASGRK1:`Nana ne nawaase ne zaher ek sa paaya`,
 			MTARSL1:`PEETO SAR AZADAARO MUSTAFA KA MATAM HAI`,
+			ANJHRK1:`Ummat ke zulmo jor se zehra guzar gayi`,
+			ANJHRK2:`Zehra ke bain the ye payambar utho utho`,
 
 
 		}
@@ -1435,7 +1498,10 @@ $(document).ready(function() {
 			SSHM41:`Zehra ki betiyoun ki ridaye`,
 			MTASHM1:`HAAYE SHAAM HAAYE SHAAM HAAYE SHAAM`,
 			MTASHM2:`parda duniya ko sikhane wali aayi bazaaron may zainab`,
-			KWNBZR1:`Sar Barehna Fatima Ki Betiyan Roti Rahi`,
+			KWNBZR1:`Sar Barehna Fatima Ki Betiyan Roti Rahi`,		
+			ANJHADRB1:`Berida binte Ali hai Shaam ke darbar me`,
+			ANJHADRB2:`Qafila shaam ke darbar ko jo jaane laga`,
+
 		}
 		for(var nouha in mirnoha){
 			nouhaOption+="<div class = \"nouhas\" id = \""+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
@@ -1553,6 +1619,13 @@ $(document).ready(function() {
 		KWNSHQ4:`Shaakh Se Ek Phool Tutha Tukdhe Tukdhe Hogaya`,
 		SPHSHQ1:`Madad ko Ayiye ya shahe karbala meri`,
 		ASGJQ3:`Maqtal se aaraha hai gulgoo qaba ka laasha`,
+		ANJHSHQ1:`Ashoor ke hangaam me dulha hai dulhan hai`,
+		ANJHSHQ2:`Bikhra hai ran me lasha noushahe karbala`,
+		ANJHSHQ3:`Kyu mujhko akela chord chale`,
+		ANJHSHQ4:`Laaye Hussain ran se Qasim bane ka lasha`,
+		ANJHSHQ5:`Qasim bane ka lasha shabbir  la rahe hain`,
+		ANJHSHQ6:`Rone laga baraati rone lagi khudayi`,
+		ANJHSHQ7:`Shahe deen kubra ki nazro se ye manzar legaye`,
 
 		}
 		for(var nouha in mirnoha){
@@ -1604,6 +1677,7 @@ $(document).ready(function() {
 			n10:"Haaye Fatima Zehra", 
 			n27:"Ya Rab Yeh Fatima Pe hai Kaisa Sitam Hua",
 			MTAFTM1:`PEHLU SHIKISHTA BIBI`,
+			ANJHBF1:`Ummat ke zulmo jor se zehra guzar gayi`,
 
 		}
 		for(var nouha in mirnoha){
@@ -1758,6 +1832,15 @@ $(document).ready(function() {
 			MTASKN4:`THI YEHI SHAAM KE ZINDAA'N MEIN SAKINA KI FUGAA`,
 			MTASKN5:`YE ROOKE KEHTI THI MAADAR SAKINA SOJAO`,
 			SPHSHQ1:`Shimr ne johi khainchi baliya sakina ki`,
+			ANJHSKN1:`Kaisi hai ye khamooshi zindaan hai sakina`,
+			ANJHSKN2:`Masoom Sakina hai ghame bepidari hai`,
+			ANJHSKN3:`Mayyat pe sakina ki maa kehti thi rokar sadqe ho madar`,
+			ANJHSKN4:`Qaid hai aziyat hai aur yateem bacchi hai`,
+			ANJHSKN5:`Sajjad ne di roke sada haaye Sakina`,
+			ANJHSKN6:`Sakina Shaam ke zindaan me roro ke ye kehti hai`,
+			ANJHSKN7:`Zindaan ki zulmat me sakina guzar gayi`,
+			ANJHSKN8:`Zindaan me kohram macha haaye sakina`,
+			SS20:`Sakina dafn hoti hai`,
 
 		}
 		for(var nouha in mirnoha){
@@ -1810,6 +1893,12 @@ $(document).ready(function() {
 			KWNSSG1:`Sughra Ne khat Me Likha Tanha Na jee Sakungi`,
 			KWNSSG2:`Yun Yaad Na Kar Ghar Me Sughra Ali Akber Ku`,
 			ASGSUG1:`Watan me kaise mai tanha rahungi aye baba`,
+			OLDSS8:`Maa ne rokar kaha alweda alweda sugra`,
+			OLDSS9:`Kehti thi maa yahi haye sughra meri`,
+			OLDSS10:`Peeto sar ahle aza ghar se janaza chala sughra`,
+			OLDSS11:`Bain karti thi yahi rokar madar haye sughra`,
+			OLDSS12:`Koun Sughra ka uthayega janaza bhayya`,
+
 			
 
 		}
@@ -1923,7 +2012,21 @@ $(document).ready(function() {
 			KWNSZB1:`HAAYE SYEDA ZAINAB`,
 			KWNSZB2:`JAALAYI SHAM E AZA AYATOU KE SAAYE ME`,
 			SPHSHZ1:`Koi Zainab ka aasra na raha`,
-
+			ANJHZNB1:`Haye Zainab Saniye Binte Payambar Margayi`,
+			ANJHZNB2:`Jaane Fatima Zainab Qalbe Murtaza Zainab`,
+			SZNB82:`Sehke ranjo gham haaye chal basi`,
+			SZNB83:`Momino peeto ro ro ke sar wawaila`,
+			SZNB84:`Atthara bhaiyo ki bahen qaid hui hai`,
+			SZ6:`Zainabe bawafa alweda alweda`,
+			SZ7:`Roke Fizza ye karti thi nauha aya taboote saniye zehra`,
+			SZ8:`Binte Fatima kargayi qaza`,
+			SZ9:`Sajjad bayaa karte the mazloom phuphi jaan`,
+			SZ10:`Behaal hai behain hai ghabrayi hai zainab`,
+			SZ11:`Zulm seh seh ke har ghadi zainab`,
+			SZ12:`Abid ne kaha laash pe zainab ki`,
+			SZ13:`Baniye Majlise aza zainab`,
+			SZ14:`Zehra se kehdo Aon o Mohd ko layiye`,
+			NS1985:`Ek Ali ki laadli thi ek Ali ka laal tha`,
 		}
 		for(var nouha in mirnoha){
 			nouhaOption+="<div class = \"nouhas\" id = \""+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
@@ -1965,6 +2068,8 @@ $(document).ready(function() {
 			SWPS30:`Nana aye mere nana, main aagayi madina`,
 			SWPS31:`Pehchaano khudara`,
 			SWPS32:`ROZE PE MUSTAFA KE UDASEE SI CHAAYI HAI`,
+			SARB27:`Ro ro ke madeene walo se`,
+			SARB28:`roke zainab ne di sada nana`,
 			SWPS33:`Sakina ko youn chordh kar jaa`,
 			SWPS34:`Sar e Abbas aata hai`,
 			SWPS35:`Shaam Ki Aurtou`,
@@ -2003,6 +2108,9 @@ $(document).ready(function() {
 			KWNWPS1:`Kis Tarha Madina Jaaye Hum Sakina`,
 			KWNWPS2:`Luthkar Madina Zainab Tashreef Larahi Hai`,
 			KWNWPS3:`MAIN KYA BATOU KE KYA KYA GUZAR GAYI AMMA`,
+			cw11:`Nana mai aagayi hoon ghar baar sab lutaake`,
+			cw12:`Zabaa pa zainabe bekas ki thi sada amma`,
+			FA20209:`Rehai khaid se zainab ko jab mili hogi`,
 
 		}
 		for(var nouha in mirnoha){
@@ -2023,6 +2131,16 @@ $(document).ready(function() {
 			SZJN9:`Zuljanah bigo che shud`,
 			SZJN10:`Zuljanah Zuljanah hai kaha baba jaan`,
 			ASGZJ1:`Aye Aspe bawafa mera baba kaha gaya`,
+
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+		}
+	}
+	else if(reciter == "Janaabe Ummul Baneen (sa)"){
+		var mirnoha={
+
+			JUB1:`Ummul baneen ne ki jaha se qaza hai aaj`,
 
 		}
 		for(var nouha in mirnoha){
@@ -2052,6 +2170,10 @@ $(document).ready(function() {
 			MTAALW2:`Haye ghareebul watan aye asiremehan`,
 			MTAALW1:`ALVIDA MOULA HUSSAIN ALVIDA MOULA`,
 			MTAALW2:`Haye ghareebul watan aye asiremehan`,
+			ANJHALW1:`Fatima ki jaan sarwar ab tera khuda hafiz`,
+			ANJHALW2:`Jati hai teri bahen alweda shahe zaman`,
+			ANJHALW3:`Saro pe qaak udao hai ruqsate shabbir`,
+			SAWD5:`Alweda Zehra ke laal`,
 
 		}
 		for(var nouha in mirnoha){

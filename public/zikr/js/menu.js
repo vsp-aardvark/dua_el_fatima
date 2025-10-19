@@ -9,15 +9,80 @@ $(document).ready(function() {
 
 	
 	if(reciter == "Mir Hassan Mir"){
+		var year  = "2024";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			MHM202241:`amad amad haram e shah`,
+			MHM202242:`Jaane walo dare Abbas pe tum jab jaana`,
+			MHM202243:`Jhoola hai ya taboot tumhara ali asghar`,
+			MHM202244:`Khamoosh na ho baap se baate karo akbar`,
+			MHM202245:`Maahe aza lo namudaar hua`,
+			MHM202246:`Mar gaya zainab mera sher e jawaan`,
+			MHM202247:`Zainab nikal aayi hai zara rok le khanjar`,
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "2023";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			MHM202231:`Akbar ka lahu sheh ki Aba tak pohanch gaya`,
+			MHM202232:`akbar ke janaze pe muje le chalo bhayya`,
+			MHM202233:`amma fiza bata do mujhko`,
+			MHM202234:`bin bazuon ke utra hai abbas zeen se`,
+			MHM202235:`naam e moula pe hai  paani jo pilaane wale`,
+			MHM202236:`shabbir di ujri maa`,
+			MHM202237:`shimr ne pehle sakina ko dikhaaya khanjar`,
+			MHM202238:`subhana rabbiyal aala`,
+			MHM202239:`Uthaate hain Abid sakina ka lasha`,
+			MHM2022310:`zakhmi hai fatima tooti hai pasliyaa`,
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year  = "2022";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+
+			MHM202221:`Baba Phuphi Amma Se Mera Zakhm Chupana`,
+			MHM202222:`bekasi ka sheh ki charcha rehgaya`,
+			MHM202223:`Bhai ko khuda bhai ka lasha na dikhaaye`,
+			MHM202224:`chand ko dekhke sughra ne kaha haaye hussain`,
+			MHM202225:`Kalma go haste rahe fatima roti rahi`,
+			MHM202226:`khuda nighedaar ya ali`,
+			MHM202227:`moula roote jate hai`,
+			MHM202228:`shimr khanjar na chala`,
+			MHM202229:`tedi masooma rul gayi baba`,
+			MHM2022210:`ya abalfazl ya abalfazl`,
+		}
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+
 		var year  = "2021-22";
 		nouhaOption+="<h4>"+year+"</h4>";
 		var mirnoha={
 
-			MHM20221:`Aye Jaun Bhai Ho Tum Mere`,
-			MHM20222:`Ghar Main Aya Hai Qatil e Akbar`,
-			MHM20223:`Haye Haye Ali Asghar`,
-			MHM20224:`Shireen mai aagaya`,
-			MHM20225:`Ya Ali (as) Adrikni`,
+			MHM2021221:`aaj baghdad me koi qaidi`,
+			MHM2021222:`Aye Jaun Bhai Ho Tum Mere`,
+			MHM2021223:`aye raat fazal lang`,
+			MHM2021224:`barbadi jo aa matam`,
+			MHM2021225:`bete ke qatilon se`,
+			MHM2021226:`Ghar Main Aya Hai Qatil e Akbar`,
+			MHM2021227:`Haye Haye Ali Asghar`,
+			MHM2021228:`karbala diya maawan`,
+			MHM2021229:`nana beemar nahi maa zakhmi aey`,
+			MHM20212210:`Shireen mai aagaya`,
+			MHM20212211:`tu na aya ghazi`,
+			MHM20212212:`woh waqt yaqeenan ayega`,
+			MHM20212213:`Ya Ali (as) Adrikni`,
+			MHM20212214:`zainab tera zakhmi baba`,
+			
 		}
 		for(var nouha in mirnoha){
 			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
@@ -665,6 +730,58 @@ $(document).ready(function() {
 
 
 	}else if(reciter == "Nadeem Sarwar"){
+		var year = "2024";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			NS20241:`haaye husain ibne ali`,
+			NS20242:`main alamdar`,
+			NS20243:`mera imam hussain`,
+			NS20244:`tum shaam ana baba`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2023";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			NS20231:`Abbase e Alamdar lashkare shabbir ka salaar`,
+			NS20232:`hoga ya hussain`,
+			NS20233:`hussain akela hai`,
+			NS20234:`janum ali ali`,
+			NS20235:`rok na tu rahwar`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2022";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			NS20221:`Alambardar aata hai`,
+			NS20222:`Aye Nahar e alqama`,
+			NS20223:`Chalta rahe karwaan`,
+			NS20224:`hazrath imam hussain`,
+			NS20225:`mazloom hussain ki humsheer`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2021";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			NS202111:`Abbas ka naara hai Dariya hai hamara`,
+			NS202112:`Haaye Mazloom Hussain Asre ashoor mera laal`,
+			NS202113:`Kal ho na ho kya pata zindagi ka karo matam`,
+			NS202114:`MaI zainab hoon`,
+			NS202115:`Mazaare Fatima Ya mazloom ya fatima ya zehra`,
+			NS202116:`Syed Badesha hussain`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
 		var year = "2020-21";
 		nouhaOption+="<h4>"+year+"</h4>";
 		var mirnoha={
@@ -934,7 +1051,9 @@ $(document).ready(function() {
 		}
 
 
-		var mirnoha={n1:"Ammu Bhi Gaye",n2:"Aye Shiyon Jab Peena Pani",n3:"Ay Fatima Sughra Ghar Lut Gaya Beta",n4:"Ay momino payame sarwar ko yaad rakhna",n5:"Haan Tha Mera Baba",n6:"Ho gaye zainab se khafa",n7:"Kufe ka aur shaam ka manzar",n8:"Mai jab bhi watan jaungi bhaiyya",n9:"ROZE PE MUSTAFA KE UDASEE SI CHAAYI HAI",n10:"Sab qatl ho gaye koi waris nahi raha",n11:"Sadaat e Karbala",n12:"Tamam alam me aaj matam",n13:"Toot gayi aas meri toot gaayi aas",n14:"Wo Shehenshah e zaman",n15:"Zainab-e-Hazine Man, Khwahra Khuda Hafiz"};
+		var mirnoha={n1:"Ammu Bhi Gaye",n2:"Aye Shiyon Jab Peena Pani",n3:"Ay Fatima Sughra Ghar Lut Gaya Beta",n4:"Ay momino payame sarwar ko yaad rakhna",n5:"Haan Tha Mera Baba",n6:"Ho gaye zainab se khafa",n7:"Kufe ka aur shaam ka manzar",n8:"Mai jab bhi watan jaungi bhaiyya",n9:"ROZE PE MUSTAFA KE UDASEE SI CHAAYI HAI",n10:"Sab qatl ho gaye koi waris nahi raha",n11:"Sadaat e Karbala",n12:"Tamam alam me aaj matam",n13:"Toot gayi aas meri toot gaayi aas",n14:"Wo Shehenshah e zaman",n15:"Zainab-e-Hazine Man, Khwahra Khuda Hafiz",
+			n21:`Ek Ali ki laadli thi ek Ali ka laal tha`
+		};
 		var year = "1984-1990";
 		nouhaOption+="<h4>"+year+"</h4>";	
 		for(var nouha in mirnoha){
@@ -983,6 +1102,7 @@ $(document).ready(function() {
 			FA20206:`Nana Rab ke waaste sun meri dua`,
 			FA20207:`Ujde hue gharo se awaaz aa rahi`,
 			FA20208:`Zuljanah Zuljanah hai kaha baba jaan`,
+			FA20209:`Rehai khaid se zainab ko jab mili hogi`,
 		};
 		for(var nouha in mirnoha){
 			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
@@ -1180,6 +1300,229 @@ $(document).ready(function() {
 		}
 
 
+	}else if(reciter == "Raza Abbas Zaidi"){
+		var year = "2024";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20241:`Abbas na jao ruk jao`,
+			RAZ20242:`Akhri Waar`,
+			RAZ20243:`Aulad agar teri hoti akbar`,
+			RAZ20244:`Madad kare ya Fatima (s.a)`,
+			RAZ20245:`Nade Ali`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2023";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20231:`Diya Jalake sakina ke naam`,
+			RAZ20232:`Ek yateema aisi bhi thi`,
+			RAZ20233:`Kya baap se is tarha juda hote hai akbar`,
+			RAZ20234:`Qatl Alamdar Hogaya`,
+			RAZ20235:`Rauza nahi Hussain nazar aaye`,
+			RAZ20236:`Shadat e shehzada ali asghar`,
+			RAZ20237:`So Rahe Hain Sab Mere Waali o Dilbar Rait Par`,
+			RAZ20238:`Utha nahi jata amma`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2022";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20221:`Battees baras ka saath`,
+			RAZ20222:`Ghareeb e zahra ka badan`,
+			RAZ20223:`Jawan bete seene mein hai sina`,
+			RAZ20224:`Kyun Chor Jaati Hai Maa`,
+			RAZ20225:`Sakina bibi ka hai janaza`,
+			RAZ20226:`Shabbir ke chehre se ghum dur karnewale`,
+			RAZ20227:`Sultane Karbala`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2021";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20211:`Athara baras in hatho'n se pala hai`,
+			RAZ20212:`Ghareeb ka yeh ghareeb sar hai`,
+			RAZ20213:`Laila duaein kijiye`,
+			RAZ20214:`Maa maa hoti hai`,
+			RAZ20215:`Mara gaya darya pe`,
+			RAZ20216:`Mushkil ko meri hal karo`,
+			RAZ20217:`Tadfeen shahzadi sakina`,
+			RAZ20218:`Wasiyat - Zehra aur Hussain`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2020-21";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ2020211:`Aap Ki Zehra pe kaise zamane aaye`,
+			RAZ2020212:`Acha Baba Ja Rahe Ho`,
+			RAZ2020213:`Gham e Hussain Meray Dil Se Kum Na Ho`,
+			RAZ2020214:`Haye Abbas Nahi Aye Na Aya Pani`,
+			RAZ2020215:`Karbala Yaad Bohat Aati Hai`,
+			RAZ2020216:`Laila Duain Kijiye Jeeta Rahay Akbar`,
+			RAZ2020217:`Phir Chahe Sakina Ko Wo Jitna Bhi Sata Lay`,
+			RAZ2020218:`Sir Dekh ke Shabbir Ka Shereen Ne Pukara`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2020";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20201:`Abbas mar gaye ali akbar juda hua`,
+			RAZ20202:`Akhir hussain maa hu`,
+			RAZ20203:`Arzoo e azadar`,
+			RAZ20204:`Aye hur jawan ka laasha`,
+			RAZ20205:`Banu asad ke shareef logo`,
+			RAZ20206:`Bhare darbaar mein muslim ka aana aur tha`,
+			RAZ20207:`Hai apni sakina ka abbas ko ghum maula`,
+			RAZ20208:`Kya kya sitam guzar gaye`,
+			RAZ20209:`Rukh se ek baar kafan aur hatado bhayya`,
+			RAZ202010:`Tum bin kayi raato'n se mai soyi nahi baba`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2019";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20191:`Betiyon Kay Pass Lejao Mujhe`,
+			RAZ20192:`Dil karbala mein reh gaya`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2018";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20181:`Baba ki kuch batein suna`,
+			RAZ20182:`Hind ye zainab hai`,
+			RAZ20183:`Laash akbar ki mere sath uthao amma`,
+			RAZ20184:`Sattar qadam ka fasla bhai bahen me tha`,
+			RAZ20185:`Sayyeda ka mohsin hai`,
+			RAZ20186:`Ya ali ummed e mehsharam`,
+			RAZ20187:`Yaad aayega abbas magar laut kar nahi`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2017";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20171:`Aap jo dil pe sina`,
+			RAZ20172:`Baba mujhe lene aagaye hai`,
+			RAZ20173:`Bismillah hussain`,
+			RAZ20174:`Hazrat ki sawari`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2016";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20161:`Akbar chupa rahe hai`,
+			RAZ20162:`Baba na aayenge`,
+			RAZ20163:`Haan ye mere bete hai`,
+			RAZ20164:`Hai mera bhai kahan`,
+			RAZ20165:`Ishq e ali o zahra hussain`,
+			RAZ20166:`Khali jhula kaise jhulau`,
+			RAZ20167:`Khat e sughra`,
+			RAZ20168:`Maa aayegi hussain`,
+			RAZ20169:`Mai kaise chalu baba`,
+			RAZ201610:`Zainab si behan hai`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2015";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20151:`Amma gawah rehna`,
+			RAZ20152:`Farmaya sheh ne meri khata kya hai kufiyon`,
+			RAZ20153:`Mere haath nahi hai`,
+			RAZ20154:`Na Maro Na Maro Mujhe`,
+			RAZ20155:`Rondi reh gayi sugra`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2013";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20131:`Aagaya abbas`,
+			RAZ20132:`Mere Baba Ke Azadar Mera Haal Suno`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2012";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20121:`Assalamu Alaike Ya Sayeda`,
+			RAZ20122:`Mai bhai bhai kehti thi Laasha behan behan`,
+			RAZ20123:`Raah pidar ka dekhna Beemar chhod de`,
+			RAZ20124:`Tumko rehna hai Rehna hai zindaan me`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2011";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20111:`Ay Raat Zara Tham`,
+			RAZ20112:`Bohot Delair They Ammu`,
+			RAZ20113:`Chalna Hai Tumhe`,
+			RAZ20114:`Haye Abbas`,
+			RAZ20115:`Sajjad Haye Sajjad`,
+			RAZ20116:`Ye Meri Laadli haye sakina`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2010";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20101:`Kyun Na Roye Sajjad`,
+			RAZ20102:`Laasha Jari Ka`,
+			RAZ20103:`Meri sakina ko neend aa rahi hai`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
+		var year = "2009";
+		nouhaOption+="<h4>"+year+"</h4>";
+		var mirnoha={
+			RAZ20091:`Amma Ghareeb Hoo mai`,
+			RAZ20092:`Bole pidar se akbar Barchi Na Khaynchna`,
+			RAZ20093:`Haye nana Shaam Ne Maar Diya hai`,
+			RAZ20094:`Mehendi Laga Ke Qasim Maqtal ko jaraha hai`,
+			RAZ20095:`Zainab Meri Bachi Ka Rakhna khayaal`,
+		};
+		for(var nouha in mirnoha){
+			nouhaOption+="<div class = \"nouhas\" id = \""+year+"/"+mirnoha[nouha]+"\">"+mirnoha[nouha]+"</div>";
+
+		}
 	}else if(reciter == "Shahid Baltistani"){
 		var year = "2020-21";
 		nouhaOption+="<h4>"+year+"</h4>";
