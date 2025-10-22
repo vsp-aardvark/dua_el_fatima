@@ -16,6 +16,7 @@ export type FormField =
   | FormDateField
   | FormDateTimeField
   | FormPictureListField
+  | FormEditorField
 
 export interface FormBaseField {
   label?: string
@@ -32,6 +33,10 @@ export interface FormTextField extends FormBaseField {
 
 export interface FormTextAreaField extends FormBaseField {
   type: 'textarea'
+}
+
+export interface FormEditorField extends FormBaseField {
+  type: 'editor'
 }
 
 export interface FormNumberField extends FormBaseField {

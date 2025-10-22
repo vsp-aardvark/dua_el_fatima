@@ -13,9 +13,13 @@ interface FormProps {
   dataSchema: FormDataSchema
   uiSchema: FormUISchema
   onSubmit: (values: any) => void
+  /**
+   * Section ClassName
+   */
+  className?: string
 }
 
-export function Form({ initialValues, dataSchema, uiSchema, onSubmit }: FormProps) {
+export function Form({ initialValues, dataSchema, uiSchema, onSubmit, className }: FormProps) {
   const { fields: fieldsData } = dataSchema
   const { sections } = uiSchema
   return (
@@ -32,7 +36,7 @@ export function Form({ initialValues, dataSchema, uiSchema, onSubmit }: FormProp
             {sections.map((section) => {
               const { title, fields } = section
               return (
-                <div key={title}>
+                <div key={title} className={className}>
                   {fields.map((fieldName) => {
                     const field = fieldsData[fieldName]
 
@@ -58,7 +62,9 @@ export function Form({ initialValues, dataSchema, uiSchema, onSubmit }: FormProp
                 </div>
               )
             })}
-            <Button type="submit">Submit</Button>
+            <Button type="submit" className={'block w-full my-3'}>
+              Submit
+            </Button>
           </form>
         )
       }}
@@ -136,7 +142,6 @@ const getFieldValue = ({
   switch (field.type) {
     case 'text':
     case 'textarea':
-    case 'integer':
     case 'checkbox':
     case 'radio':
     case 'date':

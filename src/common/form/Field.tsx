@@ -8,7 +8,7 @@ import { Checkbox } from '@/common/ui/checkbox'
 import { RadioGroup, RadioGroupItem } from '@/common/ui/radio-group'
 import { Label } from '@/common/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/common/ui/select'
-import { DateTimePicker } from '@fk6/react-datepicker'
+import HijrPicker from '@/common/ui/hijr-picker'
 
 interface Props {
   name: string
@@ -83,14 +83,21 @@ function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: Fie
     case 'checkbox': {
       const { checkboxLabel } = field
       return (
-        <Checkbox
-          size={'lg'}
-          checked={value}
-          onCheckedChange={(e) => setFieldValue(name, e)}
-          onBlur={onBlur}
-        >
-          {checkboxLabel}
-        </Checkbox>
+        <div className={'flex items-center space-x-2'}>
+          <Checkbox
+            size={'lg'}
+            checked={value}
+            onCheckedChange={(e) => setFieldValue(name, e)}
+            onBlur={onBlur}
+            id={`checkbox_for_${name}`}
+          />
+          <Label
+            className={'block text-sm/6 font-medium text-gray-900'}
+            htmlFor={`checkbox_for_${name}`}
+          >
+            {checkboxLabel}
+          </Label>
+        </div>
       )
     }
 
@@ -118,19 +125,7 @@ function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: Fie
 
     case 'date': {
       // return <Datepicker value={value} onChange={({ date }) => setFieldValue(name, date)} />
-      return (
-        <DateTimePicker
-          value={value}
-          calendar="hijri"
-          calendarProps={{
-            position: 'top',
-            disableLocaleDigits: true,
-            hideFooter: true,
-          }}
-          onChange={(date) => setFieldValue(name, date)}
-          className={'w-full'}
-        />
-      )
+      return <HijrPicker value={value} setFieldValue={setFieldValue} name={name} />
     }
 
     case 'select': {

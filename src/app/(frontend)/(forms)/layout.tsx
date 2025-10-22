@@ -16,20 +16,20 @@ const FormsLayout = ({ children }: { children: ReactNode }) => (
         `}
     </style>
     <div className="flex flex-col items-center justify-center grow bg-center bg-no-repeat page-bg">
-      <div className="m-5">
-        <Link href="/">
-          <img
-            src={toAbsoluteUrl('/android-chrome-192x192.png')}
-            className="h-[35px] max-w-none"
-            alt=""
-          />
-        </Link>
-      </div>
-      <Card className="w-full max-w-[400px]">
+      {/*<div className="m-5">*/}
+      {/*  <Link href="/">*/}
+      {/*    <img*/}
+      {/*      src={toAbsoluteUrl('/android-chrome-192x192.png')}*/}
+      {/*      className="h-[35px] max-w-none"*/}
+      {/*      alt=""*/}
+      {/*    />*/}
+      {/*  </Link>*/}
+      {/*</div>*/}
+      <div className="w-full max-w-[400px]">
         <CardContent className="p-6">{children}</CardContent>
-      </Card>
+      </div>
     </div>
   </>
 )
 
-export default FormsLayout;
+export default FormsLayout

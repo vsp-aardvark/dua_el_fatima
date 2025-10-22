@@ -1,4 +1,4 @@
-import { FormDataSchema, FormUISchema } from './types';
+import { FormDataSchema, FormUISchema } from './types'
 
 export const dataSchema: FormDataSchema = {
   fields: {
@@ -47,12 +47,12 @@ export const dataSchema: FormDataSchema = {
     },
     profileStatus: {
       type: 'checkbox',
-      label: 'Profile Status',
-      checkboxLabel: 'Active',
+      label: '',
+      checkboxLabel: 'Profile Status Active',
       required: true,
     },
   },
-};
+}
 
 export const uiSchema: FormUISchema = {
   sections: [
@@ -69,4 +69,4 @@ export const uiSchema: FormUISchema = {
       ],
     },
   ],
-};
+}
