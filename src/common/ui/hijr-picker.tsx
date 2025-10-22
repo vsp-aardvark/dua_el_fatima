@@ -1,8 +1,12 @@
-"use client"
+'use client'
 
+import dynamic from 'next/dynamic'
 import React, { FC, useRef, useState } from 'react'
-import { DateTimePicker } from '@fk6/react-datepicker'
 import { FormikHelpers } from 'formik/dist/types'
+
+const DatePicker = dynamic(() => import('@fk6/react-datepicker'), {
+  ssr: false,
+})
 
 type Props = {
   value: Date | string
@@ -16,7 +20,8 @@ const HijrPicker: FC<Props> = ({ value, setFieldValue, name }) => {
   // const handleDivClick = useCallback(() => {}, [])
   return (
     <>
-      <DateTimePicker
+      {/*// @ts-ignore*/}
+      <DatePicker.DateTimePicker
         value={value}
         calendar="hijri"
         calendarProps={{
@@ -26,7 +31,7 @@ const HijrPicker: FC<Props> = ({ value, setFieldValue, name }) => {
             is12h: true,
           },
         }}
-        onChange={(date) => setFieldValue(name, date)}
+        onChange={(date: any) => setFieldValue(name, date)}
         className={'w-full'}
         placeholder={'Select here'}
         ref={inputRef}
