@@ -8,9 +8,13 @@ import { Checkbox } from '@/common/ui/checkbox'
 import { RadioGroup, RadioGroupItem } from '@/common/ui/radio-group'
 import { Label } from '@/common/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/common/ui/select'
-import HijrPicker from '@/common/ui/hijr-picker'
 import Editor from '@/common/ui/editor'
 import AsyncSelect from '@/common/ui/async-select'
+import dynamic from 'next/dynamic'
+
+const HijrPicker = dynamic(() => import('@/common/ui/hijr-picker'), {
+  ssr: false,
+})
 
 interface Props {
   name: string
