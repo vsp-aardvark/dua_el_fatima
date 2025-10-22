@@ -14,8 +14,6 @@ const schema = z.object({
 })
 
 export default async function createElaan(formData: Record<string, any>) {
-  console.log('Data', formData)
-
   //'title', 'datetime', 'venueType', 'venue'
   const validatedFields = schema.safeParse(formData)
 
@@ -47,7 +45,7 @@ export default async function createElaan(formData: Record<string, any>) {
         venue0: data.venue,
       },
     })
-    console.log('Elaan data', elaan)
+    console.log('Elaan data', elaan.title)
 
     redirect('/forms/done')
   } catch (e: any) {
