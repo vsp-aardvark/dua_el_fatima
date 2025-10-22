@@ -1,3 +1,5 @@
+"use client"
+
 import React, { FC, useRef, useState } from 'react'
 import { DateTimePicker } from '@fk6/react-datepicker'
 import { FormikHelpers } from 'formik/dist/types'
