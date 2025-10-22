@@ -1,3 +1,5 @@
+import { AsyncSelectProps } from '@/common/ui/async-select'
+
 export interface FormDataSchema {
   fields: {
     [fieldName: string]: FormField
@@ -17,6 +19,7 @@ export type FormField =
   | FormDateTimeField
   | FormPictureListField
   | FormEditorField
+  | FormAsyncSelectField
 
 export interface FormBaseField {
   label?: string
@@ -66,6 +69,11 @@ export interface FormRadioField extends FormBaseField {
 export interface FormSelectField extends FormBaseField {
   type: 'select'
   options: FormFieldSelectOption[]
+}
+
+export interface FormAsyncSelectField extends FormBaseField {
+  type: 'async-select'
+  config: Omit<AsyncSelectProps, 'setFieldValue' | 'value' | 'name' | 'placeholder'>
 }
 
 export interface FormDateField extends FormBaseField {

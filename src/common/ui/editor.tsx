@@ -9,7 +9,7 @@ import { FC, useCallback } from 'react'
 import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin'
 
 type Props = {
-  value: Date | string
+  value: any
   name: string
 } & Pick<FormikHelpers<any>, 'setFieldValue'>
 type OnChangeType = Parameters<typeof OnChangePlugin>[0]['onChange']

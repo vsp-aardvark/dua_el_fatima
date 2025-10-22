@@ -42,6 +42,13 @@ const Scheduler = ({}) => {
           type: 'editor',
           label: 'Editor',
         },
+        categories: {
+          type: 'async-select',
+          label: '',
+          config: {
+            collection: 'categories',
+          },
+        },
       },
     }
   }, [])
@@ -51,7 +58,7 @@ const Scheduler = ({}) => {
       sections: [
         {
           title: 'Elaan Form',
-          fields: ['title', 'datetime', 'venueType', 'venue', 'editor'],
+          fields: ['title', 'datetime', 'venueType', 'venue', 'editor', 'categories'],
         },
       ],
     }

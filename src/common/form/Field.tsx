@@ -10,6 +10,7 @@ import { Label } from '@/common/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/common/ui/select'
 import HijrPicker from '@/common/ui/hijr-picker'
 import Editor from '@/common/ui/editor'
+import AsyncSelect from '@/common/ui/async-select'
 
 interface Props {
   name: string
@@ -132,6 +133,12 @@ function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: Fie
     case 'editor': {
       // return <Datepicker value={value} onChange={({ date }) => setFieldValue(name, date)} />
       return <Editor value={value} name={name} setFieldValue={setFieldValue} />
+    }
+
+    case 'async-select': {
+      const { config } = field
+      // return <Datepicker value={value} onChange={({ date }) => setFieldValue(name, date)} />
+      return <AsyncSelect value={value} name={name} setFieldValue={setFieldValue} {...config} />
     }
 
     case 'select': {
