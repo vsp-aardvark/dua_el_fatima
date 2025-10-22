@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
-import Link from 'next/link'
 import { toAbsoluteUrl } from '@/common/lib/helpers'
-import { Card, CardContent } from '@/common/ui/card'
+import { CardContent } from '@/common/ui/card'
 
 const FormsLayout = ({ children }: { children: ReactNode }) => (
   <>
@@ -25,7 +24,7 @@ const FormsLayout = ({ children }: { children: ReactNode }) => (
       {/*    />*/}
       {/*  </Link>*/}
       {/*</div>*/}
-      <div className="w-full max-w-[400px]">
+      <div className="w-full md:max-w-[400px] mx-auto mx-w-[95%]">
         <CardContent className="p-6">{children}</CardContent>
       </div>
     </div>
