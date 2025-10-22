@@ -3,84 +3,83 @@
 import React, { useMemo } from 'react'
 import { FormDataSchema, FormUISchema } from '@/common/form/types'
 import Form from '@/common/form/Form'
+import useHandleSubmit from '@/common/form/useHandleSubmit'
+import createDraft from '@/app/actions/create-draft'
 
-const Scheduler = ({}) => {
+const Draft = ({}) => {
   const dataSchema: FormDataSchema = useMemo(() => {
     return {
       fields: {
         title: {
-          type: 'select',
-          label: 'Elaan',
+          type: 'text',
+          label: 'Title',
           caption: '',
           required: true,
-          options: [
-            { label: 'Majls', id: 'Majls' },
-            { label: 'Jashan', id: 'Jashan' },
-            { label: 'Amaal', id: 'Amaal' },
-          ],
         },
-        datetime: {
-          type: 'date',
-          label: 'Ba Tareeq & Ba Waqt',
-          required: true,
+        subject: {
+          type: 'async-select',
+          label: 'Shaheed / Munasibath',
+          required: false,
+          config: {
+            collection: 'subjects',
+          },
         },
-        venueType: {
-          label: 'Select',
-          type: 'radio',
-          options: [
-            { label: 'Mutamanni', value: 'male' },
-            { label: 'Bani-e-Majlis', value: 'female' },
-            { label: 'Bani-e-Jashan', value: 'other' },
-          ],
+        category: {
+          type: 'async-select',
+          label: 'Category',
+          required: false,
+          config: {
+            collection: 'categories',
+          },
+          caption: 'e.g Nouha, Marsia',
         },
-        venue: {
-          type: 'textarea',
-          label: 'Ba MuQaaam',
-          required: true,
+        group: {
+          type: 'async-select',
+          label: 'Anjuman (Optional)',
+          required: false,
+          config: {
+            collection: 'groups',
+          },
+          caption: 'e.g e Masomeen',
         },
         editor: {
           type: 'editor',
           label: 'Editor',
-        },
-        categories: {
-          type: 'async-select',
-          label: '',
-          config: {
-            collection: 'categories',
-          },
+          required: false,
         },
       },
     }
   }, [])
-
   const uiSchema: FormUISchema = useMemo(() => {
     return {
       sections: [
         {
           title: 'Elaan Form',
-          fields: ['title', 'datetime', 'venueType', 'venue', 'editor', 'categories'],
+          fields: ['title', 'subject', 'category', 'group', 'editor'],
         },
       ],
     }
   }, [])
+
+  const [handleSubmit] = useHandleSubmit(createDraft, {})
 
   return (
     <>
       <Form
         initialValues={{
           title: '',
-          datetime: '',
-          venueType: '',
-          venue: [],
+          subject: '',
+          category: '',
+          group: '',
           editor: '',
         }}
         dataSchema={dataSchema}
         uiSchema={uiSchema}
         className={'grid grid-cols-1 gap-4'}
-        onSubmit={(values) => alert(JSON.stringify(values, null, 4))}
+        onSubmit={handleSubmit}
       />
     </>
   )
 }
 
-export default Scheduler
+export default Draft

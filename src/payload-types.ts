@@ -337,7 +337,7 @@ export interface PoemsDraft {
    * e.g Nouha, Marsia
    */
   category: string | Category;
-  group: string | Group;
+  group?: (string | null) | Group;
   /**
    * Required unless this poem is a group (see below).
    */

@@ -15,12 +15,13 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/common/ui/popover'
 import { RiCheckboxCircleFill } from '@remixicon/react'
 import { FormikHelpers } from 'formik/dist/types'
 import { FC, useCallback, useEffect, useState } from 'react'
+import { Config } from '@/payload-types'
 
 export type AsyncSelectProps = {
   value: Date | string
   name: string
   placeholder?: string
-  collection: string
+  collection: keyof Config['collections']
   ///which field to display as label
   labelKey?: string
   // which field to use as value
@@ -34,7 +35,7 @@ const AsyncSelect: FC<AsyncSelectProps> = ({
   collection,
   labelKey = 'title',
   valueKey = 'id',
-  placeholder = 'Select an item...',
+  placeholder = 'Select any item...',
   searchKey = 'title',
   name,
 }) => {
@@ -93,7 +94,7 @@ const AsyncSelect: FC<AsyncSelectProps> = ({
       </PopoverTrigger>
       <PopoverContent className="w-(--radix-popper-anchor-width) p-0">
         <Command>
-          <CommandInput placeholder="Search city..." value={query} onValueChange={setQuery} />
+          <CommandInput placeholder={placeholder} value={query} onValueChange={setQuery} />
           <CommandList>
             <CommandEmpty>{loading ? 'Loading...' : 'No results found.'}</CommandEmpty>
             <CommandGroup>

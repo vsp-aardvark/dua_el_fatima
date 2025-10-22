@@ -69,7 +69,7 @@ const PoemDrafts: CollectionConfig = {
       name: 'group',
       type: 'relationship',
       relationTo: 'groups',
-      required: true,
+      required: false,
       label: 'Anjuman',
     },
     {
