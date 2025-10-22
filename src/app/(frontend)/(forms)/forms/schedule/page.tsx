@@ -61,13 +61,11 @@ const Scheduler = ({}) => {
     <>
       <Form
         initialValues={{
-          name: '',
-          email: '',
-          dateOfBirth: '',
-          favoriteColor: [],
-          aboutYourself: '',
-          radioGroup: '',
-          profileStatus: '',
+          title: '',
+          datetime: '',
+          venueType: '',
+          venue: [],
+          editor: '',
         }}
         dataSchema={dataSchema}
         uiSchema={uiSchema}
