@@ -29,7 +29,8 @@ const Form = ({ initialValues, dataSchema, uiSchema, onSubmit, className }: Form
       validateOnBlur={false}
       validateOnChange={false}
     >
-      {({ handleSubmit, values, touched }) => {
+      {({ handleSubmit, values }) => {
+        console.log('Values', values)
         return (
           <form onSubmit={handleSubmit}>
             {sections.map((section) => {
@@ -140,13 +141,15 @@ const getFieldValue = ({
   }
   switch (field.type) {
     case 'text':
+    case 'number':
+    case 'editor':
     case 'textarea':
+    case 'email':
+    case 'date':
     case 'checkbox':
     case 'radio':
-    case 'date':
-      return values[name]
     case 'select':
-      return values[name].values
+      return values[name]
   }
 }
 
