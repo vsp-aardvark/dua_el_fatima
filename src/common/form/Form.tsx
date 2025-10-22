@@ -1,17 +1,18 @@
 'use client'
 
 import React from 'react'
-import { Formik } from 'formik'
+import { Formik, FormikConfig } from 'formik'
 import FormikFormControl from './FormikFormControl'
 import Field from './Field'
 import { FormDataSchema, FormUISchema, FormField } from './types'
 import { Button } from '@/common/ui/button'
+import { ProgressCircle } from '@/common/ui/progress'
 
 interface FormProps {
   initialValues: { [key: string]: any }
   dataSchema: FormDataSchema
   uiSchema: FormUISchema
-  onSubmit: (values: any) => void
+  onSubmit: FormikConfig<any>['onSubmit']
   /**
    * Section ClassName
    */
@@ -29,8 +30,7 @@ const Form = ({ initialValues, dataSchema, uiSchema, onSubmit, className }: Form
       validateOnBlur={false}
       validateOnChange={false}
     >
-      {({ handleSubmit, values }) => {
-        console.log('Values', values)
+      {({ handleSubmit, values, isSubmitting, isValid }) => {
         return (
           <form onSubmit={handleSubmit}>
             {sections.map((section) => {
@@ -62,8 +62,21 @@ const Form = ({ initialValues, dataSchema, uiSchema, onSubmit, className }: Form
                 </div>
               )
             })}
-            <Button type="submit" className={'block w-full my-3'}>
-              Submit
+            <Button
+              type="submit"
+              className={'block w-full my-3'}
+              disabled={isSubmitting || !isValid}
+            >
+              {isSubmitting ? (
+                <ProgressCircle
+                  value={25}
+                  size={24}
+                  strokeWidth={2}
+                  className="text-blue-500 animate-spin"
+                />
+              ) : (
+                'Submit'
+              )}
             </Button>
           </form>
         )

@@ -58,25 +58,15 @@ const EventDrafts: CollectionConfig = {
     },
     {
       name: 'dateAt',
-      type: 'date',
+      type: 'text',
       required: true,
       label: 'Ba Tareeq',
-      admin: {
-        date: {
-          pickerAppearance: 'dayOnly',
-        },
-      },
     },
     {
       name: 'timeAt',
-      type: 'date',
+      type: 'text',
       required: false,
       label: 'Ba WaQt',
-      admin: {
-        date: {
-          pickerAppearance: 'timeOnly',
-        },
-      },
     },
     {
       name: 'message',

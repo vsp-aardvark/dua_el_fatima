@@ -20,6 +20,9 @@ const HijrPicker: FC<Props> = ({ value, setFieldValue, name }) => {
         calendarProps={{
           position: 'top',
           disableLocaleDigits: true,
+          timePickerProps: {
+            is12h: true,
+          },
         }}
         onChange={(date) => setFieldValue(name, date)}
         className={'w-full'}
