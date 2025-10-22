@@ -8,6 +8,7 @@ import { Checkbox } from '@/common/ui/checkbox'
 import { RadioGroup, RadioGroupItem } from '@/common/ui/radio-group'
 import { Label } from '@/common/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/common/ui/select'
+import { DateTimePicker } from '@fk6/react-datepicker'
 
 interface Props {
   name: string
@@ -48,24 +49,21 @@ type FieldSwitchProps = {
   handleChange: any
 } & FormikProps<any>
 
-function FieldSwitch({
-  name,
-  field,
-  handleChange,
-  setFieldValue,
-  setFieldTouched,
-  value,
-}: FieldSwitchProps) {
+function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: FieldSwitchProps) {
   const onBlur = () => setFieldTouched(name)
 
   switch (field.type) {
+    case 'email':
+    case 'number':
     case 'text': {
       return (
         <Input
           name={name}
           value={value}
-          onChange={(e: any) => setFieldValue(name, e.target.value)}
+          onChange={(e) => setFieldValue(name, e.target.value)}
           onBlur={onBlur}
+          variant="lg"
+          type={field.type}
         />
       )
     }
@@ -75,15 +73,10 @@ function FieldSwitch({
         <Textarea
           name={name}
           value={value}
-          onChange={(e: any) => setFieldValue(name, e.target.value)}
+          onChange={(e) => setFieldValue(name, e.target.value)}
           onBlur={onBlur}
+          variant="lg"
         />
-      )
-    }
-
-    case 'integer': {
-      return (
-        <Input name={name} value={value} onChange={handleChange} onBlur={onBlur} type="number" />
       )
     }
 
@@ -91,8 +84,9 @@ function FieldSwitch({
       const { checkboxLabel } = field
       return (
         <Checkbox
+          size={'lg'}
           checked={value}
-          onChange={(e: any) => setFieldValue(name, e.target.checked)}
+          onCheckedChange={(e) => setFieldValue(name, e)}
           onBlur={onBlur}
         >
           {checkboxLabel}
@@ -108,6 +102,7 @@ function FieldSwitch({
           onValueChange={(e) => setFieldValue(name, e)}
           onBlur={onBlur}
           defaultValue={value}
+          size={'lg'}
         >
           {options.map((option, index) => (
             <div className="flex items-center space-x-2" key={index}>
@@ -123,7 +118,19 @@ function FieldSwitch({
 
     case 'date': {
       // return <Datepicker value={value} onChange={({ date }) => setFieldValue(name, date)} />
-      return null
+      return (
+        <DateTimePicker
+          value={value}
+          calendar="hijri"
+          calendarProps={{
+            position: 'top',
+            disableLocaleDigits: true,
+            hideFooter: true,
+          }}
+          onChange={(date) => setFieldValue(name, date)}
+          className={'w-full'}
+        />
+      )
     }
 
     case 'select': {
@@ -135,7 +142,7 @@ function FieldSwitch({
             onValueChange={(params) => setFieldValue(name, params)}
             onOpenChange={onBlur}
           >
-            <SelectTrigger>
+            <SelectTrigger size={'lg'}>
               <SelectValue placeholder={field.label} />
             </SelectTrigger>
             <SelectContent>

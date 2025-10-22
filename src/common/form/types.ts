@@ -1,99 +1,106 @@
 export interface FormDataSchema {
   fields: {
-    [fieldName: string]: FormField;
-  };
+    [fieldName: string]: FormField
+  }
 }
 
 export type FormField =
   | FormTextField
   | FormTextAreaField
-  | FormIntegerField
+  | FormNumberField
+  | FormEmailField
   | FormFloatField
   | FormCheckboxField
   | FormRadioField
   | FormSelectField
   | FormDateField
   | FormDateTimeField
-  | FormPictureListField;
+  | FormPictureListField
 
 export interface FormBaseField {
-  label?: string;
-  caption?: string;
-  error?: string;
-  required?: boolean;
-  checkboxLabel?: string;
-  condition?: FormFieldDisplayCondition;
+  label?: string
+  caption?: string
+  error?: string
+  required?: boolean
+  checkboxLabel?: string
+  condition?: FormFieldDisplayCondition
 }
 
 export interface FormTextField extends FormBaseField {
-  type: 'text';
+  type: 'text'
 }
 
 export interface FormTextAreaField extends FormBaseField {
-  type: 'textarea';
+  type: 'textarea'
 }
 
-export interface FormIntegerField extends FormBaseField {
-  type: 'integer';
-  unit?: string;
+export interface FormNumberField extends FormBaseField {
+  type: 'number'
+  unit?: string
+}
+
+export interface FormEmailField extends FormBaseField {
+  type: 'email'
+  unit?: string
 }
 
 export interface FormFloatField extends FormBaseField {
-  type: 'float';
+  type: 'float'
 }
 
 export interface FormCheckboxField extends FormBaseField {
-  type: 'checkbox';
-  checkboxLabel?: string;
+  type: 'checkbox'
+  checkboxLabel?: string
 }
 
 export interface FormRadioField extends FormBaseField {
-  type: 'radio';
-  options: FormFieldOption[];
+  type: 'radio'
+  options: FormFieldOption[]
 }
 
 export interface FormSelectField extends FormBaseField {
-  type: 'select';
-  options: FormFieldSelectOption[];
+  type: 'select'
+  options: FormFieldSelectOption[]
 }
 
 export interface FormDateField extends FormBaseField {
-  type: 'date';
+  type: 'date'
 }
 
 export interface FormDateTimeField extends FormBaseField {
-  type: 'datetime';
+  type: 'datetime'
 }
 
 export interface FormPictureListField extends FormBaseField {
-  type: 'picturelist';
+  type: 'picturelist'
 }
 
 export interface FormFieldOption {
-  label: string;
-  value: string;
+  label: string
+  value: string
 }
+
 export interface FormFieldSelectOption {
-  label: string;
-  id: string;
+  label: string
+  id: string
 }
 
 export interface FormFieldDisplayRule {
-  field: string;
-  value: string | number | boolean | null | undefined;
+  field: string
+  value: string | number | boolean | null | undefined
 }
 
 export interface FormFieldDisplayCondition {
-  rules: FormFieldDisplayRule[];
-  operator: 'OR' | 'AND';
+  rules: FormFieldDisplayRule[]
+  operator: 'OR' | 'AND'
 }
 
 export interface FormUISchema {
-  sections: FormUISchemaSection[];
+  sections: FormUISchemaSection[]
 }
 
 export interface FormUISchemaSection {
-  title?: string;
-  caption?: string;
-  fields: string[];
+  title?: string
+  caption?: string
+  fields: string[]
 }

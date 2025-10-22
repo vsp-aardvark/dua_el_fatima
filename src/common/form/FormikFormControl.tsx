@@ -27,7 +27,7 @@ export const FormikFormControl: React.FC<Props & PropsWithChildren> = ({
             className={cn('flex flex-col gap-2.5', className)}
             data-invalid={!!error}
           >
-            <FormLabel>{label}</FormLabel>
+            <FormLabel className={"block text-sm/6 font-medium text-gray-900"} >{label}</FormLabel>
             {children}
             <FormDescription error={touched ? error : undefined}>{caption}</FormDescription>
           </div>

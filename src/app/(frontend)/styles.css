@@ -296,13 +296,16 @@ svg {
     ::-webkit-scrollbar {
         width: 5px;
     }
+
     ::-webkit-scrollbar-track {
         background: transparent;
     }
+
     ::-webkit-scrollbar-thumb {
         background: var(--input);
         border-radius: 5px;
     }
+
     * {
         scrollbar-width: thin;
         scrollbar-color: var(--input) transparent;
@@ -326,3 +329,5 @@ html {
 @utility container-fluid {
     @apply w-full mx-auto px-4 lg:px-5;
 }
+
+@import "./styles/date-picker.css";
