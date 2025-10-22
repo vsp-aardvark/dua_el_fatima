@@ -1,10 +1,62 @@
 'use client'
 
-import React from 'react'
+import React, { useMemo } from 'react'
 import { FormDataSchema, FormUISchema } from '@/common/form/types'
-import { Form } from '@/common/form/Form'
+import Form from '@/common/form/Form'
 
 const Scheduler = ({}) => {
+  const dataSchema: FormDataSchema = useMemo(() => {
+    return {
+      fields: {
+        title: {
+          type: 'select',
+          label: 'Elaan',
+          caption: '',
+          required: true,
+          options: [
+            { label: 'Majls', id: 'Majls' },
+            { label: 'Jashan', id: 'Jashan' },
+            { label: 'Amaal', id: 'Amaal' },
+          ],
+        },
+        datetime: {
+          type: 'date',
+          label: 'Ba Tareeq & Ba Waqt',
+          required: true,
+        },
+        venueType: {
+          label: 'Select',
+          type: 'radio',
+          options: [
+            { label: 'Mutamanni', value: 'male' },
+            { label: 'Bani-e-Majlis', value: 'female' },
+            { label: 'Bani-e-Jashan', value: 'other' },
+          ],
+        },
+        venue: {
+          type: 'textarea',
+          label: 'Ba MuQaaam',
+          required: true,
+        },
+        editor: {
+          type: 'editor',
+          label: 'Editor',
+        },
+      },
+    }
+  }, [])
+
+  const uiSchema: FormUISchema = useMemo(() => {
+    return {
+      sections: [
+        {
+          title: 'Elaan Form',
+          fields: ['title', 'datetime', 'venueType', 'venue', 'editor'],
+        },
+      ],
+    }
+  }, [])
+
   return (
     <>
       <Form
@@ -24,54 +76,6 @@ const Scheduler = ({}) => {
       />
     </>
   )
-}
-
-const dataSchema: FormDataSchema = {
-  fields: {
-    title: {
-      type: 'select',
-      label: 'Elaan',
-      caption: '',
-      required: true,
-      options: [
-        { label: 'Majls', id: 'Majls' },
-        { label: 'Jashan', id: 'Jashan' },
-        { label: 'Amaal', id: 'Amaal' },
-      ],
-    },
-    datetime: {
-      type: 'date',
-      label: 'Ba Tareeq & Ba Waqt',
-      required: true,
-    },
-    venueType: {
-      label: 'Select',
-      type: 'radio',
-      options: [
-        { label: 'Mutamanni', value: 'male' },
-        { label: 'Bani-e-Majlis', value: 'female' },
-        { label: 'Bani-e-Jashan', value: 'other' },
-      ],
-    },
-    venue: {
-      type: 'textarea',
-      label: 'Ba MuQaaam',
-      required: true,
-    },
-    editor: {
-      type: 'editor',
-      label: 'Editor',
-    },
-  },
-}
-
-const uiSchema: FormUISchema = {
-  sections: [
-    {
-      title: 'Elaan Form',
-      fields: ['title', 'datetime', 'venueType', 'venue', 'editor'],
-    },
-  ],
 }
 
 export default Scheduler

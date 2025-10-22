@@ -5,7 +5,6 @@ import { Formik } from 'formik'
 import FormikFormControl from './FormikFormControl'
 import Field from './Field'
 import { FormDataSchema, FormUISchema, FormField } from './types'
-import { dataSchema, uiSchema } from './schemas'
 import { Button } from '@/common/ui/button'
 
 interface FormProps {
@@ -19,7 +18,7 @@ interface FormProps {
   className?: string
 }
 
-export function Form({ initialValues, dataSchema, uiSchema, onSubmit, className }: FormProps) {
+const Form = ({ initialValues, dataSchema, uiSchema, onSubmit, className }: FormProps) => {
   const { fields: fieldsData } = dataSchema
   const { sections } = uiSchema
   return (
@@ -151,21 +150,4 @@ const getFieldValue = ({
   }
 }
 
-export default function ExampleFormFormik() {
-  return (
-    <Form
-      initialValues={{
-        name: '',
-        email: '',
-        dateOfBirth: '',
-        favoriteColor: [],
-        aboutYourself: '',
-        radioGroup: '',
-        profileStatus: '',
-      }}
-      dataSchema={dataSchema}
-      uiSchema={uiSchema}
-      onSubmit={(values) => alert(JSON.stringify(values, null, 4))}
-    />
-  )
-}
+export default Form
