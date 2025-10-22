@@ -331,3 +331,11 @@ html {
 }
 
 @import "./styles/date-picker.css";
+
+.editor-paragraph {
+    @apply focus-visible:border-0 focus-visible:outline-0;
+}
+
+.editor-placeholder {
+    @apply text-sm text-muted;
+}

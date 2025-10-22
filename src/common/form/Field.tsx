@@ -9,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from '@/common/ui/radio-group'
 import { Label } from '@/common/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/common/ui/select'
 import HijrPicker from '@/common/ui/hijr-picker'
+import Editor from '@/common/ui/editor'
 
 interface Props {
   name: string
@@ -126,6 +127,11 @@ function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: Fie
     case 'date': {
       // return <Datepicker value={value} onChange={({ date }) => setFieldValue(name, date)} />
       return <HijrPicker value={value} setFieldValue={setFieldValue} name={name} />
+    }
+
+    case 'editor': {
+      // return <Datepicker value={value} onChange={({ date }) => setFieldValue(name, date)} />
+      return <Editor value={value} name={name} setFieldValue={setFieldValue} />
     }
 
     case 'select': {
