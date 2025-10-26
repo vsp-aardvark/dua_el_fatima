@@ -27,7 +27,8 @@ export interface FormBaseField {
   error?: string
   required?: boolean
   checkboxLabel?: string
-  condition?: FormFieldDisplayCondition
+  condition?: FormFieldDisplayCondition,
+  placeholder?: string
 }
 
 export interface FormTextField extends FormBaseField {

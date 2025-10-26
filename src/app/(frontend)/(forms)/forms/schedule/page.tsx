@@ -19,7 +19,7 @@ const Scheduler = ({}) => {
           caption: '',
           required: true,
           options: [
-            { label: 'Majls', id: 'Majls' },
+            { label: 'Ma jls', id: 'Majls' },
             { label: 'Jashan', id: 'Jashan' },
             { label: 'Amaal', id: 'Amaal' },
           ],
@@ -43,6 +43,19 @@ const Scheduler = ({}) => {
           label: 'Ba MuQaaam',
           required: true,
         },
+        org: {
+          type: 'text',
+          label: '',
+          required: false,
+          placeholder: 'Organiser',
+          condition: {
+            operator: 'OR',
+            rules: [
+              { field: 'venueType', value: 'Bani-e-Majlis' },
+              { field: 'venueType', value: 'Bani-e-Jashan' },
+            ],
+          },
+        },
       },
     }
   }, [])
@@ -51,7 +64,7 @@ const Scheduler = ({}) => {
       sections: [
         {
           title: 'Elaan Form',
-          fields: ['title', 'datetime', 'venueType', 'venue'],
+          fields: ['title', 'datetime', 'venueType', 'org', 'venue'],
         },
       ],
     }
@@ -67,6 +80,7 @@ const Scheduler = ({}) => {
           datetime: '',
           venueType: '',
           venue: '',
+          org: '',
         }}
         dataSchema={dataSchema}
         uiSchema={uiSchema}
