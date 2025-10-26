@@ -33,7 +33,8 @@ export async function transferDraftPost(path: string, _: Record<string, any> = {
         slug: formatSlug(poemDraft.title),
         content: poemDraft.content,
         subject: poemDraft.subject,
-        category: poemDraft,
+        category: poemDraft.category,
+        // @ts-ignore
         group: poemDraft.group,
         //
         _status: 'published',
@@ -59,9 +60,13 @@ export async function transferDraftPost(path: string, _: Record<string, any> = {
       data: {
         title: eventDraft.title,
         dateAt: eventDraft.dateAt,
+        timeAt: eventDraft.timeAt,
         message: eventDraft.message,
         media: eventDraft.media,
         link: eventDraft.link,
+        venue0: eventDraft.venue0,
+        venue01: eventDraft.venue01,
+        type: eventDraft.type,
         _status: 'published',
       },
     })
