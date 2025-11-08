@@ -19,7 +19,7 @@ const Scheduler = ({}) => {
           caption: '',
           required: true,
           options: [
-            { label: 'Majls', id: 'Majls' },
+            { label: 'Majlis', id: 'Majlis' },
             { label: 'Jashan', id: 'Jashan' },
             { label: 'Amaal', id: 'Amaal' },
           ],
@@ -33,9 +33,8 @@ const Scheduler = ({}) => {
           label: 'Select',
           type: 'radio',
           options: [
-            { label: 'Mutamanni', value: 'Mutamanni' },
-            { label: 'Bani-e-Majlis', value: 'Bani-e-Majlis' },
-            { label: 'Bani-e-Jashan', value: 'Bani-e-Jashan' },
+            { label: 'Bani-e-Majlis | Mutamanni', value: 'Bani-e-Majlis' },
+            { label: 'Bani-e-Jashan | Mutamanni', value: 'Bani-e-Jashan' },
           ],
         },
         venue: {
