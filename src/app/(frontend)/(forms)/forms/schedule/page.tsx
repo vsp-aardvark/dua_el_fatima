@@ -19,7 +19,7 @@ const Scheduler = ({}) => {
           caption: '',
           required: true,
           options: [
-            { label: 'Ma jls', id: 'Majls' },
+            { label: 'Majlis', id: 'Majlis' },
             { label: 'Jashan', id: 'Jashan' },
             { label: 'Amaal', id: 'Amaal' },
           ],
