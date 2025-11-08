@@ -70,6 +70,7 @@ function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: Fie
           onBlur={onBlur}
           variant="lg"
           type={field.type}
+          placeholder={field.placeholder}
         />
       )
     }
@@ -82,6 +83,7 @@ function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: Fie
           onChange={(e) => setFieldValue(name, e.target.value)}
           onBlur={onBlur}
           variant="lg"
+          placeholder={field.placeholder}
         />
       )
     }

@@ -11,6 +11,7 @@ const schema = z.object({
   venueType: z.string(),
   venue: z.string().optional(),
   adj: z.string().optional(),
+  org: z.string().optional(),
 })
 
 export default async function createElaan(formData: Record<string, any>) {
@@ -43,6 +44,7 @@ export default async function createElaan(formData: Record<string, any>) {
         type: data.title,
         message: data.venueType,
         venue0: data.venue,
+        venue01: data.org,
       },
     })
     console.log('Elaan data', elaan.title)
