@@ -12,6 +12,7 @@ import { textToLexical } from '@/utils/text-lexical'
 import { DateTime } from 'luxon'
 import { formatSlug } from '@/common/fields/slug/formatSlug'
 import { appConfig } from '@/utils/app-config'
+import uuid from '@/common/utils/uuid'
 
 const schema = z.object({
   category: z.string(),
@@ -39,7 +40,11 @@ export default async function importLyrics(formData: Record<string, any>) {
 
   //check folder exists
   const ROOT_PATH = appConfig.ROOT_PATH
-  const dir_path = join(ROOT_PATH, 'public/zikr/lyrics', data.path.join('/'))
+  const dir_path = join(
+    ROOT_PATH,
+    'public/zikr/lyrics',
+    data.path.map((e) => decodeURIComponent(e)).join('/'),
+  )
 
   if (!fs.existsSync(dir_path)) {
     console.log('⚠️ Directory does not exist.')
@@ -81,10 +86,10 @@ export default async function importLyrics(formData: Record<string, any>) {
               //
               _status: 'published',
               publishedAt: DateTime.utc().toISO(),
-              slug: formatSlug(file.toUpperCase()),
+              slug: formatSlug(file.trim() ?? uuid()),
             },
           })
-          console.log('✅ SAVED Lyrics data', poem.title, `${file}`)
+          console.log('✅ SAVED Lyrics data', poem.title, data.folders[i], `${file}`)
         }
       } catch (e) {
         console.error(e)

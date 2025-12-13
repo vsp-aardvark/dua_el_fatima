@@ -12,7 +12,11 @@ import { appConfig } from '@/utils/app-config'
 export default async function Page({ params }: { params: Promise<{ paths: string[] }> }) {
   const { paths } = await params
   const ROOT_PATH = appConfig.ROOT_PATH
-  const dir_path = join(ROOT_PATH, 'public/zikr/lyrics', paths.join('/'))
+  const dir_path = join(
+    ROOT_PATH,
+    'public/zikr/lyrics',
+    paths.map((e) => decodeURIComponent(e)).join('/'),
+  )
 
   if (!fs.existsSync(dir_path)) {
     console.error('No such directory', dir_path)
