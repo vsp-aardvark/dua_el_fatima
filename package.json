@@ -41,7 +41,7 @@
     "luxon": "^3.7.1",
     "moment": "^2.30.1",
     "moment-hijri": "^3.0.0",
-    "next": "15.4.7",
+    "next": "15.4.10",
     "payload": "3.49.1",
     "pdfjs-dist": "^5.4.149",
     "postcss": "^8.5.6",
