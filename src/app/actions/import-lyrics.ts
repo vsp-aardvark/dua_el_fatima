@@ -84,7 +84,7 @@ export default async function importLyrics(formData: Record<string, any>) {
               slug: formatSlug(file.toUpperCase()),
             },
           })
-          console.log('✅ SAVED Lyrics data', poem.title, `${file} - ${content}`)
+          console.log('✅ SAVED Lyrics data', poem.title, `${file}`)
         }
       } catch (e) {
         console.error(e)
