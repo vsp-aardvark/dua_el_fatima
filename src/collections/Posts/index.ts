@@ -135,7 +135,7 @@ const Poems: CollectionConfig<'poems'> = {
       name: 'group',
       type: 'relationship',
       relationTo: 'groups',
-      required: true,
+      required: false,
       label: 'Anjuman',
       admin: {
         position: 'sidebar',

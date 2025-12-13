@@ -57,16 +57,17 @@ const AsyncSelect: FC<AsyncSelectProps> = ({
 
         const res = await fetch(url)
         const data = await res.json()
-        setItems(data.docs || [])
+
+        setItems(data.docs ?? [])
       } catch (err) {
         console.error('Error loading collection:', err)
       } finally {
         setLoading(false)
       }
-    }, 400)
+    }, 100)
 
     return () => clearTimeout(delay)
-  }, [collection, query, searchKey])
+  }, [collection, query, searchKey, setItems, setLoading])
 
   const handleSelect = useCallback(
     (currentValue: string, item: any) => {
@@ -93,10 +94,12 @@ const AsyncSelect: FC<AsyncSelectProps> = ({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-(--radix-popper-anchor-width) p-0">
-        <Command>
+        <Command shouldFilter={false}>
           <CommandInput placeholder={placeholder} value={query} onValueChange={setQuery} />
           <CommandList>
-            <CommandEmpty>{loading ? 'Loading...' : 'No results found.'}</CommandEmpty>
+            <CommandEmpty>
+              {loading ? 'Loading...' : `No results found. ${items.length}`}
+            </CommandEmpty>
             <CommandGroup>
               {items.map((item) => (
                 <CommandItem

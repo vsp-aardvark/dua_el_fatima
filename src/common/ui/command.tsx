@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import React from 'react'
-import { cn } from '@/common/lib/utils'
-import { Dialog, DialogContent, DialogTitle } from '@/common/ui/dialog'
-import { type DialogProps } from '@radix-ui/react-dialog'
-import { Command as CommandPrimitive } from 'cmdk'
-import { Check, LucideIcon, Search } from 'lucide-react'
+import React from 'react';
+import { cn } from '@/common/lib/utils';
+import { Dialog, DialogContent, DialogTitle } from '@/common/ui/dialog';
+import { type DialogProps } from '@radix-ui/react-dialog';
+import { Command as CommandPrimitive } from 'cmdk';
+import { Check, LucideIcon, Search } from 'lucide-react';
 
 function Command({ className, ...props }: React.ComponentProps<typeof CommandPrimitive>) {
   return (
@@ -16,10 +16,10 @@ function Command({ className, ...props }: React.ComponentProps<typeof CommandPri
       )}
       {...props}
     />
-  )
+  );
 }
 
-type CommandDialogProps = DialogProps & { className?: string }
+type CommandDialogProps = DialogProps & { className?: string };
 
 const CommandDialog = ({ children, className, ...props }: CommandDialogProps) => {
   return (
@@ -31,19 +31,12 @@ const CommandDialog = ({ children, className, ...props }: CommandDialogProps) =>
         </Command>
       </DialogContent>
     </Dialog>
-  )
-}
+  );
+};
 
-function CommandInput({
-  className,
-  ...props
-}: React.ComponentProps<typeof CommandPrimitive.Input>) {
+function CommandInput({ className, ...props }: React.ComponentProps<typeof CommandPrimitive.Input>) {
   return (
-    <div
-      className="flex items-center border-border border-b px-3"
-      cmdk-input-wrapper=""
-      data-slot="command-input"
-    >
+    <div className="flex items-center border-border border-b px-3" cmdk-input-wrapper="" data-slot="command-input">
       <Search className="me-2 h-4 w-4 shrink-0 opacity-50" />
       <CommandPrimitive.Input
         className={cn(
@@ -53,7 +46,7 @@ function CommandInput({
         {...props}
       />
     </div>
-  )
+  );
 }
 
 function CommandList({ className, ...props }: React.ComponentProps<typeof CommandPrimitive.List>) {
@@ -63,23 +56,14 @@ function CommandList({ className, ...props }: React.ComponentProps<typeof Comman
       className={cn('max-h-[300px] overflow-y-auto overflow-x-hidden', className)}
       {...props}
     />
-  )
+  );
 }
 
 function CommandEmpty({ ...props }: React.ComponentProps<typeof CommandPrimitive.Empty>) {
-  return (
-    <CommandPrimitive.Empty
-      data-slot="command-empty"
-      className="py-6 text-center text-sm"
-      {...props}
-    />
-  )
+  return <CommandPrimitive.Empty data-slot="command-empty" className="py-6 text-center text-sm" {...props} />;
 }
 
-function CommandGroup({
-  className,
-  ...props
-}: React.ComponentProps<typeof CommandPrimitive.Group>) {
+function CommandGroup({ className, ...props }: React.ComponentProps<typeof CommandPrimitive.Group>) {
   return (
     <CommandPrimitive.Group
       data-slot="command-group"
@@ -89,20 +73,17 @@ function CommandGroup({
       )}
       {...props}
     />
-  )
+  );
 }
 
-function CommandSeparator({
-  className,
-  ...props
-}: React.ComponentProps<typeof CommandPrimitive.Separator>) {
+function CommandSeparator({ className, ...props }: React.ComponentProps<typeof CommandPrimitive.Separator>) {
   return (
     <CommandPrimitive.Separator
       data-slot="command-separator"
       className={cn('-mx-1.5 h-px bg-border', className)}
       {...props}
     />
-  )
+  );
 }
 
 function CommandItem({ className, ...props }: React.ComponentProps<typeof CommandPrimitive.Item>) {
@@ -111,11 +92,12 @@ function CommandItem({ className, ...props }: React.ComponentProps<typeof Comman
       data-slot="command-item"
       className={cn(
         'relative flex text-foreground cursor-default gap-2 select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden data-[disabled=true]:pointer-events-none data-[selected=true]:bg-accent data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+        '[&_svg:not([role=img]):not([class*=text-])]:opacity-60',
         className,
       )}
       {...props}
     />
-  )
+  );
 }
 
 const CommandShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
@@ -125,11 +107,11 @@ const CommandShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanE
       className={cn('ms-auto text-xs tracking-widest text-muted-foreground', className)}
       {...props}
     />
-  )
-}
+  );
+};
 
 interface ButtonArrowProps extends React.SVGProps<SVGSVGElement> {
-  icon?: LucideIcon // Allows passing any Lucide icon
+  icon?: LucideIcon; // Allows passing any Lucide icon
 }
 
 function CommandCheck({ icon: Icon = Check, className, ...props }: ButtonArrowProps) {
@@ -140,7 +122,7 @@ function CommandCheck({ icon: Icon = Check, className, ...props }: ButtonArrowPr
       className={cn('size-4 ms-auto text-primary', className)}
       {...props}
     />
-  )
+  );
 }
 
 export {
@@ -154,4 +136,4 @@ export {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-}
+};

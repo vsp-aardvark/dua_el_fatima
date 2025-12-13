@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import Editor from '@/common/ui/editor'
 import AsyncSelect from '@/common/ui/async-select'
 import dynamic from 'next/dynamic'
+import { Separator } from '@/common/ui/separator'
 
 const HijrPicker = dynamic(() => import('@/common/ui/hijr-picker'), {
   ssr: false,
@@ -170,6 +171,9 @@ function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: Fie
         </>
       )
     }
+
+    case 'separator':
+      return <Separator className="my-2" />
 
     default:
       return null

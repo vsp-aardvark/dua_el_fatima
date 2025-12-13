@@ -20,6 +20,7 @@ export type FormField =
   | FormPictureListField
   | FormEditorField
   | FormAsyncSelectField
+  | FormSeparatorField
 
 export interface FormBaseField {
   label?: string
@@ -27,8 +28,12 @@ export interface FormBaseField {
   error?: string
   required?: boolean
   checkboxLabel?: string
-  condition?: FormFieldDisplayCondition,
+  condition?: FormFieldDisplayCondition
   placeholder?: string
+}
+
+export interface FormSeparatorField extends FormBaseField {
+  type: 'separator'
 }
 
 export interface FormTextField extends FormBaseField {

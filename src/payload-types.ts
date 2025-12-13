@@ -201,7 +201,7 @@ export interface Poem {
   slug?: string | null;
   slugLock?: boolean | null;
   publishedAt?: string | null;
-  group: string | Group;
+  group?: (string | null) | Group;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;

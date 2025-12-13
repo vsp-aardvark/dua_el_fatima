@@ -37,7 +37,7 @@ const Form = ({ initialValues, dataSchema, uiSchema, onSubmit, className }: Form
               const { title, fields } = section
               return (
                 <div key={title} className={className}>
-                  {fields.map((fieldName) => {
+                  {fields.map((fieldName, index) => {
                     const field = fieldsData[fieldName]
 
                     if (!field) {
@@ -50,7 +50,7 @@ const Form = ({ initialValues, dataSchema, uiSchema, onSubmit, className }: Form
 
                     return (
                       <FormikFormControl
-                        key={fieldName}
+                        key={index + fieldName}
                         name={fieldName}
                         label={field.label}
                         caption={field.caption}

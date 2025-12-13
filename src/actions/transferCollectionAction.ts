@@ -34,7 +34,6 @@ export async function transferDraftPost(path: string, _: Record<string, any> = {
         content: poemDraft.content,
         subject: poemDraft.subject,
         category: poemDraft.category,
-        // @ts-ignore
         group: poemDraft.group,
         //
         _status: 'published',
