@@ -91,7 +91,8 @@ export default async function importLyrics(formData: Record<string, any>) {
           })
           console.log('✅ SAVED Lyrics data', poem.title, data.folders[i], `${file}`)
         }
-      } catch (e) {
+      } catch (e: Error | any) {
+        console.log(`Error Saving ${file}`, folderPath, e.message)
         console.error(e)
         errors.push(e)
       }
@@ -100,11 +101,7 @@ export default async function importLyrics(formData: Record<string, any>) {
   }
 
   try {
-    if (errors.length > 0) {
-      console.error(errors)
-      throw new Error(`${errors.length} errors found.`)
-    }
-    redirect('/forms/done')
+    redirect(`/forms/done?errors=${errors.length}`)
   } catch (e: any) {
     if (e?.message === 'NEXT_REDIRECT' || e == 'NEXT_REDIRECT') {
       // Re-throw to allow Next.js handling the redirect
