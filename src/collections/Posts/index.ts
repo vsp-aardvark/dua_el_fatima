@@ -142,6 +142,13 @@ const Poems: CollectionConfig<'poems'> = {
       },
     },
   ],
+  indexes: [
+    {
+      // any lyrics with the same title,subject and category
+      fields: ['slug', 'subject', 'category'],
+      unique: true,
+    },
+  ],
   versions: {
     drafts: {
       autosave: {
