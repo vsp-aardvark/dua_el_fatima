@@ -6,16 +6,18 @@ import configPromise from '@payload-config'
 import { redirect } from 'next/navigation'
 import { join } from 'pathe'
 import * as fs from 'node:fs'
-import path from 'path'
 import { LyricExtractor } from '@/utils/lyric-extractor'
-import { textToLexical } from '@/utils/text-lexical'
-import { DateTime } from 'luxon'
-import { formatSlug } from '@/common/fields/slug/formatSlug'
 import { appConfig } from '@/utils/app-config'
-import uuid from '@/common/utils/uuid'
+import {
+  loopFileStructure,
+  loopFolderStructure,
+} from '@/app/(frontend)/(forms)/forms/import/[...paths]/utils'
 
 const schema = z.object({
   category: z.string(),
+  //folders
+  // files
+  type: z.string(),
   group: z.string().optional(),
   path: z.array(z.string()),
   folders: z.array(z.string()),
@@ -25,7 +27,7 @@ export default async function importLyrics(formData: Record<string, any>) {
   const validatedFields = schema.safeParse(formData)
 
   if (!validatedFields.success) {
-    console.log('Errors', validatedFields.error.flatten().fieldErrors)
+    console.log('Errors', z.treeifyError(validatedFields.error).errors)
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Submission failed. Please try again.',
@@ -55,50 +57,22 @@ export default async function importLyrics(formData: Record<string, any>) {
   }
 
   //loop for the provided data
-  const errors = []
   const extractor = new LyricExtractor()
 
-  for (let i = 0; i < data.folders.length; i++) {
-    const subjectValue = formData[`subject${i}`]
-
-    if (subjectValue == undefined || !subjectValue) {
-      console.log(`Subject at ${i} not found`)
-      continue
-    }
-
-    const folderPath = join(dir_path, data.folders[i])
-    const files = fs.readdirSync(folderPath)
-
-    for (const file of files) {
-      try {
-        const content = await extractor.parseFromPath(path.join(folderPath, file))
-        if (!content) {
-          console.log(`Content not found. Please try again. for ${folderPath}/${file}`)
-        } else {
-          const poem = await payload.create({
+  const errors =
+    data.type === 'folders'
+      ? await loopFolderStructure(data, formData, dir_path, extractor, async (poem) => {
+          return await payload.create({
             collection: 'poems',
-            data: {
-              title: file.toUpperCase(),
-              subject: subjectValue,
-              category: data.category,
-              group: data.group,
-              content: textToLexical(content),
-              //
-              _status: 'published',
-              publishedAt: DateTime.utc().toISO(),
-              slug: formatSlug(file.trim() ?? uuid()),
-            },
+            data: poem,
           })
-          console.log('✅ SAVED Lyrics data', poem.title, data.folders[i], `${file}`)
-        }
-      } catch (e: Error | any) {
-        console.log(`Error Saving ${file}`, folderPath, e.message)
-        console.error(e)
-        errors.push(e)
-      }
-    }
-    //loop through the files and insert into
-  }
+        })
+      : await loopFileStructure(data, formData, dir_path, extractor, async (poem) => {
+          return await payload.create({
+            collection: 'poems',
+            data: poem,
+          })
+        })
 
   try {
     redirect(`/forms/done?errors=${errors.length}`)
@@ -114,4 +88,5 @@ export default async function importLyrics(formData: Record<string, any>) {
       message: 'Submission failed. Please try again.',
     }
   }
+  //
 }

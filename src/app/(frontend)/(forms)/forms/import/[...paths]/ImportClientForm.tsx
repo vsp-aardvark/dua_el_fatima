@@ -38,6 +38,15 @@ const ImportClientForm: FC<{ folders: string[]; path: string[] }> = ({ folders, 
             collection: 'subjects',
           },
         },
+        type: {
+          type: 'select',
+          label: 'File structure type',
+          required: false,
+          options: [
+            { label: 'Folders', id: 'folders' },
+            { label: 'Files', id: 'files' },
+          ],
+        },
         category: {
           type: 'async-select',
           label: 'Category',
@@ -73,7 +82,7 @@ const ImportClientForm: FC<{ folders: string[]; path: string[] }> = ({ folders, 
       sections: [
         {
           title: 'Import Client Form',
-          fields: ['category', 'group'].concat(uiFields.flat()),
+          fields: ['category', 'group', 'type'].concat(uiFields.flat()),
         },
       ],
     }
