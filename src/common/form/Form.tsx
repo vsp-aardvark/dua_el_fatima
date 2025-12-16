@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { Formik, FormikConfig } from 'formik'
 import FormikFormControl from './FormikFormControl'
 import Field from './Field'
@@ -19,7 +19,14 @@ interface FormProps {
   className?: string
 }
 
-const Form = ({ initialValues, dataSchema, uiSchema, onSubmit, className }: FormProps) => {
+const Form = ({
+  initialValues,
+  dataSchema,
+  uiSchema,
+  onSubmit,
+  className,
+  children,
+}: FormProps & PropsWithChildren) => {
   const { fields: fieldsData } = dataSchema
   const { sections } = uiSchema
   return (
@@ -62,6 +69,7 @@ const Form = ({ initialValues, dataSchema, uiSchema, onSubmit, className }: Form
                 </div>
               )
             })}
+            {children}
             <Button
               type="submit"
               className={'block w-full my-3'}

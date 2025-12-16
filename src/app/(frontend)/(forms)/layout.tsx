@@ -24,7 +24,7 @@ const FormsLayout = ({ children }: { children: ReactNode }) => (
       {/*    />*/}
       {/*  </Link>*/}
       {/*</div>*/}
-      <div className="w-full md:max-w-[400px] mx-auto mx-w-[95%]">
+      <div className="w-full md:max-w-[500px] mx-auto mx-w-[95%]">
         <CardContent className="p-6">{children}</CardContent>
       </div>
     </div>

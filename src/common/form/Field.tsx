@@ -111,9 +111,10 @@ function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: Fie
     }
 
     case 'radio': {
-      const { options } = field
+      const { options,disabled } = field
       return (
         <RadioGroup
+          disabled={disabled}
           value={value}
           onValueChange={(e) => setFieldValue(name, e)}
           onBlur={onBlur}

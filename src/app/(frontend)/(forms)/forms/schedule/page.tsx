@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { FormDataSchema, FormUISchema } from '@/common/form/types'
 import Form from '@/common/form/Form'
 import createElaan from '@/app/actions/create-elaan'
 import { useSearchParams } from 'next/navigation'
 import useHandleSubmit from '@/common/form/useHandleSubmit'
+import { useFormikContext } from 'formik'
 
 const Scheduler = ({}) => {
   const params = useSearchParams()
@@ -32,10 +33,15 @@ const Scheduler = ({}) => {
         venueType: {
           label: 'Select',
           type: 'radio',
+          disabled: true,
           options: [
             { label: 'Bani-e-Majlis | Mutamanni', value: 'Bani-e-Majlis' },
             { label: 'Bani-e-Jashan | Mutamanni', value: 'Bani-e-Jashan' },
           ],
+          condition: {
+            operator: 'OR',
+            rules: [{ field: 'title', value: 'Amaal' }],
+          },
         },
         venue: {
           type: 'textarea',
@@ -47,13 +53,6 @@ const Scheduler = ({}) => {
           label: '',
           required: false,
           placeholder: 'Organiser',
-          condition: {
-            operator: 'OR',
-            rules: [
-              { field: 'venueType', value: 'Bani-e-Majlis' },
-              { field: 'venueType', value: 'Bani-e-Jashan' },
-            ],
-          },
         },
       },
     }
@@ -85,9 +84,38 @@ const Scheduler = ({}) => {
         uiSchema={uiSchema}
         className={'grid grid-cols-1 gap-4'}
         onSubmit={handleSubmit}
-      />
+      >
+        <OnChangeEffect />
+      </Form>
     </>
   )
+}
+
+/**
+ * 1. Create the observer component
+ * @constructor
+ */
+const OnChangeEffect = () => {
+  // 2. Access Formik context
+  const { values, setFieldValue } = useFormikContext<Record<string, any>>()
+  // 3. Use effect hook to watch specific values
+  useEffect(() => {
+    // 4. Perform the side effect when conditions are met
+    if (values.title && values.title != 'Amaal') {
+      switch (values.title) {
+        case 'Jashan':
+          setFieldValue('venueType', 'Bani-e-Jashan')
+          break
+        case 'Majlis':
+          setFieldValue('venueType', 'Bani-e-Majlis')
+          break
+      }
+    } else {
+      setFieldValue('venueType', null)
+    }
+  }, [setFieldValue, values.title]) // Dependencies array
+
+  return null // This component doesn't render anything
 }
 
 export default Scheduler

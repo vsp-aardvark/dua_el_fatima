@@ -30,6 +30,7 @@ export interface FormBaseField {
   checkboxLabel?: string
   condition?: FormFieldDisplayCondition
   placeholder?: string
+  disabled?: boolean
 }
 
 export interface FormSeparatorField extends FormBaseField {
