@@ -39,7 +39,8 @@ export default async function createElaan(formData: Record<string, any>) {
       data: {
         title: data.title,
         dateAt: data.datetime.toISOString().split('T')[0],
-        timeAt: data.datetime.toISOString().split('T')[1] + (data.adj ?? '0'),
+        //FIXME + (data.adj ?? '0')
+        timeAt: data.datetime.toISOString().split('T')[1].split('.').at(0),
         // @ts-ignore
         type: data.title,
         message: data.venueType,

@@ -64,6 +64,7 @@ const Alerts: CollectionConfig = {
       admin: {
         date: {
           pickerAppearance: 'dayOnly',
+          displayFormat: 'd MMM yyy',
         },
       },
     },
@@ -75,6 +76,7 @@ const Alerts: CollectionConfig = {
       admin: {
         date: {
           pickerAppearance: 'timeOnly',
+          displayFormat: 'h:mm:ss a',
         },
       },
     },
