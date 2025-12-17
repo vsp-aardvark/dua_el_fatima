@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { CardContent } from '@/common/ui/card'
 import { CheckIcon } from 'lucide-react'
@@ -17,6 +19,26 @@ const Page = ({}) => (
           </p>
         </div>
       </div>
+    </div>
+    <div className="mt-5 sm:mt-6">
+      <button
+        type="button"
+        className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+        onClick={() => {
+          // If the event has already fired, call it directly
+          // @ts-ignore
+          if (window?.flutter_inappwebview) {
+            // @ts-ignore
+            window?.flutter_inappwebview
+              ?.callHandler('onCloseHandler', Date.now(), { key: 'value' })
+              .then(function (result: any) {
+                console.log(result)
+              })
+          }
+        }}
+      >
+        Close
+      </button>
     </div>
     <div className="mt-5 sm:mt-6">
       <Link
