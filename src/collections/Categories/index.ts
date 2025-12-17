@@ -43,6 +43,15 @@ const Categories: CollectionConfig = {
         position: 'sidebar',
       },
     },
+    {
+      type: 'checkbox',
+      label: 'Hidden',
+      name: 'hidden',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
 }
 

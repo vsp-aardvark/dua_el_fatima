@@ -56,6 +56,15 @@ const Subjects: CollectionConfig = {
         hidden: true,
       },
     },
+    {
+      type: 'checkbox',
+      label: 'Skip Categories',
+      name: 'skipC',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
 }
 
