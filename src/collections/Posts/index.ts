@@ -97,6 +97,35 @@ const Poems: CollectionConfig<'poems'> = {
           ],
         },
         {
+          label: 'Urdu',
+          fields: [
+            {
+              name: 'urdu',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+                    ParagraphFeature(),
+                    LinkFeature(),
+                    BlocksFeature({ blocks: [MediaBlock] }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                    HorizontalRuleFeature(),
+                  ]
+                },
+              }),
+              label: false,
+              required: false,
+              admin: {
+                condition: (data) => !data?.isGroup || data.isGroup === true,
+                description: 'Required unless this poem is a group (see below).',
+              },
+            },
+          ],
+        },
+        {
           label: 'Media',
           fields: [
             {
@@ -104,6 +133,7 @@ const Poems: CollectionConfig<'poems'> = {
               type: 'upload',
               relationTo: 'media',
               required: false,
+              hasMany: true,
             },
           ],
         },

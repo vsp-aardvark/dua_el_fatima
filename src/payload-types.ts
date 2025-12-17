@@ -197,7 +197,25 @@ export interface Poem {
     };
     [k: string]: unknown;
   } | null;
-  media?: (string | null) | Media;
+  /**
+   * Required unless this poem is a group (see below).
+   */
+  urdu?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  media?: (string | Media)[] | null;
   slug?: string | null;
   slugLock?: boolean | null;
   publishedAt?: string | null;
@@ -657,6 +675,7 @@ export interface PoemsSelect<T extends boolean = true> {
   subject?: T;
   category?: T;
   content?: T;
+  urdu?: T;
   media?: T;
   slug?: T;
   slugLock?: T;
