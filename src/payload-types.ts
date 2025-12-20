@@ -395,6 +395,7 @@ export interface Device {
   info?: string | null;
   lastUsedAt?: string | null;
   lastSeenInfo?: string | null;
+  token?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -797,6 +798,7 @@ export interface DevicesSelect<T extends boolean = true> {
   info?: T;
   lastUsedAt?: T;
   lastSeenInfo?: T;
+  token?: T;
   updatedAt?: T;
   createdAt?: T;
 }

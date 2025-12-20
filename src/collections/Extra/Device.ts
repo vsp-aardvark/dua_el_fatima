@@ -25,6 +25,7 @@ const Devices: CollectionConfig = {
       type: 'text',
       required: true,
       index: true,
+      unique: true,
     },
     {
       label: 'Brand',
@@ -82,6 +83,38 @@ const Devices: CollectionConfig = {
     },
   ],
   defaultSort: ['updatedAt', 'createdAt'],
+  hooks: {
+    beforeChange: [
+      async ({ data, operation, req }) => {
+        if (operation !== 'create') return data
+
+        const existing = await req.payload.find({
+          collection: 'devices',
+          where: {
+            deviceId: { equals: data.deviceId },
+          },
+          select: {
+            deviceId: true,
+            id: true,
+          },
+          limit: 1,
+        })
+
+        if (existing.docs.length > 0) {
+          await req.payload.update({
+            collection: 'devices',
+            id: existing.docs[0].id,
+            data,
+          })
+
+          return false
+          // cancel create
+        }
+
+        return data
+      },
+    ],
+  },
 }
 
 export default Devices
