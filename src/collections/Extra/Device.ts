@@ -24,6 +24,7 @@ const Devices: CollectionConfig = {
       name: 'deviceId',
       type: 'text',
       required: true,
+      index: true,
     },
     {
       label: 'Brand',
