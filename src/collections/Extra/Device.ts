@@ -73,6 +73,12 @@ const Devices: CollectionConfig = {
       type: 'text',
       required: false,
     },
+    {
+      label: 'Push Token',
+      name: 'token',
+      type: 'text',
+      required: false,
+    },
   ],
   defaultSort: ['updatedAt', 'createdAt'],
 }
