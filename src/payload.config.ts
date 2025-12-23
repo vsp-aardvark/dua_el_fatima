@@ -66,19 +66,53 @@ export default buildConfig({
     PoemDrafts,
     Devices,
     Suggestions,
-    Groups
+    Groups,
   ],
   sharp,
   plugins: [
     payloadCloudPlugin(),
     storage,
     searchPlugin({
-      collections: ['poems', 'subjects', 'categories','groups'],
+      collections: ['poems', 'subjects', 'categories', 'groups'],
       defaultPriorities: {
         poems: 10,
         categories: 20,
         subjects: 30,
       },
+      searchOverrides: {
+        fields: ({ defaultFields }) => [
+          ...defaultFields,
+          {
+            name: 'subject',
+            type: 'relationship',
+            relationTo: 'subjects',
+            admin: {
+              position: 'sidebar',
+            },
+            required: false,
+          },
+          {
+            name: 'category',
+            type: 'relationship',
+            admin: {
+              position: 'sidebar',
+            },
+            relationTo: 'categories',
+            required: false,
+          },
+        ],
+      },
+      beforeSync: ({ originalDoc, searchDoc }) => ({
+        ...searchDoc,
+        // - Modify your docs in any way here, this can be async
+        // - You also need to add the `category` & `subject` field in the `searchOverrides` config
+        ...(searchDoc.doc.relationTo == 'poems'
+          ? {
+              subject: originalDoc.subject,
+              category: originalDoc.category,
+            }
+          : {}),
+      }),
     }),
   ],
 })
