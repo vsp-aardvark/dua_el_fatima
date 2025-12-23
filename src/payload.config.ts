@@ -77,7 +77,6 @@ export default buildConfig({
       // collections: ['poems', 'subjects', 'categories', 'groups'],
       defaultPriorities: {
         poems: 10,
-        categories: 20,
         subjects: 30,
       },
       searchOverrides: {
