@@ -73,7 +73,7 @@ export default buildConfig({
     payloadCloudPlugin(),
     storage,
     searchPlugin({
-      collections: ['poems', 'subjects', 'groups'],
+      collections: ['poems'],
       // collections: ['poems', 'subjects', 'categories', 'groups'],
       defaultPriorities: {
         poems: 10,

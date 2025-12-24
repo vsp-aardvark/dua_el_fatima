@@ -434,13 +434,11 @@ export interface Search {
         value: string | Subject;
       }
     | {
-        relationTo: 'categories';
-        value: string | Category;
-      }
-    | {
         relationTo: 'groups';
         value: string | Group;
       };
+  subject?: (string | null) | Subject;
+  category?: (string | null) | Category;
   updatedAt: string;
   createdAt: string;
 }
@@ -838,6 +836,8 @@ export interface SearchSelect<T extends boolean = true> {
   title?: T;
   priority?: T;
   doc?: T;
+  subject?: T;
+  category?: T;
   updatedAt?: T;
   createdAt?: T;
 }
