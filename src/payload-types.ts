@@ -165,6 +165,7 @@ export interface Subject {
     totalDocs?: number;
   };
   skipC?: boolean | null;
+  tags?: string | null;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
@@ -241,6 +242,7 @@ export interface Category {
   slugLock?: boolean | null;
   group?: boolean | null;
   hidden?: boolean | null;
+  tags?: string | null;
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
@@ -660,6 +662,7 @@ export interface SubjectsSelect<T extends boolean = true> {
   sortOrder?: T;
   poems?: T;
   skipC?: T;
+  tags?: T;
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;
@@ -676,6 +679,7 @@ export interface CategoriesSelect<T extends boolean = true> {
   slugLock?: T;
   group?: T;
   hidden?: T;
+  tags?: T;
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;

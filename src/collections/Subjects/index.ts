@@ -65,6 +65,16 @@ const Subjects: CollectionConfig = {
         position: 'sidebar',
       },
     },
+    {
+      type: 'text',
+      label: 'Tags',
+      name: 'tags',
+      required: false,
+      defaultValue: 'all',
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
 }
 
