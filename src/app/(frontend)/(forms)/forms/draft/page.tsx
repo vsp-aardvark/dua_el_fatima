@@ -47,6 +47,11 @@ const Draft = ({}) => {
           label: 'Editor',
           required: false,
         },
+        files: {
+          type: 'picturelist',
+          label: 'Upload Attachments',
+          required: false,
+        },
       },
     }
   }, [])
@@ -55,13 +60,13 @@ const Draft = ({}) => {
       sections: [
         {
           title: 'Elaan Form',
-          fields: ['title', 'subject', 'category', 'group', 'editor'],
+          fields: ['title', 'subject', 'category', 'group', 'editor', 'files'],
         },
       ],
     }
   }, [])
 
-  const [handleSubmit] = useHandleSubmit(createDraft, {})
+  const [handleSubmit] = useHandleSubmit(createDraft, {}, { withFiles: true })
 
   return (
     <>

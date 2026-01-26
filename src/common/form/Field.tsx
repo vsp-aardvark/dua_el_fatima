@@ -12,6 +12,7 @@ import Editor from '@/common/ui/editor'
 import AsyncSelect from '@/common/ui/async-select'
 import dynamic from 'next/dynamic'
 import { Separator } from '@/common/ui/separator'
+import FileUploadCompact from '@/common/ui/upload-compact'
 
 const HijrPicker = dynamic(() => import('@/common/ui/hijr-picker'), {
   ssr: false,
@@ -111,7 +112,7 @@ function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: Fie
     }
 
     case 'radio': {
-      const { options,disabled } = field
+      const { options, disabled } = field
       return (
         <RadioGroup
           disabled={disabled}
@@ -175,6 +176,18 @@ function FieldSwitch({ name, field, setFieldValue, setFieldTouched, value }: Fie
 
     case 'separator':
       return <Separator className="my-2" />
+
+    case 'picturelist':
+      return (
+        <FileUploadCompact
+          maxFiles={10}
+          maxSize={50 * 1024 * 1024} //50mb
+          multiple={true}
+          className={'w-full'}
+          onFilesChange={(files) => setFieldValue(name, files)}
+          accept={'image/*,.pdf'}
+        />
+      )
 
     default:
       return null

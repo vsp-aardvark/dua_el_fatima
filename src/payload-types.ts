@@ -376,7 +376,7 @@ export interface PoemsDraft {
     };
     [k: string]: unknown;
   } | null;
-  media?: (string | null) | Media;
+  media?: (string | Media)[] | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -424,19 +424,10 @@ export interface Search {
   id: string;
   title?: string | null;
   priority?: number | null;
-  doc:
-    | {
-        relationTo: 'poems';
-        value: string | Poem;
-      }
-    | {
-        relationTo: 'subjects';
-        value: string | Subject;
-      }
-    | {
-        relationTo: 'groups';
-        value: string | Group;
-      };
+  doc: {
+    relationTo: 'poems';
+    value: string | Poem;
+  };
   subject?: (string | null) | Subject;
   category?: (string | null) | Category;
   updatedAt: string;

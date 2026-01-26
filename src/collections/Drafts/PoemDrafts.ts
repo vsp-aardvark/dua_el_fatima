@@ -108,6 +108,7 @@ const PoemDrafts: CollectionConfig = {
               relationTo: 'media',
               required: false,
               label: false,
+              hasMany: true,
             },
           ],
         },

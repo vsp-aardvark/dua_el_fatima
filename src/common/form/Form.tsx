@@ -38,6 +38,7 @@ const Form = ({
       validateOnChange={false}
     >
       {({ handleSubmit, values, isSubmitting, isValid }) => {
+        console.log('Form Values', values)
         return (
           <form onSubmit={handleSubmit}>
             {sections.map((section) => {

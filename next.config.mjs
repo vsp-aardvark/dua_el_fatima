@@ -12,11 +12,16 @@ const nextConfig = {
     return webpackConfig
   },
   eslint: {
-    ignoreDuringBuilds: true
+    ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true
-  }
+    ignoreBuildErrors: true,
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '100mb',
+    },
+  },
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })

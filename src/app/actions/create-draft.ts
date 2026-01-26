@@ -13,8 +13,22 @@ const schema = z.object({
   editor: z.any(),
 })
 
-export default async function createDraft(formData: Record<string, any>) {
-  const validatedFields = schema.safeParse(formData)
+export default async function createDraft(formData: FormData) {
+  const body: Record<string, any> = {}
+  formData.forEach((value, key) => {
+    if (key.includes('[]')) {
+      const strippedKey = key.replace('[]', '')
+      if (body[strippedKey]) {
+        body[strippedKey] = [...body[strippedKey], value]
+      } else {
+        body[strippedKey] = [value]
+      }
+    } else {
+      body[key] = value
+    }
+  })
+
+  const validatedFields = schema.safeParse(body)
 
   if (!validatedFields.success) {
     console.log('Errors', validatedFields.error.flatten().fieldErrors)
@@ -39,8 +53,10 @@ export default async function createDraft(formData: Record<string, any>) {
         category: data.category,
         group: data.group,
         content: typeof data.editor == 'string' ? JSON.parse(data.editor) : data.editor,
+        media: body.files ?? undefined,
       },
     })
+
     console.log('Draft data', draft.title)
 
     redirect('/forms/done')
