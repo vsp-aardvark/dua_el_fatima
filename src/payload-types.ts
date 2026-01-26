@@ -78,6 +78,7 @@ export interface Config {
     devices: Device;
     suggestions: Suggestion;
     groups: Group;
+    notifications: Notification;
     search: Search;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
@@ -101,6 +102,7 @@ export interface Config {
     devices: DevicesSelect<false> | DevicesSelect<true>;
     suggestions: SuggestionsSelect<false> | SuggestionsSelect<true>;
     groups: GroupsSelect<false> | GroupsSelect<true>;
+    notifications: NotificationsSelect<false> | NotificationsSelect<true>;
     search: SearchSelect<false> | SearchSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -415,6 +417,21 @@ export interface Suggestion {
   createdAt: string;
 }
 /**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "notifications".
+ */
+export interface Notification {
+  id: string;
+  _order?: string | null;
+  title: string;
+  subtitle: string;
+  message: string;
+  media?: (string | null) | Media;
+  link?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -575,6 +592,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'groups';
         value: string | Group;
+      } | null)
+    | ({
+        relationTo: 'notifications';
+        value: string | Notification;
       } | null)
     | ({
         relationTo: 'search';
@@ -818,6 +839,20 @@ export interface GroupsSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   deletedAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "notifications_select".
+ */
+export interface NotificationsSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  subtitle?: T;
+  message?: T;
+  media?: T;
+  link?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

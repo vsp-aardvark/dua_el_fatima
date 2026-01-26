@@ -19,6 +19,7 @@ import PoemDrafts from '@/collections/Drafts/PoemDrafts'
 import Devices from '@/collections/Extra/Device'
 import Suggestions from '@/collections/Suggestions'
 import Groups from '@/collections/Posts/Groups'
+import Notifications from '@/collections/Notifications'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -67,6 +68,7 @@ export default buildConfig({
     Devices,
     Suggestions,
     Groups,
+    Notifications,
   ],
   sharp,
   plugins: [
