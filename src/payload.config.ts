@@ -85,6 +85,14 @@ export default buildConfig({
         fields: ({ defaultFields }) => [
           ...defaultFields,
           {
+            name: 'tags',
+            type: 'text',
+            admin: {
+              position: 'sidebar',
+            },
+            required: false,
+          },
+          {
             name: 'subject',
             type: 'relationship',
             relationTo: 'subjects',
@@ -112,6 +120,11 @@ export default buildConfig({
           ? {
               subject: originalDoc.subject,
               category: originalDoc.category,
+            }
+          : {}),
+        ...(searchDoc.doc.relationTo == 'subjects'
+          ? {
+              tags: originalDoc.tags,
             }
           : {}),
       }),

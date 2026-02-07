@@ -7,7 +7,7 @@ const Subjects: CollectionConfig = {
   slug: 'subjects',
   admin: {
     useAsTitle: 'title',
-    listSearchableFields: ['title', 'sortOrder'],
+    listSearchableFields: ['title', 'sortOrder', 'tags'],
     defaultColumns: ['title', 'sortOrder', 'slug'],
     group: 'Personality',
   },

@@ -447,6 +447,7 @@ export interface Search {
     relationTo: 'poems';
     value: string | Poem;
   };
+  tags?: string | null;
   subject?: (string | null) | Subject;
   category?: (string | null) | Category;
   updatedAt: string;
@@ -866,6 +867,7 @@ export interface SearchSelect<T extends boolean = true> {
   title?: T;
   priority?: T;
   doc?: T;
+  tags?: T;
   subject?: T;
   category?: T;
   updatedAt?: T;
