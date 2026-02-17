@@ -109,7 +109,7 @@ export const loopFileStructure = async (
           //
           _status: 'published',
           publishedAt: DateTime.utc().toISO(),
-          slug: formatSlug(fileName.trim() ?? uuid()),
+          slug: formatSlug((fileName as string).replace(' ', '-').trim() ?? uuid()) + uuid(),
         })
 
         console.log('✅ SAVED Lyrics data', poem.title, fileName)
