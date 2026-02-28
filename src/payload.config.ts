@@ -20,6 +20,7 @@ import Devices from '@/collections/Extra/Device'
 import Suggestions from '@/collections/Suggestions'
 import Groups from '@/collections/Posts/Groups'
 import Notifications from '@/collections/Notifications'
+import Folders from './collections/Folder'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -69,6 +70,7 @@ export default buildConfig({
     Suggestions,
     Groups,
     Notifications,
+    Folders
   ],
   sharp,
   plugins: [

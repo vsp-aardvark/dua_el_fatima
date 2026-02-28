@@ -1,26 +1,21 @@
 import { CollectionConfig } from 'payload'
+import { slugField } from '@/common/fields/slug'
 import { anyone } from '@/access/anyone'
 import { authenticated } from '@/access/authenticated'
-import { slugField } from '@/common/fields/slug'
 
-const Subjects: CollectionConfig = {
-  slug: 'subjects',
+const Folders: CollectionConfig = {
+  slug: 'folders',
   admin: {
     useAsTitle: 'title',
-    listSearchableFields: ['title', 'sortOrder', 'tags'],
     defaultColumns: ['title', 'sortOrder', 'slug'],
+    listSearchableFields: ['title', 'sortOrder'],
     group: 'Personality',
   },
   defaultPopulate: {
     title: true,
     slug: true,
-    skipC: true,
   },
   orderable: true,
-  labels: {
-    singular: 'Personality',
-    plural: 'Personalities',
-  },
   trash: true,
   access: {
     read: anyone,
@@ -40,27 +35,9 @@ const Subjects: CollectionConfig = {
     },
     ...slugField(),
     {
-      name: 'sortOrder',
-      type: 'number',
-      required: false,
-      defaultValue: 0,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'poems', // reverse relation
-      type: 'join',
-      collection: 'poems',
-      on: 'subject',
-      admin: {
-        hidden: true,
-      },
-    },
-    {
       type: 'checkbox',
-      label: 'Skip Categories',
-      name: 'skipC',
+      label: 'Hidden',
+      name: 'hidden',
       required: false,
       admin: {
         position: 'sidebar',
@@ -76,7 +53,18 @@ const Subjects: CollectionConfig = {
         position: 'sidebar',
       },
     },
+    {
+      name: 'subject',
+      type: 'relationship',
+      relationTo: 'subjects',
+      required: false,
+      admin: {
+        description: 'Linked Subject From Folder',
+        position: 'sidebar',
+      },
+      maxDepth: 1,
+    },
   ],
 }
 
-export default Subjects
+export default Folders

@@ -79,6 +79,7 @@ export interface Config {
     suggestions: Suggestion;
     groups: Group;
     notifications: Notification;
+    folders: Folder;
     search: Search;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
@@ -103,6 +104,7 @@ export interface Config {
     suggestions: SuggestionsSelect<false> | SuggestionsSelect<true>;
     groups: GroupsSelect<false> | GroupsSelect<true>;
     notifications: NotificationsSelect<false> | NotificationsSelect<true>;
+    folders: FoldersSelect<false> | FoldersSelect<true>;
     search: SearchSelect<false> | SearchSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -434,6 +436,27 @@ export interface Notification {
   createdAt: string;
 }
 /**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "folders".
+ */
+export interface Folder {
+  id: string;
+  _order?: string | null;
+  title: string;
+  description?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  hidden?: boolean | null;
+  tags?: string | null;
+  /**
+   * Linked Subject From Folder
+   */
+  subject?: (string | null) | Subject;
+  updatedAt: string;
+  createdAt: string;
+  deletedAt?: string | null;
+}
+/**
  * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -599,6 +622,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'notifications';
         value: string | Notification;
+      } | null)
+    | ({
+        relationTo: 'folders';
+        value: string | Folder;
       } | null)
     | ({
         relationTo: 'search';
@@ -858,6 +885,23 @@ export interface NotificationsSelect<T extends boolean = true> {
   link?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "folders_select".
+ */
+export interface FoldersSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  description?: T;
+  slug?: T;
+  slugLock?: T;
+  hidden?: T;
+  tags?: T;
+  subject?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  deletedAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
