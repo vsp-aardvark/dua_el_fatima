@@ -26,6 +26,7 @@ export const loopFolderStructure = async (
 
   for (let i = 0; i < data.folders.length; i++) {
     const subjectValue = rawData[`subject${i}`]
+    const groupedValue = rawData[`group${i}`]
 
     if (subjectValue == undefined || !subjectValue) {
       console.log(`Subject at ${i} not found`)
@@ -46,6 +47,7 @@ export const loopFolderStructure = async (
             subject: subjectValue,
             category: data.category,
             group: data.group,
+            grouped: groupedValue || null,
             content: textToLexical(content),
             //
             _status: 'published',
@@ -86,6 +88,7 @@ export const loopFileStructure = async (
 
   for (let i = 0; i < data.folders.length; i++) {
     const subjectValue = rawData[`subject${i}`]
+    const groupedValue = rawData[`group${i}`]
 
     if (subjectValue == undefined || !subjectValue) {
       console.log(`Subject at ${i} not found`)
@@ -105,6 +108,7 @@ export const loopFileStructure = async (
           subject: subjectValue,
           category: data.category,
           group: data.group,
+          grouped: groupedValue || null,
           content: textToLexical(content),
           //
           _status: 'published',

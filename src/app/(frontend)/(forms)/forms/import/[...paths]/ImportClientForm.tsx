@@ -24,6 +24,12 @@ const ImportClientForm: FC<{ folders: string[]; path: string[] }> = ({ folders, 
           },
         }
 
+        copyPreviousValue[`group${currentIndex}`] = {
+          type: 'text',
+          label: 'Grouped',
+          required: false,
+        }
+
         return copyPreviousValue
       },
       {} as FormDataSchema['fields'],
@@ -76,7 +82,7 @@ const ImportClientForm: FC<{ folders: string[]; path: string[] }> = ({ folders, 
 
   const uiSchema: FormUISchema = useMemo(() => {
     const uiFields = folders.map((_, index) => {
-      return ['separator', `subject${index}`]
+      return ['separator', `subject${index}`, `group${index}`]
     })
     return {
       sections: [
