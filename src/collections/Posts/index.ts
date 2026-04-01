@@ -171,6 +171,15 @@ const Poems: CollectionConfig<'poems'> = {
         position: 'sidebar',
       },
     },
+    {
+      name: 'grouped',
+      type: 'text',
+      required: false,
+      label: 'Grouped',
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
   indexes: [
     {
